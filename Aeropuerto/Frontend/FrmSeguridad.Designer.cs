@@ -121,7 +121,7 @@
             TxbxTitulo.Name = "TxbxTitulo";
             TxbxTitulo.Size = new Size(110, 23);
             TxbxTitulo.TabIndex = 72;
-            TxbxTitulo.Text = "Puerta Embarque";
+            TxbxTitulo.Text = "Seguridad";
             TxbxTitulo.TextAlign = HorizontalAlignment.Center;
             // 
             // button3
