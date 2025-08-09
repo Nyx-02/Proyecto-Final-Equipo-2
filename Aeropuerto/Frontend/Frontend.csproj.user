@@ -1,8 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <ItemGroup>
-        <Compile Update="Form1.cs">
-            <SubType>Form</SubType>
-        </Compile>
-    </ItemGroup>
+  <ItemGroup>
+    <Compile Update="FrmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmPasajero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmItinerario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmAvion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmAerolinea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmReserva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmEquipaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmPuertaEmbarque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmSeguridad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmVuelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
