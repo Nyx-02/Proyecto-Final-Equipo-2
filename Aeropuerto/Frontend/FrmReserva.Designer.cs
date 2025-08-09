@@ -41,6 +41,7 @@
             button2 = new Button();
             button1 = new Button();
             BtEliminar = new Button();
+            textBox7 = new TextBox();
             SuspendLayout();
             // 
             // textBox6
@@ -160,11 +161,21 @@
             BtEliminar.Text = "Eliminar";
             BtEliminar.UseVisualStyleBackColor = true;
             // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(432, 143);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(100, 23);
+            textBox7.TabIndex = 38;
+            textBox7.Text = "Fecha De Reserva";
+            textBox7.TextAlign = HorizontalAlignment.Center;
+            // 
             // FrmReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox7);
             Controls.Add(textBox6);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
@@ -199,5 +210,6 @@
         private Button button2;
         private Button button1;
         private Button BtEliminar;
+        private TextBox textBox7;
     }
 }

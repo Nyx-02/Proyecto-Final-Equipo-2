@@ -1,0 +1,12 @@
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\bin\Debug\net8.0\Backend.deps.json
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\bin\Debug\net8.0\Backend.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\bin\Debug\net8.0\Backend.pdb
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\Backend.AssemblyInfoInputs.cache
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\Backend.AssemblyInfo.cs
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\Backend.csproj.CoreCompileInputs.cache
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\Backend.sourcelink.json
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\Backend.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\refint\Backend.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\Backend.pdb
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Backend\obj\Debug\net8.0\ref\Backend.dll

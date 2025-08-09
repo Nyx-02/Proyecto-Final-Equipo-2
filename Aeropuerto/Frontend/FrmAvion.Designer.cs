@@ -41,6 +41,7 @@
             button1 = new Button();
             BtEliminar = new Button();
             textBox6 = new TextBox();
+            textBox7 = new TextBox();
             SuspendLayout();
             // 
             // comboBox1
@@ -56,7 +57,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(395, 169);
+            dateTimePicker1.Location = new Point(395, 172);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 22;
@@ -161,11 +162,21 @@
             textBox6.Text = "Aerolinea";
             textBox6.TextAlign = HorizontalAlignment.Center;
             // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(435, 143);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(126, 23);
+            textBox7.TabIndex = 25;
+            textBox7.Text = "Fecha De Fabricacion";
+            textBox7.TextAlign = HorizontalAlignment.Center;
+            // 
             // FrmAvion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox7);
             Controls.Add(textBox6);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
@@ -201,5 +212,6 @@
         private Button button1;
         private Button BtEliminar;
         private TextBox textBox6;
+        private TextBox textBox7;
     }
 }

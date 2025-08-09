@@ -41,6 +41,7 @@
             button2 = new Button();
             button1 = new Button();
             BtEliminar = new Button();
+            textBox7 = new TextBox();
             SuspendLayout();
             // 
             // textBox6
@@ -56,7 +57,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Facturado", "En Cabina ", "Perdido" });
-            comboBox1.Location = new Point(458, 222);
+            comboBox1.Location = new Point(456, 242);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(63, 23);
             comboBox1.TabIndex = 49;
@@ -65,7 +66,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(392, 161);
+            dateTimePicker1.Location = new Point(390, 181);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 48;
@@ -160,11 +161,21 @@
             BtEliminar.Text = "Eliminar";
             BtEliminar.UseVisualStyleBackColor = true;
             // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(446, 152);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(100, 23);
+            textBox7.TabIndex = 51;
+            textBox7.Text = "Fecha De Registro";
+            textBox7.TextAlign = HorizontalAlignment.Center;
+            // 
             // FrmEquipaje
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox7);
             Controls.Add(textBox6);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
@@ -199,5 +210,6 @@
         private Button button2;
         private Button button1;
         private Button BtEliminar;
+        private TextBox textBox7;
     }
 }
