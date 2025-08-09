@@ -28,18 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            BtEliminar = new Button();
             SuspendLayout();
+            // 
+            // BtEliminar
+            // 
+            BtEliminar.Location = new Point(337, 318);
+            BtEliminar.Name = "BtEliminar";
+            BtEliminar.Size = new Size(75, 23);
+            BtEliminar.TabIndex = 0;
+            BtEliminar.Text = "Eliminar";
+            BtEliminar.UseVisualStyleBackColor = true;
+            BtEliminar.Click += button1_Click_1;
             // 
             // FrmVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BtEliminar);
             Name = "FrmVuelo";
             Text = "Form2";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private Button BtEliminar;
     }
 }
