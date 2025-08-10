@@ -36,5 +36,10 @@ namespace Frontend
         {
 
         }
+
+        private void FrmVuelo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

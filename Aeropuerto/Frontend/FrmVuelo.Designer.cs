@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVuelo));
             BtEliminar = new Button();
             button1 = new Button();
             button2 = new Button();
@@ -202,7 +203,7 @@
             // 
             // button4
             // 
-            button4.Image = Frontend._.Vuelo1;
+            button4.Image = (Image)resources.GetObject("button4.Image");
             button4.Location = new Point(12, 12);
             button4.Name = "button4";
             button4.Size = new Size(47, 40);
@@ -234,6 +235,7 @@
             Controls.Add(BtEliminar);
             Name = "FrmVuelo";
             Text = "Form2";
+            Load += FrmVuelo_Load;
             ResumeLayout(false);
             PerformLayout();
         }
