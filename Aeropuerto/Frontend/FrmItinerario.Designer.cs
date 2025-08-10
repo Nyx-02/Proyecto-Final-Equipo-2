@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmItinerario));
             dateTimePicker2 = new DateTimePicker();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
@@ -43,6 +44,7 @@
             button2 = new Button();
             button1 = new Button();
             BtEliminar = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // dateTimePicker2
@@ -176,11 +178,21 @@
             BtEliminar.Text = "Eliminar";
             BtEliminar.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Location = new Point(12, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(47, 40);
+            button4.TabIndex = 113;
+            button4.UseVisualStyleBackColor = true;
+            // 
             // FrmItinerario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(dateTimePicker2);
             Controls.Add(textBox7);
             Controls.Add(textBox8);
@@ -219,5 +231,6 @@
         private Button button2;
         private Button button1;
         private Button BtEliminar;
+        private Button button4;
     }
 }

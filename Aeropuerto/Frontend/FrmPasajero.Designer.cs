@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPasajero));
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -41,6 +42,7 @@
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             comboBox1 = new ComboBox();
+            button4 = new Button();
             SuspendLayout();
             // 
             // button3
@@ -161,11 +163,21 @@
             comboBox1.TabIndex = 17;
             comboBox1.Text = "Clase";
             // 
+            // button4
+            // 
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Location = new Point(12, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(47, 40);
+            button4.TabIndex = 20;
+            button4.UseVisualStyleBackColor = true;
+            // 
             // FrmPasajero
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(comboBox1);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
@@ -200,5 +212,6 @@
         private TextBox textBox6;
         private TextBox textBox7;
         private ComboBox comboBox1;
+        private Button button4;
     }
 }

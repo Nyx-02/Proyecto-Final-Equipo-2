@@ -45,6 +45,7 @@
             dateTimePicker3 = new DateTimePicker();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
+            button4 = new Button();
             SuspendLayout();
             // 
             // BtEliminar
@@ -199,11 +200,21 @@
             textBox8.Text = "Hora De Salida";
             textBox8.TextAlign = HorizontalAlignment.Center;
             // 
+            // button4
+            // 
+            button4.Image = Frontend._.Vuelo1;
+            button4.Location = new Point(12, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(47, 40);
+            button4.TabIndex = 19;
+            button4.UseVisualStyleBackColor = true;
+            // 
             // FrmVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(textBox8);
             Controls.Add(textBox7);
             Controls.Add(dateTimePicker3);
@@ -246,5 +257,6 @@
         private DateTimePicker dateTimePicker3;
         private TextBox textBox7;
         private TextBox textBox8;
+        private Button button4;
     }
 }

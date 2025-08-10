@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPuertaEmbarque));
             textBox6 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             textBox5 = new TextBox();
@@ -43,6 +44,7 @@
             dateTimePicker2 = new DateTimePicker();
             textBox8 = new TextBox();
             textBox7 = new TextBox();
+            button4 = new Button();
             SuspendLayout();
             // 
             // textBox6
@@ -176,11 +178,21 @@
             textBox7.Text = "Horario de Cierre";
             textBox7.TextAlign = HorizontalAlignment.Center;
             // 
+            // button4
+            // 
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Location = new Point(12, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(47, 40);
+            button4.TabIndex = 68;
+            button4.UseVisualStyleBackColor = true;
+            // 
             // FrmPuertaEmbarque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(textBox7);
             Controls.Add(textBox8);
             Controls.Add(dateTimePicker2);
@@ -219,5 +231,6 @@
         private DateTimePicker dateTimePicker2;
         private TextBox textBox8;
         private TextBox textBox7;
+        private Button button4;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAvion));
             comboBox1 = new ComboBox();
             dateTimePicker1 = new DateTimePicker();
             textBox5 = new TextBox();
@@ -42,6 +43,7 @@
             BtEliminar = new Button();
             textBox6 = new TextBox();
             textBox7 = new TextBox();
+            button4 = new Button();
             SuspendLayout();
             // 
             // comboBox1
@@ -171,11 +173,21 @@
             textBox7.Text = "Fecha De Fabricacion";
             textBox7.TextAlign = HorizontalAlignment.Center;
             // 
+            // button4
+            // 
+            button4.Image = (Image)resources.GetObject("button4.Image");
+            button4.Location = new Point(12, 12);
+            button4.Name = "button4";
+            button4.Size = new Size(47, 40);
+            button4.TabIndex = 26;
+            button4.UseVisualStyleBackColor = true;
+            // 
             // FrmAvion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
             Controls.Add(textBox7);
             Controls.Add(textBox6);
             Controls.Add(comboBox1);
@@ -213,5 +225,6 @@
         private Button BtEliminar;
         private TextBox textBox6;
         private TextBox textBox7;
+        private Button button4;
     }
 }
