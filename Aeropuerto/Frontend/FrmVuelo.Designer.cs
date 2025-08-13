@@ -29,236 +29,181 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVuelo));
-            BtEliminar = new Button();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            TxbxTitulo = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox1 = new ComboBox();
-            textBox6 = new TextBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker3 = new DateTimePicker();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            button4 = new Button();
+            butGuardar = new Button();
+            butEditar = new Button();
+            buteliminar = new Button();
+            botBuscar = new Button();
+            labGuardar = new Label();
+            labeditar = new Label();
+            labborrar = new Label();
+            labBuscar = new Label();
+            picboxlogo = new PictureBox();
+            labeNombrecorpo = new Label();
+            LabelTitulo = new Label();
+            ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             SuspendLayout();
             // 
-            // BtEliminar
+            // butGuardar
             // 
-            BtEliminar.Location = new Point(391, 335);
-            BtEliminar.Name = "BtEliminar";
-            BtEliminar.Size = new Size(75, 23);
-            BtEliminar.TabIndex = 0;
-            BtEliminar.Text = "Eliminar";
-            BtEliminar.UseVisualStyleBackColor = true;
-            BtEliminar.Click += button1_Click_1;
+            butGuardar.BackgroundImage = (Image)resources.GetObject("butGuardar.BackgroundImage");
+            butGuardar.FlatStyle = FlatStyle.Flat;
+            butGuardar.Image = (Image)resources.GetObject("butGuardar.Image");
+            butGuardar.Location = new Point(280, 354);
+            butGuardar.Name = "butGuardar";
+            butGuardar.Size = new Size(56, 53);
+            butGuardar.TabIndex = 3;
+            butGuardar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // butEditar
             // 
-            button1.Location = new Point(310, 335);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Editar";
-            button1.UseVisualStyleBackColor = true;
+            butEditar.BackgroundImage = (Image)resources.GetObject("butEditar.BackgroundImage");
+            butEditar.FlatStyle = FlatStyle.Flat;
+            butEditar.Image = (Image)resources.GetObject("butEditar.Image");
+            butEditar.Location = new Point(342, 354);
+            butEditar.Name = "butEditar";
+            butEditar.Size = new Size(56, 53);
+            butEditar.TabIndex = 4;
+            butEditar.UseVisualStyleBackColor = true;
+            butEditar.Click += butEditar_Click;
             // 
-            // button2
+            // buteliminar
             // 
-            button2.Location = new Point(472, 335);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Buscar";
-            button2.UseVisualStyleBackColor = true;
+            buteliminar.BackgroundImage = (Image)resources.GetObject("buteliminar.BackgroundImage");
+            buteliminar.FlatStyle = FlatStyle.Flat;
+            buteliminar.Image = (Image)resources.GetObject("buteliminar.Image");
+            buteliminar.Location = new Point(404, 354);
+            buteliminar.Name = "buteliminar";
+            buteliminar.Size = new Size(56, 53);
+            buteliminar.TabIndex = 5;
+            buteliminar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // botBuscar
             // 
-            button3.Location = new Point(229, 335);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 3;
-            button3.Text = "Guardar";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            botBuscar.BackgroundImage = (Image)resources.GetObject("botBuscar.BackgroundImage");
+            botBuscar.FlatStyle = FlatStyle.Flat;
+            botBuscar.Image = (Image)resources.GetObject("botBuscar.Image");
+            botBuscar.Location = new Point(466, 354);
+            botBuscar.Name = "botBuscar";
+            botBuscar.Size = new Size(56, 53);
+            botBuscar.TabIndex = 6;
+            botBuscar.UseVisualStyleBackColor = true;
             // 
-            // TxbxTitulo
+            // labGuardar
             // 
-            TxbxTitulo.Location = new Point(340, 63);
-            TxbxTitulo.Name = "TxbxTitulo";
-            TxbxTitulo.Size = new Size(94, 23);
-            TxbxTitulo.TabIndex = 4;
-            TxbxTitulo.Text = "Vuelo";
-            TxbxTitulo.TextAlign = HorizontalAlignment.Center;
-            TxbxTitulo.TextChanged += TxbxTitulo_TextChanged;
+            labGuardar.BackColor = Color.LightSkyBlue;
+            labGuardar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labGuardar.Location = new Point(280, 410);
+            labGuardar.Name = "labGuardar";
+            labGuardar.Size = new Size(56, 21);
+            labGuardar.TabIndex = 7;
+            labGuardar.Text = "Guardar";
+            labGuardar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // labeditar
             // 
-            textBox1.Location = new Point(204, 118);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 5;
-            textBox1.Text = "ID";
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            labeditar.BackColor = Color.LightSkyBlue;
+            labeditar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labeditar.Location = new Point(342, 410);
+            labeditar.Name = "labeditar";
+            labeditar.Size = new Size(56, 21);
+            labeditar.TabIndex = 8;
+            labeditar.Text = "Editar";
+            labeditar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // labborrar
             // 
-            textBox2.Location = new Point(204, 147);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 6;
-            textBox2.Text = "Origen";
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            labborrar.BackColor = Color.LightSkyBlue;
+            labborrar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labborrar.Location = new Point(404, 410);
+            labborrar.Name = "labborrar";
+            labborrar.Size = new Size(56, 21);
+            labborrar.TabIndex = 9;
+            labborrar.Text = "Borrar";
+            labborrar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // labBuscar
             // 
-            textBox3.Location = new Point(204, 176);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 7;
-            textBox3.Text = "Destino";
-            textBox3.TextAlign = HorizontalAlignment.Center;
+            labBuscar.BackColor = Color.LightSkyBlue;
+            labBuscar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labBuscar.Location = new Point(466, 410);
+            labBuscar.Name = "labBuscar";
+            labBuscar.Size = new Size(56, 21);
+            labBuscar.TabIndex = 10;
+            labBuscar.Text = "Buscar";
+            labBuscar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // picboxlogo
             // 
-            textBox4.Location = new Point(204, 205);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 8;
-            textBox4.Text = "Aerolinea";
-            textBox4.TextAlign = HorizontalAlignment.Center;
+            picboxlogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            picboxlogo.BackgroundImage = (Image)resources.GetObject("picboxlogo.BackgroundImage");
+            picboxlogo.Image = (Image)resources.GetObject("picboxlogo.Image");
+            picboxlogo.Location = new Point(12, 12);
+            picboxlogo.Name = "picboxlogo";
+            picboxlogo.Size = new Size(78, 61);
+            picboxlogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxlogo.TabIndex = 11;
+            picboxlogo.TabStop = false;
             // 
-            // textBox5
+            // labeNombrecorpo
             // 
-            textBox5.Location = new Point(204, 234);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 9;
-            textBox5.Text = "Precio";
-            textBox5.TextAlign = HorizontalAlignment.Center;
+            labeNombrecorpo.BackColor = Color.LightSkyBlue;
+            labeNombrecorpo.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labeNombrecorpo.Location = new Point(12, 76);
+            labeNombrecorpo.Name = "labeNombrecorpo";
+            labeNombrecorpo.Size = new Size(78, 20);
+            labeNombrecorpo.TabIndex = 1;
+            labeNombrecorpo.Text = "AeroLink";
+            labeNombrecorpo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
+            // LabelTitulo
             // 
-            dateTimePicker1.Location = new Point(370, 156);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Programado", "Retrasado", "Cancelado" });
-            comboBox1.Location = new Point(226, 275);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(63, 23);
-            comboBox1.TabIndex = 11;
-            comboBox1.Tag = "";
-            comboBox1.Text = "Estado";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(422, 127);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 14;
-            textBox6.Text = "Fecha";
-            textBox6.TextAlign = HorizontalAlignment.Center;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(370, 214);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(200, 23);
-            dateTimePicker2.TabIndex = 15;
-            // 
-            // dateTimePicker3
-            // 
-            dateTimePicker3.Location = new Point(370, 272);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(200, 23);
-            dateTimePicker3.TabIndex = 16;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(422, 243);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 17;
-            textBox7.Text = "Hora De Llegada";
-            textBox7.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(422, 185);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(100, 23);
-            textBox8.TabIndex = 18;
-            textBox8.Text = "Hora De Salida";
-            textBox8.TextAlign = HorizontalAlignment.Center;
-            // 
-            // button4
-            // 
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(12, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(47, 40);
-            button4.TabIndex = 19;
-            button4.UseVisualStyleBackColor = true;
+            LabelTitulo.BackColor = Color.LightSkyBlue;
+            LabelTitulo.Font = new Font("Segoe UI Emoji", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            LabelTitulo.Location = new Point(280, 9);
+            LabelTitulo.Name = "LabelTitulo";
+            LabelTitulo.Size = new Size(242, 39);
+            LabelTitulo.TabIndex = 12;
+            LabelTitulo.Text = "Gestion de Vuelos";
+            LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            LabelTitulo.Click += label1_Click;
             // 
             // FrmVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
-            Controls.Add(button4);
-            Controls.Add(textBox8);
-            Controls.Add(textBox7);
-            Controls.Add(dateTimePicker3);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(textBox6);
-            Controls.Add(comboBox1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(TxbxTitulo);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(BtEliminar);
+            Controls.Add(LabelTitulo);
+            Controls.Add(picboxlogo);
+            Controls.Add(labBuscar);
+            Controls.Add(labborrar);
+            Controls.Add(labeditar);
+            Controls.Add(labGuardar);
+            Controls.Add(botBuscar);
+            Controls.Add(buteliminar);
+            Controls.Add(butEditar);
+            Controls.Add(butGuardar);
+            Controls.Add(labeNombrecorpo);
             Name = "FrmVuelo";
-            Text = "Form2";
+            Text = "Gestion de Vuelos";
             Load += FrmVuelo_Load;
+            ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Button BtEliminar;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private TextBox TxbxTitulo;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox1;
-        private TextBox textBox6;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker3;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private Button button4;
+        private Button butGuardar;
+        private Button butEditar;
+        private Button buteliminar;
+        private Button botBuscar;
+        private Label labGuardar;
+        private Label labeditar;
+        private Label labborrar;
+        private Label labBuscar;
+        private PictureBox picboxlogo;
+        private Label labeNombrecorpo;
+        private Label LabelTitulo;
     }
 }
