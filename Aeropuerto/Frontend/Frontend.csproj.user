@@ -7,6 +7,9 @@
     <Compile Update="FrmAvion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmCheckIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,9 +17,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmPasajero.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FrmCheckIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmItinerario.cs">
