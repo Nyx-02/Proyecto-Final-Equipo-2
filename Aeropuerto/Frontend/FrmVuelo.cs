@@ -51,5 +51,10 @@ namespace Frontend
         {
 
         }
+
+        private void lbDestino_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

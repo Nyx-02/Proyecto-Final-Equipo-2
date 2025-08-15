@@ -40,6 +40,22 @@
             picboxlogo = new PictureBox();
             labeNombrecorpo = new Label();
             LabelTitulo = new Label();
+            lbId = new Label();
+            lbDestino = new Label();
+            lbAerolinea = new Label();
+            LabOrigen = new Label();
+            textID = new TextBox();
+            texDestino = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            lbEstado = new Label();
+            lbhoradelle = new Label();
+            lbHorasali = new Label();
+            lbFecha = new Label();
+            DTPFecha = new DateTimePicker();
+            DTPhoradelle = new DateTimePicker();
+            dateTimePicker3 = new DateTimePicker();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             SuspendLayout();
             // 
@@ -159,13 +175,160 @@
             // 
             LabelTitulo.BackColor = Color.LightSkyBlue;
             LabelTitulo.Font = new Font("Segoe UI Emoji", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            LabelTitulo.Location = new Point(280, 9);
+            LabelTitulo.Location = new Point(280, 34);
             LabelTitulo.Name = "LabelTitulo";
             LabelTitulo.Size = new Size(242, 39);
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Vuelos";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
             LabelTitulo.Click += label1_Click;
+            // 
+            // lbId
+            // 
+            lbId.BackColor = Color.LightSkyBlue;
+            lbId.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbId.Location = new Point(189, 127);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(56, 21);
+            lbId.TabIndex = 13;
+            lbId.Text = "ID:";
+            lbId.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbDestino
+            // 
+            lbDestino.BackColor = Color.LightSkyBlue;
+            lbDestino.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbDestino.Location = new Point(175, 169);
+            lbDestino.Name = "lbDestino";
+            lbDestino.Size = new Size(70, 21);
+            lbDestino.TabIndex = 15;
+            lbDestino.Text = "Destino:";
+            lbDestino.TextAlign = ContentAlignment.MiddleCenter;
+            lbDestino.Click += lbDestino_Click;
+            // 
+            // lbAerolinea
+            // 
+            lbAerolinea.BackColor = Color.LightSkyBlue;
+            lbAerolinea.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbAerolinea.Location = new Point(175, 211);
+            lbAerolinea.Name = "lbAerolinea";
+            lbAerolinea.Size = new Size(70, 21);
+            lbAerolinea.TabIndex = 16;
+            lbAerolinea.Text = "Aerolinea:";
+            lbAerolinea.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // LabOrigen
+            // 
+            LabOrigen.BackColor = Color.LightSkyBlue;
+            LabOrigen.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            LabOrigen.Location = new Point(189, 253);
+            LabOrigen.Name = "LabOrigen";
+            LabOrigen.Size = new Size(56, 21);
+            LabOrigen.TabIndex = 17;
+            LabOrigen.Text = "Origen:";
+            LabOrigen.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textID
+            // 
+            textID.Location = new Point(251, 125);
+            textID.Name = "textID";
+            textID.Size = new Size(100, 23);
+            textID.TabIndex = 18;
+            // 
+            // texDestino
+            // 
+            texDestino.Location = new Point(251, 170);
+            texDestino.Name = "texDestino";
+            texDestino.Size = new Size(100, 23);
+            texDestino.TabIndex = 19;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(251, 254);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(100, 23);
+            textBox3.TabIndex = 20;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(251, 211);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(100, 23);
+            textBox4.TabIndex = 21;
+            // 
+            // lbEstado
+            // 
+            lbEstado.BackColor = Color.LightSkyBlue;
+            lbEstado.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbEstado.Location = new Point(381, 253);
+            lbEstado.Name = "lbEstado";
+            lbEstado.Size = new Size(56, 21);
+            lbEstado.TabIndex = 22;
+            lbEstado.Text = "Estado:";
+            lbEstado.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbhoradelle
+            // 
+            lbhoradelle.BackColor = Color.LightSkyBlue;
+            lbhoradelle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbhoradelle.Location = new Point(381, 211);
+            lbhoradelle.Name = "lbhoradelle";
+            lbhoradelle.Size = new Size(112, 21);
+            lbhoradelle.TabIndex = 23;
+            lbhoradelle.Text = "Hora de LLegada:";
+            lbhoradelle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbHorasali
+            // 
+            lbHorasali.BackColor = Color.LightSkyBlue;
+            lbHorasali.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbHorasali.Location = new Point(381, 169);
+            lbHorasali.Name = "lbHorasali";
+            lbHorasali.Size = new Size(101, 21);
+            lbHorasali.TabIndex = 24;
+            lbHorasali.Text = "Hora de Salida:";
+            lbHorasali.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbFecha
+            // 
+            lbFecha.BackColor = Color.LightSkyBlue;
+            lbFecha.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbFecha.Location = new Point(381, 127);
+            lbFecha.Name = "lbFecha";
+            lbFecha.Size = new Size(56, 21);
+            lbFecha.TabIndex = 25;
+            lbFecha.Text = "Fecha:";
+            lbFecha.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // DTPFecha
+            // 
+            DTPFecha.Location = new Point(443, 127);
+            DTPFecha.Name = "DTPFecha";
+            DTPFecha.Size = new Size(200, 23);
+            DTPFecha.TabIndex = 26;
+            // 
+            // DTPhoradelle
+            // 
+            DTPhoradelle.Location = new Point(499, 211);
+            DTPhoradelle.Name = "DTPhoradelle";
+            DTPhoradelle.Size = new Size(200, 23);
+            DTPhoradelle.TabIndex = 27;
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Location = new Point(488, 170);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(200, 23);
+            dateTimePicker3.TabIndex = 28;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Activo", "Retrasado", "Cancelado" });
+            comboBox1.Location = new Point(443, 253);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 29;
             // 
             // FrmVuelo
             // 
@@ -175,6 +338,22 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(comboBox1);
+            Controls.Add(dateTimePicker3);
+            Controls.Add(DTPhoradelle);
+            Controls.Add(DTPFecha);
+            Controls.Add(lbFecha);
+            Controls.Add(lbHorasali);
+            Controls.Add(lbhoradelle);
+            Controls.Add(lbEstado);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
+            Controls.Add(texDestino);
+            Controls.Add(textID);
+            Controls.Add(LabOrigen);
+            Controls.Add(lbAerolinea);
+            Controls.Add(lbDestino);
+            Controls.Add(lbId);
             Controls.Add(LabelTitulo);
             Controls.Add(picboxlogo);
             Controls.Add(labBuscar);
@@ -191,6 +370,7 @@
             Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -205,5 +385,21 @@
         private PictureBox picboxlogo;
         private Label labeNombrecorpo;
         private Label LabelTitulo;
+        private Label lbId;
+        private Label lbDestino;
+        private Label lbAerolinea;
+        private Label LabOrigen;
+        private TextBox textID;
+        private TextBox texDestino;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private Label lbEstado;
+        private Label lbhoradelle;
+        private Label lbHorasali;
+        private Label lbFecha;
+        private DateTimePicker DTPFecha;
+        private DateTimePicker DTPhoradelle;
+        private DateTimePicker dateTimePicker3;
+        private ComboBox comboBox1;
     }
 }
