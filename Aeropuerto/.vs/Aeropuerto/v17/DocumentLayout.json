@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmseguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmseguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmmantenimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmmantenimiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,13 +27,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmSeguridad.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmSeguridad.cs",
-              "RelativeDocumentMoniker": "Frontend\\FrmSeguridad.cs",
-              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmSeguridad.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Frontend\\FrmSeguridad.cs [Dise\u00F1o]",
+              "Title": "FrmMantenimiento.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmMantenimiento.cs",
+              "RelativeDocumentMoniker": "Frontend\\FrmMantenimiento.cs",
+              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmMantenimiento.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\FrmMantenimiento.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-15T02:30:19.976Z",
+              "WhenOpened": "2025-08-15T02:44:10.81Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
