@@ -54,9 +54,10 @@
             lbSalario = new Label();
             DTPfechadeingreso = new DateTimePicker();
             textBox2 = new TextBox();
-            texturno = new TextBox();
-            texSalario = new TextBox();
+            nupdsalario = new NumericUpDown();
+            cbturno = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nupdsalario).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -314,19 +315,21 @@
             textBox2.Size = new Size(100, 23);
             textBox2.TabIndex = 29;
             // 
-            // texturno
+            // nupdsalario
             // 
-            texturno.Location = new Point(461, 169);
-            texturno.Name = "texturno";
-            texturno.Size = new Size(100, 23);
-            texturno.TabIndex = 30;
+            nupdsalario.Location = new Point(461, 129);
+            nupdsalario.Name = "nupdsalario";
+            nupdsalario.Size = new Size(120, 23);
+            nupdsalario.TabIndex = 32;
             // 
-            // texSalario
+            // cbturno
             // 
-            texSalario.Location = new Point(461, 125);
-            texSalario.Name = "texSalario";
-            texSalario.Size = new Size(100, 23);
-            texSalario.TabIndex = 31;
+            cbturno.FormattingEnabled = true;
+            cbturno.Items.AddRange(new object[] { "Mañana", "Tarde", "Noche" });
+            cbturno.Location = new Point(460, 169);
+            cbturno.Name = "cbturno";
+            cbturno.Size = new Size(121, 23);
+            cbturno.TabIndex = 33;
             // 
             // FrmEmpleado
             // 
@@ -336,8 +339,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
-            Controls.Add(texSalario);
-            Controls.Add(texturno);
+            Controls.Add(cbturno);
+            Controls.Add(nupdsalario);
             Controls.Add(textBox2);
             Controls.Add(DTPfechadeingreso);
             Controls.Add(lbSalario);
@@ -367,6 +370,7 @@
             Text = "Gestion de Empleados";
             Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nupdsalario).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -397,7 +401,7 @@
         private Label lbSalario;
         private DateTimePicker DTPfechadeingreso;
         private TextBox textBox2;
-        private TextBox texturno;
-        private TextBox texSalario;
+        private NumericUpDown nupdsalario;
+        private ComboBox cbturno;
     }
 }

@@ -29,202 +29,385 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAvion));
-            comboBox1 = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            TxbxTitulo = new TextBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            BtEliminar = new Button();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            button4 = new Button();
+            butGuardar = new Button();
+            butEditar = new Button();
+            buteliminar = new Button();
+            botBuscar = new Button();
+            labGuardar = new Label();
+            labeditar = new Label();
+            labborrar = new Label();
+            labBuscar = new Label();
+            picboxlogo = new PictureBox();
+            labeNombrecorpo = new Label();
+            LabelTitulo = new Label();
+            lbId = new Label();
+            lbmodelo = new Label();
+            lbcapacidad = new Label();
+            Labfabricante = new Label();
+            textID = new TextBox();
+            texmodelo = new TextBox();
+            texfabricante = new TextBox();
+            lbmatricula = new Label();
+            lbestado = new Label();
+            lbfabricacion = new Label();
+            tematricula = new TextBox();
+            lbmotoro = new Label();
+            nupdCapacidad = new NumericUpDown();
+            nupdfabricacion = new NumericUpDown();
+            cbEstado = new ComboBox();
+            cbmotor = new ComboBox();
+            ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nupdCapacidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nupdfabricacion).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // butGuardar
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Activo", "Mantenimiento", "Fuera de Servicio" });
-            comboBox1.Location = new Point(461, 230);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(63, 23);
-            comboBox1.TabIndex = 23;
-            comboBox1.Tag = "";
-            comboBox1.Text = "Estado";
+            butGuardar.BackgroundImage = (Image)resources.GetObject("butGuardar.BackgroundImage");
+            butGuardar.FlatStyle = FlatStyle.Flat;
+            butGuardar.Image = (Image)resources.GetObject("butGuardar.Image");
+            butGuardar.Location = new Point(280, 354);
+            butGuardar.Name = "butGuardar";
+            butGuardar.Size = new Size(56, 53);
+            butGuardar.TabIndex = 3;
+            butGuardar.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // butEditar
             // 
-            dateTimePicker1.Location = new Point(395, 172);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 22;
+            butEditar.BackgroundImage = (Image)resources.GetObject("butEditar.BackgroundImage");
+            butEditar.FlatStyle = FlatStyle.Flat;
+            butEditar.Image = (Image)resources.GetObject("butEditar.Image");
+            butEditar.Location = new Point(342, 354);
+            butEditar.Name = "butEditar";
+            butEditar.Size = new Size(56, 53);
+            butEditar.TabIndex = 4;
+            butEditar.UseVisualStyleBackColor = true;
+            butEditar.Click += butEditar_Click;
             // 
-            // textBox5
+            // buteliminar
             // 
-            textBox5.Location = new Point(206, 259);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 21;
-            textBox5.Text = "Capacidad";
-            textBox5.TextAlign = HorizontalAlignment.Center;
+            buteliminar.BackgroundImage = (Image)resources.GetObject("buteliminar.BackgroundImage");
+            buteliminar.FlatStyle = FlatStyle.Flat;
+            buteliminar.Image = (Image)resources.GetObject("buteliminar.Image");
+            buteliminar.Location = new Point(404, 354);
+            buteliminar.Name = "buteliminar";
+            buteliminar.Size = new Size(56, 53);
+            buteliminar.TabIndex = 5;
+            buteliminar.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // botBuscar
             // 
-            textBox4.Location = new Point(206, 230);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 20;
-            textBox4.Text = "Matricula";
-            textBox4.TextAlign = HorizontalAlignment.Center;
+            botBuscar.BackgroundImage = (Image)resources.GetObject("botBuscar.BackgroundImage");
+            botBuscar.FlatStyle = FlatStyle.Flat;
+            botBuscar.Image = (Image)resources.GetObject("botBuscar.Image");
+            botBuscar.Location = new Point(466, 354);
+            botBuscar.Name = "botBuscar";
+            botBuscar.Size = new Size(56, 53);
+            botBuscar.TabIndex = 6;
+            botBuscar.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // labGuardar
             // 
-            textBox3.Location = new Point(206, 201);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 19;
-            textBox3.Text = "Frabicante";
-            textBox3.TextAlign = HorizontalAlignment.Center;
+            labGuardar.BackColor = Color.LightSkyBlue;
+            labGuardar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labGuardar.Location = new Point(280, 410);
+            labGuardar.Name = "labGuardar";
+            labGuardar.Size = new Size(56, 21);
+            labGuardar.TabIndex = 7;
+            labGuardar.Text = "Guardar";
+            labGuardar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox2
+            // labeditar
             // 
-            textBox2.Location = new Point(206, 172);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 18;
-            textBox2.Text = "Modelo";
-            textBox2.TextAlign = HorizontalAlignment.Center;
-            textBox2.TextChanged += textBox2_TextChanged;
+            labeditar.BackColor = Color.LightSkyBlue;
+            labeditar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labeditar.Location = new Point(342, 410);
+            labeditar.Name = "labeditar";
+            labeditar.Size = new Size(56, 21);
+            labeditar.TabIndex = 8;
+            labeditar.Text = "Editar";
+            labeditar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // labborrar
             // 
-            textBox1.Location = new Point(206, 143);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 17;
-            textBox1.Text = "ID";
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            labborrar.BackColor = Color.LightSkyBlue;
+            labborrar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labborrar.Location = new Point(404, 410);
+            labborrar.Name = "labborrar";
+            labborrar.Size = new Size(56, 21);
+            labborrar.TabIndex = 9;
+            labborrar.Text = "Borrar";
+            labborrar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // TxbxTitulo
+            // labBuscar
             // 
-            TxbxTitulo.Location = new Point(339, 63);
-            TxbxTitulo.Name = "TxbxTitulo";
-            TxbxTitulo.Size = new Size(94, 23);
-            TxbxTitulo.TabIndex = 16;
-            TxbxTitulo.Text = "Avion";
-            TxbxTitulo.TextAlign = HorizontalAlignment.Center;
+            labBuscar.BackColor = Color.LightSkyBlue;
+            labBuscar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labBuscar.Location = new Point(466, 410);
+            labBuscar.Name = "labBuscar";
+            labBuscar.Size = new Size(56, 21);
+            labBuscar.TabIndex = 10;
+            labBuscar.Text = "Buscar";
+            labBuscar.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // picboxlogo
             // 
-            button3.Location = new Point(231, 342);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 15;
-            button3.Text = "Guardar";
-            button3.UseVisualStyleBackColor = true;
+            picboxlogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            picboxlogo.BackgroundImage = (Image)resources.GetObject("picboxlogo.BackgroundImage");
+            picboxlogo.Image = (Image)resources.GetObject("picboxlogo.Image");
+            picboxlogo.Location = new Point(12, 12);
+            picboxlogo.Name = "picboxlogo";
+            picboxlogo.Size = new Size(78, 61);
+            picboxlogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxlogo.TabIndex = 11;
+            picboxlogo.TabStop = false;
             // 
-            // button2
+            // labeNombrecorpo
             // 
-            button2.Location = new Point(474, 342);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 14;
-            button2.Text = "Buscar";
-            button2.UseVisualStyleBackColor = true;
+            labeNombrecorpo.BackColor = Color.LightSkyBlue;
+            labeNombrecorpo.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labeNombrecorpo.Location = new Point(12, 76);
+            labeNombrecorpo.Name = "labeNombrecorpo";
+            labeNombrecorpo.Size = new Size(78, 20);
+            labeNombrecorpo.TabIndex = 1;
+            labeNombrecorpo.Text = "AeroLink";
+            labeNombrecorpo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // LabelTitulo
             // 
-            button1.Location = new Point(312, 342);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 13;
-            button1.Text = "Editar";
-            button1.UseVisualStyleBackColor = true;
+            LabelTitulo.BackColor = Color.LightSkyBlue;
+            LabelTitulo.Font = new Font("Segoe UI Emoji", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            LabelTitulo.Location = new Point(280, 34);
+            LabelTitulo.Name = "LabelTitulo";
+            LabelTitulo.Size = new Size(242, 39);
+            LabelTitulo.TabIndex = 12;
+            LabelTitulo.Text = "Gestion de Empleados";
+            LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            LabelTitulo.Click += label1_Click;
             // 
-            // BtEliminar
+            // lbId
             // 
-            BtEliminar.Location = new Point(393, 342);
-            BtEliminar.Name = "BtEliminar";
-            BtEliminar.Size = new Size(75, 23);
-            BtEliminar.TabIndex = 12;
-            BtEliminar.Text = "Eliminar";
-            BtEliminar.UseVisualStyleBackColor = true;
+            lbId.BackColor = Color.LightSkyBlue;
+            lbId.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbId.Location = new Point(194, 127);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(56, 21);
+            lbId.TabIndex = 13;
+            lbId.Text = "ID:";
+            lbId.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox6
+            // lbmodelo
             // 
-            textBox6.Location = new Point(206, 288);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 24;
-            textBox6.Text = "Aerolinea";
-            textBox6.TextAlign = HorizontalAlignment.Center;
+            lbmodelo.BackColor = Color.LightSkyBlue;
+            lbmodelo.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbmodelo.Location = new Point(189, 169);
+            lbmodelo.Name = "lbmodelo";
+            lbmodelo.Size = new Size(61, 21);
+            lbmodelo.TabIndex = 15;
+            lbmodelo.Text = "Modelo:";
+            lbmodelo.TextAlign = ContentAlignment.MiddleCenter;
+            lbmodelo.Click += lbDestino_Click;
             // 
-            // textBox7
+            // lbcapacidad
             // 
-            textBox7.Location = new Point(435, 143);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(126, 23);
-            textBox7.TabIndex = 25;
-            textBox7.Text = "Fecha De Fabricacion";
-            textBox7.TextAlign = HorizontalAlignment.Center;
+            lbcapacidad.BackColor = Color.LightSkyBlue;
+            lbcapacidad.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbcapacidad.Location = new Point(179, 211);
+            lbcapacidad.Name = "lbcapacidad";
+            lbcapacidad.Size = new Size(71, 21);
+            lbcapacidad.TabIndex = 16;
+            lbcapacidad.Text = "Capacidad:";
+            lbcapacidad.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button4
+            // Labfabricante
             // 
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(12, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(47, 40);
-            button4.TabIndex = 26;
-            button4.UseVisualStyleBackColor = true;
+            Labfabricante.BackColor = Color.LightSkyBlue;
+            Labfabricante.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Labfabricante.Location = new Point(174, 253);
+            Labfabricante.Name = "Labfabricante";
+            Labfabricante.Size = new Size(76, 21);
+            Labfabricante.TabIndex = 17;
+            Labfabricante.Text = "Fabricante:";
+            Labfabricante.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textID
+            // 
+            textID.Location = new Point(256, 125);
+            textID.Name = "textID";
+            textID.Size = new Size(100, 23);
+            textID.TabIndex = 18;
+            // 
+            // texmodelo
+            // 
+            texmodelo.Location = new Point(256, 170);
+            texmodelo.Name = "texmodelo";
+            texmodelo.Size = new Size(100, 23);
+            texmodelo.TabIndex = 19;
+            // 
+            // texfabricante
+            // 
+            texfabricante.Location = new Point(256, 254);
+            texfabricante.Name = "texfabricante";
+            texfabricante.Size = new Size(100, 23);
+            texfabricante.TabIndex = 20;
+            // 
+            // lbmatricula
+            // 
+            lbmatricula.BackColor = Color.LightSkyBlue;
+            lbmatricula.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbmatricula.Location = new Point(386, 213);
+            lbmatricula.Name = "lbmatricula";
+            lbmatricula.Size = new Size(69, 21);
+            lbmatricula.TabIndex = 22;
+            lbmatricula.Text = "Matricula:";
+            lbmatricula.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbestado
+            // 
+            lbestado.BackColor = Color.LightSkyBlue;
+            lbestado.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbestado.Location = new Point(386, 169);
+            lbestado.Name = "lbestado";
+            lbestado.Size = new Size(69, 21);
+            lbestado.TabIndex = 24;
+            lbestado.Text = "Estado:";
+            lbestado.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbfabricacion
+            // 
+            lbfabricacion.BackColor = Color.LightSkyBlue;
+            lbfabricacion.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbfabricacion.Location = new Point(386, 127);
+            lbfabricacion.Name = "lbfabricacion";
+            lbfabricacion.Size = new Size(125, 21);
+            lbfabricacion.TabIndex = 25;
+            lbfabricacion.Text = "Año de Fabricacion:";
+            lbfabricacion.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tematricula
+            // 
+            tematricula.Location = new Point(461, 214);
+            tematricula.Name = "tematricula";
+            tematricula.Size = new Size(100, 23);
+            tematricula.TabIndex = 29;
+            // 
+            // lbmotoro
+            // 
+            lbmotoro.BackColor = Color.LightSkyBlue;
+            lbmotoro.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbmotoro.Location = new Point(386, 256);
+            lbmotoro.Name = "lbmotoro";
+            lbmotoro.Size = new Size(97, 21);
+            lbmotoro.TabIndex = 32;
+            lbmotoro.Text = "Tipo de Motor:";
+            lbmotoro.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // nupdCapacidad
+            // 
+            nupdCapacidad.Location = new Point(256, 213);
+            nupdCapacidad.Name = "nupdCapacidad";
+            nupdCapacidad.Size = new Size(100, 23);
+            nupdCapacidad.TabIndex = 34;
+            // 
+            // nupdfabricacion
+            // 
+            nupdfabricacion.Location = new Point(517, 125);
+            nupdfabricacion.Name = "nupdfabricacion";
+            nupdfabricacion.Size = new Size(100, 23);
+            nupdfabricacion.TabIndex = 35;
+            // 
+            // cbEstado
+            // 
+            cbEstado.FormattingEnabled = true;
+            cbEstado.Items.AddRange(new object[] { "Operativo", "En Mantenimiento", "Retirado" });
+            cbEstado.Location = new Point(461, 170);
+            cbEstado.Name = "cbEstado";
+            cbEstado.Size = new Size(121, 23);
+            cbEstado.TabIndex = 36;
+            // 
+            // cbmotor
+            // 
+            cbmotor.FormattingEnabled = true;
+            cbmotor.Items.AddRange(new object[] { "Turbofan ", "Turbohélice", "Pistón" });
+            cbmotor.Location = new Point(489, 257);
+            cbmotor.Name = "cbmotor";
+            cbmotor.Size = new Size(121, 23);
+            cbmotor.TabIndex = 37;
             // 
             // FrmAvion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
-            Controls.Add(button4);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(comboBox1);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(TxbxTitulo);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(BtEliminar);
+            Controls.Add(cbmotor);
+            Controls.Add(cbEstado);
+            Controls.Add(nupdfabricacion);
+            Controls.Add(nupdCapacidad);
+            Controls.Add(lbmotoro);
+            Controls.Add(tematricula);
+            Controls.Add(lbfabricacion);
+            Controls.Add(lbestado);
+            Controls.Add(lbmatricula);
+            Controls.Add(texfabricante);
+            Controls.Add(texmodelo);
+            Controls.Add(textID);
+            Controls.Add(Labfabricante);
+            Controls.Add(lbcapacidad);
+            Controls.Add(lbmodelo);
+            Controls.Add(lbId);
+            Controls.Add(LabelTitulo);
+            Controls.Add(picboxlogo);
+            Controls.Add(labBuscar);
+            Controls.Add(labborrar);
+            Controls.Add(labeditar);
+            Controls.Add(labGuardar);
+            Controls.Add(botBuscar);
+            Controls.Add(buteliminar);
+            Controls.Add(butEditar);
+            Controls.Add(butGuardar);
+            Controls.Add(labeNombrecorpo);
             Name = "FrmAvion";
-            Text = "Form3";
-            Load += FrmAvion_Load;
+            Text = "Gestion de Aviones";
+            Load += FrmVuelo_Load;
+            ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nupdCapacidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nupdfabricacion).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private ComboBox comboBox1;
-        private DateTimePicker dateTimePicker1;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox TxbxTitulo;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Button BtEliminar;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private Button button4;
+        private Button butGuardar;
+        private Button butEditar;
+        private Button buteliminar;
+        private Button botBuscar;
+        private Label labGuardar;
+        private Label labeditar;
+        private Label labborrar;
+        private Label labBuscar;
+        private PictureBox picboxlogo;
+        private Label labeNombrecorpo;
+        private Label LabelTitulo;
+        private Label lbId;
+        private Label lbmodelo;
+        private Label lbcapacidad;
+        private Label Labfabricante;
+        private TextBox textID;
+        private TextBox texmodelo;
+        private TextBox texfabricante;
+        private Label lbmatricula;
+        private Label lbIngreso;
+        private Label lbestado;
+        private Label lbfabricacion;
+        private DateTimePicker DTPfechadeingreso;
+        private TextBox tematricula;
+        private Label lbmotoro;
+        private NumericUpDown nupdCapacidad;
+        private NumericUpDown nupdfabricacion;
+        private ComboBox cbEstado;
+        private ComboBox cbmotor;
     }
 }
