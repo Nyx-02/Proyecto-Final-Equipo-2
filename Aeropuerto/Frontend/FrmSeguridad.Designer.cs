@@ -41,21 +41,21 @@
             labeNombrecorpo = new Label();
             LabelTitulo = new Label();
             lbId = new Label();
-            lbempleado = new Label();
-            lbpuesto = new Label();
-            this.lbobservaciones = new Label();
+            lbpasajero = new Label();
+            lbvuelo = new Label();
+            Labfecha = new Label();
             textID = new TextBox();
             texempleado = new TextBox();
-            this.texobservaciones = new TextBox();
-            this.lbnivelacceso = new Label();
+            lbacceso = new Label();
+            ibturno = new Label();
+            lbobservaciones = new Label();
+            texasiento = new TextBox();
             lbestado = new Label();
-            lbturno = new Label();
-            cbEstado = new ComboBox();
-            cbturno = new ComboBox();
-            lbfecha = new Label();
+            cbclase = new ComboBox();
+            cbestado = new ComboBox();
             texpuesto = new TextBox();
-            DTPfecha = new DateTimePicker();
-            cbAcceso = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
+            cbniveleacceso = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             SuspendLayout();
             // 
@@ -194,39 +194,39 @@
             lbId.Text = "ID:";
             lbId.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lbempleado
+            // lbpasajero
             // 
-            lbempleado.BackColor = Color.LightSkyBlue;
-            lbempleado.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbempleado.Location = new Point(162, 169);
-            lbempleado.Name = "lbempleado";
-            lbempleado.Size = new Size(88, 21);
-            lbempleado.TabIndex = 15;
-            lbempleado.Text = "ID Empleado:";
-            lbempleado.TextAlign = ContentAlignment.MiddleCenter;
-            lbempleado.Click += lbDestino_Click;
+            lbpasajero.BackColor = Color.LightSkyBlue;
+            lbpasajero.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbpasajero.Location = new Point(163, 169);
+            lbpasajero.Name = "lbpasajero";
+            lbpasajero.Size = new Size(87, 21);
+            lbpasajero.TabIndex = 15;
+            lbpasajero.Text = "ID Empleado:";
+            lbpasajero.TextAlign = ContentAlignment.MiddleCenter;
+            lbpasajero.Click += lbDestino_Click;
             // 
-            // lbpuesto
+            // lbvuelo
             // 
-            lbpuesto.BackColor = Color.LightSkyBlue;
-            lbpuesto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbpuesto.Location = new Point(194, 211);
-            lbpuesto.Name = "lbpuesto";
-            lbpuesto.Size = new Size(56, 21);
-            lbpuesto.TabIndex = 16;
-            lbpuesto.Text = "Puesto:";
-            lbpuesto.TextAlign = ContentAlignment.MiddleCenter;
+            lbvuelo.BackColor = Color.LightSkyBlue;
+            lbvuelo.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbvuelo.Location = new Point(194, 211);
+            lbvuelo.Name = "lbvuelo";
+            lbvuelo.Size = new Size(56, 21);
+            lbvuelo.TabIndex = 16;
+            lbvuelo.Text = "Puesto:";
+            lbvuelo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lbobservaciones
+            // Labfecha
             // 
-            this.lbobservaciones.BackColor = Color.LightSkyBlue;
-            this.lbobservaciones.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            this.lbobservaciones.Location = new Point(386, 172);
-            this.lbobservaciones.Name = "lbobservaciones";
-            this.lbobservaciones.Size = new Size(97, 21);
-            this.lbobservaciones.TabIndex = 17;
-            this.lbobservaciones.Text = "Observaciones:";
-            this.lbobservaciones.TextAlign = ContentAlignment.MiddleCenter;
+            Labfecha.BackColor = Color.LightSkyBlue;
+            Labfecha.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Labfecha.Location = new Point(386, 127);
+            Labfecha.Name = "Labfecha";
+            Labfecha.Size = new Size(69, 21);
+            Labfecha.TabIndex = 17;
+            Labfecha.Text = "Fecha:";
+            Labfecha.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // textID
             // 
@@ -242,97 +242,97 @@
             texempleado.Size = new Size(100, 23);
             texempleado.TabIndex = 19;
             // 
-            // texobservaciones
+            // lbacceso
             // 
-            this.texobservaciones.Location = new Point(489, 169);
-            this.texobservaciones.Name = "texobservaciones";
-            this.texobservaciones.Size = new Size(100, 23);
-            this.texobservaciones.TabIndex = 20;
+            lbacceso.BackColor = Color.LightSkyBlue;
+            lbacceso.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbacceso.Location = new Point(386, 213);
+            lbacceso.Name = "lbacceso";
+            lbacceso.Size = new Size(115, 21);
+            lbacceso.TabIndex = 22;
+            lbacceso.Text = "Nivel de Acceso:";
+            lbacceso.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lbnivelacceso
+            // ibturno
             // 
-            this.lbnivelacceso.BackColor = Color.LightSkyBlue;
-            this.lbnivelacceso.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            this.lbnivelacceso.Location = new Point(386, 213);
-            this.lbnivelacceso.Name = "lbnivelacceso";
-            this.lbnivelacceso.Size = new Size(106, 21);
-            this.lbnivelacceso.TabIndex = 22;
-            this.lbnivelacceso.Text = "Nivel de Acceso:";
-            this.lbnivelacceso.TextAlign = ContentAlignment.MiddleCenter;
+            ibturno.BackColor = Color.LightSkyBlue;
+            ibturno.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            ibturno.Location = new Point(181, 256);
+            ibturno.Name = "ibturno";
+            ibturno.Size = new Size(69, 21);
+            ibturno.TabIndex = 24;
+            ibturno.Text = "Turno:";
+            ibturno.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbobservaciones
+            // 
+            lbobservaciones.BackColor = Color.LightSkyBlue;
+            lbobservaciones.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbobservaciones.Location = new Point(389, 170);
+            lbobservaciones.Name = "lbobservaciones";
+            lbobservaciones.Size = new Size(97, 21);
+            lbobservaciones.TabIndex = 25;
+            lbobservaciones.Text = "Observaciones:";
+            lbobservaciones.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // texasiento
+            // 
+            texasiento.Location = new Point(492, 170);
+            texasiento.Name = "texasiento";
+            texasiento.Size = new Size(100, 23);
+            texasiento.TabIndex = 29;
             // 
             // lbestado
             // 
             lbestado.BackColor = Color.LightSkyBlue;
             lbestado.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbestado.Location = new Point(386, 253);
+            lbestado.Location = new Point(386, 258);
             lbestado.Name = "lbestado";
             lbestado.Size = new Size(69, 21);
-            lbestado.TabIndex = 24;
+            lbestado.TabIndex = 32;
             lbestado.Text = "Estado:";
             lbestado.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lbturno
+            // cbclase
             // 
-            lbturno.BackColor = Color.LightSkyBlue;
-            lbturno.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbturno.Location = new Point(194, 252);
-            lbturno.Name = "lbturno";
-            lbturno.Size = new Size(56, 21);
-            lbturno.TabIndex = 32;
-            lbturno.Text = "Turno:";
-            lbturno.TextAlign = ContentAlignment.MiddleCenter;
+            cbclase.FormattingEnabled = true;
+            cbclase.Items.AddRange(new object[] { "Mañana", "Tarde", "Noche" });
+            cbclase.Location = new Point(256, 256);
+            cbclase.Name = "cbclase";
+            cbclase.Size = new Size(103, 23);
+            cbclase.TabIndex = 36;
             // 
-            // cbEstado
+            // cbestado
             // 
-            cbEstado.FormattingEnabled = true;
-            cbEstado.Items.AddRange(new object[] { "Activo", "Inactivo" });
-            cbEstado.Location = new Point(461, 254);
-            cbEstado.Name = "cbEstado";
-            cbEstado.Size = new Size(121, 23);
-            cbEstado.TabIndex = 36;
-            // 
-            // cbturno
-            // 
-            cbturno.FormattingEnabled = true;
-            cbturno.Items.AddRange(new object[] { "Mañana", "Tarde", "Noche" });
-            cbturno.Location = new Point(256, 253);
-            cbturno.Name = "cbturno";
-            cbturno.Size = new Size(100, 23);
-            cbturno.TabIndex = 37;
-            // 
-            // lbfecha
-            // 
-            lbfecha.BackColor = Color.LightSkyBlue;
-            lbfecha.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbfecha.Location = new Point(386, 127);
-            lbfecha.Name = "lbfecha";
-            lbfecha.Size = new Size(76, 21);
-            lbfecha.TabIndex = 38;
-            lbfecha.Text = "Fecha:";
-            lbfecha.TextAlign = ContentAlignment.MiddleCenter;
+            cbestado.FormattingEnabled = true;
+            cbestado.Items.AddRange(new object[] { "Pendiente", "Pagado", "Cancelado" });
+            cbestado.Location = new Point(461, 259);
+            cbestado.Name = "cbestado";
+            cbestado.Size = new Size(121, 23);
+            cbestado.TabIndex = 37;
             // 
             // texpuesto
             // 
-            texpuesto.Location = new Point(256, 214);
+            texpuesto.Location = new Point(256, 211);
             texpuesto.Name = "texpuesto";
             texpuesto.Size = new Size(100, 23);
-            texpuesto.TabIndex = 40;
+            texpuesto.TabIndex = 38;
             // 
-            // DTPfecha
+            // dateTimePicker1
             // 
-            DTPfecha.Location = new Point(461, 125);
-            DTPfecha.Name = "DTPfecha";
-            DTPfecha.Size = new Size(200, 23);
-            DTPfecha.TabIndex = 41;
+            dateTimePicker1.Location = new Point(461, 125);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 39;
             // 
-            // cbAcceso
+            // cbniveleacceso
             // 
-            cbAcceso.FormattingEnabled = true;
-            cbAcceso.Items.AddRange(new object[] { "Bajo", "Medio", "Alto" });
-            cbAcceso.Location = new Point(498, 214);
-            cbAcceso.Name = "cbAcceso";
-            cbAcceso.Size = new Size(121, 23);
-            cbAcceso.TabIndex = 42;
+            cbniveleacceso.FormattingEnabled = true;
+            cbniveleacceso.Items.AddRange(new object[] { "Bajo", "Medio", "Alto" });
+            cbniveleacceso.Location = new Point(507, 214);
+            cbniveleacceso.Name = "cbniveleacceso";
+            cbniveleacceso.Size = new Size(121, 23);
+            cbniveleacceso.TabIndex = 40;
             // 
             // FrmSeguridad
             // 
@@ -342,21 +342,21 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
-            Controls.Add(cbAcceso);
-            Controls.Add(DTPfecha);
+            Controls.Add(cbniveleacceso);
+            Controls.Add(dateTimePicker1);
             Controls.Add(texpuesto);
-            Controls.Add(lbfecha);
-            Controls.Add(cbturno);
-            Controls.Add(cbEstado);
-            Controls.Add(lbturno);
+            Controls.Add(cbestado);
+            Controls.Add(cbclase);
             Controls.Add(lbestado);
-            Controls.Add(this.lbnivelacceso);
-            Controls.Add(this.texobservaciones);
+            Controls.Add(texasiento);
+            Controls.Add(lbobservaciones);
+            Controls.Add(ibturno);
+            Controls.Add(lbacceso);
             Controls.Add(texempleado);
             Controls.Add(textID);
-            Controls.Add(this.lbobservaciones);
-            Controls.Add(lbpuesto);
-            Controls.Add(lbempleado);
+            Controls.Add(Labfecha);
+            Controls.Add(lbvuelo);
+            Controls.Add(lbpasajero);
             Controls.Add(lbId);
             Controls.Add(LabelTitulo);
             Controls.Add(picboxlogo);
@@ -390,24 +390,22 @@
         private Label labeNombrecorpo;
         private Label LabelTitulo;
         private Label lbId;
-        private Label lbempleado;
-        private Label lbpuesto;
-        private Label labdimesiones;
+        private Label lbpasajero;
+        private Label lbvuelo;
+        private Label Labfecha;
         private TextBox textID;
         private TextBox texempleado;
-        private TextBox texdimensiones;
-        private Label lbetiqueta;
+        private Label lbacceso;
         private Label lbIngreso;
-        private Label lbestado;
+        private Label ibturno;
+        private Label lbobservaciones;
         private DateTimePicker DTPfechadeingreso;
-        private TextBox texetiqueta;
-        private Label lbturno;
-        private ComboBox cbEstado;
-        private ComboBox cbturno;
-        private TextBox texcolor;
-        private Label lbfecha;
+        private TextBox texasiento;
+        private Label lbestado;
+        private ComboBox cbclase;
+        private ComboBox cbestado;
         private TextBox texpuesto;
-        private DateTimePicker DTPfecha;
-        private ComboBox cbAcceso;
+        private DateTimePicker dateTimePicker1;
+        private ComboBox cbniveleacceso;
     }
 }

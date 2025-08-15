@@ -56,5 +56,10 @@ namespace Frontend
         {
 
         }
+
+        private void nupdfabricacion_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
