@@ -1,0 +1,15 @@
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\bin\Debug\net8.0\Aeropuerto.exe
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\bin\Debug\net8.0\Aeropuerto.deps.json
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\bin\Debug\net8.0\Aeropuerto.runtimeconfig.json
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\bin\Debug\net8.0\Aeropuerto.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\bin\Debug\net8.0\Aeropuerto.pdb
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\Aeropuerto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\Aeropuerto.AssemblyInfoInputs.cache
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\Aeropuerto.AssemblyInfo.cs
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\Aeropuerto.csproj.CoreCompileInputs.cache
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\Aeropuerto.sourcelink.json
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\Aeropuerto.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\refint\Aeropuerto.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\Aeropuerto.pdb
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\Aeropuerto.genruntimeconfig.cache
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Aeropuerto\obj\Debug\net8.0\ref\Aeropuerto.dll

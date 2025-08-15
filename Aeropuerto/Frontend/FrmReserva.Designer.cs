@@ -29,200 +29,384 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReserva));
-            textBox6 = new TextBox();
-            comboBox1 = new ComboBox();
+            butGuardar = new Button();
+            butEditar = new Button();
+            buteliminar = new Button();
+            botBuscar = new Button();
+            labGuardar = new Label();
+            labeditar = new Label();
+            labborrar = new Label();
+            labBuscar = new Label();
+            picboxlogo = new PictureBox();
+            labeNombrecorpo = new Label();
+            LabelTitulo = new Label();
+            lbId = new Label();
+            lbpasajero = new Label();
+            lbvuelo = new Label();
+            Labreserva = new Label();
+            textID = new TextBox();
+            texpasajero = new TextBox();
+            lbprecio = new Label();
+            ibclase = new Label();
+            lbfabricacion = new Label();
+            texasiento = new TextBox();
+            lbpago = new Label();
+            nupdprecio = new NumericUpDown();
+            cbclase = new ComboBox();
+            cbpago = new ComboBox();
+            texvuelo = new TextBox();
             dateTimePicker1 = new DateTimePicker();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            TxbxTitulo = new TextBox();
-            button3 = new Button();
-            button2 = new Button();
-            button1 = new Button();
-            BtEliminar = new Button();
-            textBox7 = new TextBox();
-            button4 = new Button();
+            ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nupdprecio).BeginInit();
             SuspendLayout();
             // 
-            // textBox6
+            // butGuardar
             // 
-            textBox6.Location = new Point(201, 291);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(100, 23);
-            textBox6.TabIndex = 37;
-            textBox6.Text = "Precio";
-            textBox6.TextAlign = HorizontalAlignment.Center;
+            butGuardar.BackgroundImage = (Image)resources.GetObject("butGuardar.BackgroundImage");
+            butGuardar.FlatStyle = FlatStyle.Flat;
+            butGuardar.Image = (Image)resources.GetObject("butGuardar.Image");
+            butGuardar.Location = new Point(280, 354);
+            butGuardar.Name = "butGuardar";
+            butGuardar.Size = new Size(56, 53);
+            butGuardar.TabIndex = 3;
+            butGuardar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // butEditar
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Confirmada", "Pendiente", "Cancelada" });
-            comboBox1.Location = new Point(456, 233);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(63, 23);
-            comboBox1.TabIndex = 36;
-            comboBox1.Tag = "";
-            comboBox1.Text = "Estado";
+            butEditar.BackgroundImage = (Image)resources.GetObject("butEditar.BackgroundImage");
+            butEditar.FlatStyle = FlatStyle.Flat;
+            butEditar.Image = (Image)resources.GetObject("butEditar.Image");
+            butEditar.Location = new Point(342, 354);
+            butEditar.Name = "butEditar";
+            butEditar.Size = new Size(56, 53);
+            butEditar.TabIndex = 4;
+            butEditar.UseVisualStyleBackColor = true;
+            butEditar.Click += butEditar_Click;
+            // 
+            // buteliminar
+            // 
+            buteliminar.BackgroundImage = (Image)resources.GetObject("buteliminar.BackgroundImage");
+            buteliminar.FlatStyle = FlatStyle.Flat;
+            buteliminar.Image = (Image)resources.GetObject("buteliminar.Image");
+            buteliminar.Location = new Point(404, 354);
+            buteliminar.Name = "buteliminar";
+            buteliminar.Size = new Size(56, 53);
+            buteliminar.TabIndex = 5;
+            buteliminar.UseVisualStyleBackColor = true;
+            // 
+            // botBuscar
+            // 
+            botBuscar.BackgroundImage = (Image)resources.GetObject("botBuscar.BackgroundImage");
+            botBuscar.FlatStyle = FlatStyle.Flat;
+            botBuscar.Image = (Image)resources.GetObject("botBuscar.Image");
+            botBuscar.Location = new Point(466, 354);
+            botBuscar.Name = "botBuscar";
+            botBuscar.Size = new Size(56, 53);
+            botBuscar.TabIndex = 6;
+            botBuscar.UseVisualStyleBackColor = true;
+            // 
+            // labGuardar
+            // 
+            labGuardar.BackColor = Color.LightSkyBlue;
+            labGuardar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labGuardar.Location = new Point(280, 410);
+            labGuardar.Name = "labGuardar";
+            labGuardar.Size = new Size(56, 21);
+            labGuardar.TabIndex = 7;
+            labGuardar.Text = "Guardar";
+            labGuardar.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // labeditar
+            // 
+            labeditar.BackColor = Color.LightSkyBlue;
+            labeditar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labeditar.Location = new Point(342, 410);
+            labeditar.Name = "labeditar";
+            labeditar.Size = new Size(56, 21);
+            labeditar.TabIndex = 8;
+            labeditar.Text = "Editar";
+            labeditar.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // labborrar
+            // 
+            labborrar.BackColor = Color.LightSkyBlue;
+            labborrar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labborrar.Location = new Point(404, 410);
+            labborrar.Name = "labborrar";
+            labborrar.Size = new Size(56, 21);
+            labborrar.TabIndex = 9;
+            labborrar.Text = "Borrar";
+            labborrar.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // labBuscar
+            // 
+            labBuscar.BackColor = Color.LightSkyBlue;
+            labBuscar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labBuscar.Location = new Point(466, 410);
+            labBuscar.Name = "labBuscar";
+            labBuscar.Size = new Size(56, 21);
+            labBuscar.TabIndex = 10;
+            labBuscar.Text = "Buscar";
+            labBuscar.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // picboxlogo
+            // 
+            picboxlogo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            picboxlogo.BackgroundImage = (Image)resources.GetObject("picboxlogo.BackgroundImage");
+            picboxlogo.Image = (Image)resources.GetObject("picboxlogo.Image");
+            picboxlogo.Location = new Point(12, 12);
+            picboxlogo.Name = "picboxlogo";
+            picboxlogo.Size = new Size(78, 61);
+            picboxlogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picboxlogo.TabIndex = 11;
+            picboxlogo.TabStop = false;
+            // 
+            // labeNombrecorpo
+            // 
+            labeNombrecorpo.BackColor = Color.LightSkyBlue;
+            labeNombrecorpo.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labeNombrecorpo.Location = new Point(12, 76);
+            labeNombrecorpo.Name = "labeNombrecorpo";
+            labeNombrecorpo.Size = new Size(78, 20);
+            labeNombrecorpo.TabIndex = 1;
+            labeNombrecorpo.Text = "AeroLink";
+            labeNombrecorpo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // LabelTitulo
+            // 
+            LabelTitulo.BackColor = Color.LightSkyBlue;
+            LabelTitulo.Font = new Font("Segoe UI Emoji", 15.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            LabelTitulo.Location = new Point(280, 34);
+            LabelTitulo.Name = "LabelTitulo";
+            LabelTitulo.Size = new Size(242, 39);
+            LabelTitulo.TabIndex = 12;
+            LabelTitulo.Text = "Gestion de Reservas";
+            LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
+            LabelTitulo.Click += label1_Click;
+            // 
+            // lbId
+            // 
+            lbId.BackColor = Color.LightSkyBlue;
+            lbId.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbId.Location = new Point(194, 127);
+            lbId.Name = "lbId";
+            lbId.Size = new Size(56, 21);
+            lbId.TabIndex = 13;
+            lbId.Text = "ID:";
+            lbId.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbpasajero
+            // 
+            lbpasajero.BackColor = Color.LightSkyBlue;
+            lbpasajero.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbpasajero.Location = new Point(169, 169);
+            lbpasajero.Name = "lbpasajero";
+            lbpasajero.Size = new Size(81, 21);
+            lbpasajero.TabIndex = 15;
+            lbpasajero.Text = "ID Pasajero:";
+            lbpasajero.TextAlign = ContentAlignment.MiddleCenter;
+            lbpasajero.Click += lbDestino_Click;
+            // 
+            // lbvuelo
+            // 
+            lbvuelo.BackColor = Color.LightSkyBlue;
+            lbvuelo.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbvuelo.Location = new Point(179, 211);
+            lbvuelo.Name = "lbvuelo";
+            lbvuelo.Size = new Size(71, 21);
+            lbvuelo.TabIndex = 16;
+            lbvuelo.Text = "ID Vuelo:";
+            lbvuelo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Labreserva
+            // 
+            Labreserva.BackColor = Color.LightSkyBlue;
+            Labreserva.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Labreserva.Location = new Point(386, 127);
+            Labreserva.Name = "Labreserva";
+            Labreserva.Size = new Size(115, 21);
+            Labreserva.TabIndex = 17;
+            Labreserva.Text = "Fecha de Reserva:";
+            Labreserva.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // textID
+            // 
+            textID.Location = new Point(256, 125);
+            textID.Name = "textID";
+            textID.Size = new Size(100, 23);
+            textID.TabIndex = 18;
+            // 
+            // texpasajero
+            // 
+            texpasajero.Location = new Point(256, 170);
+            texpasajero.Name = "texpasajero";
+            texpasajero.Size = new Size(100, 23);
+            texpasajero.TabIndex = 19;
+            // 
+            // lbprecio
+            // 
+            lbprecio.BackColor = Color.LightSkyBlue;
+            lbprecio.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbprecio.Location = new Point(386, 213);
+            lbprecio.Name = "lbprecio";
+            lbprecio.Size = new Size(69, 21);
+            lbprecio.TabIndex = 22;
+            lbprecio.Text = "Precio:";
+            lbprecio.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // ibclase
+            // 
+            ibclase.BackColor = Color.LightSkyBlue;
+            ibclase.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            ibclase.Location = new Point(386, 169);
+            ibclase.Name = "ibclase";
+            ibclase.Size = new Size(69, 21);
+            ibclase.TabIndex = 24;
+            ibclase.Text = "Clase:";
+            ibclase.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lbfabricacion
+            // 
+            lbfabricacion.BackColor = Color.LightSkyBlue;
+            lbfabricacion.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbfabricacion.Location = new Point(179, 256);
+            lbfabricacion.Name = "lbfabricacion";
+            lbfabricacion.Size = new Size(71, 21);
+            lbfabricacion.TabIndex = 25;
+            lbfabricacion.Text = "Asiento:";
+            lbfabricacion.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // texasiento
+            // 
+            texasiento.Location = new Point(256, 257);
+            texasiento.Name = "texasiento";
+            texasiento.Size = new Size(100, 23);
+            texasiento.TabIndex = 29;
+            // 
+            // lbpago
+            // 
+            lbpago.BackColor = Color.LightSkyBlue;
+            lbpago.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbpago.Location = new Point(386, 256);
+            lbpago.Name = "lbpago";
+            lbpago.Size = new Size(115, 21);
+            lbpago.TabIndex = 32;
+            lbpago.Text = "Estado de Pago:";
+            lbpago.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // nupdprecio
+            // 
+            nupdprecio.Location = new Point(461, 215);
+            nupdprecio.Name = "nupdprecio";
+            nupdprecio.Size = new Size(100, 23);
+            nupdprecio.TabIndex = 35;
+            nupdprecio.ValueChanged += nupdfabricacion_ValueChanged;
+            // 
+            // cbclase
+            // 
+            cbclase.FormattingEnabled = true;
+            cbclase.Items.AddRange(new object[] { "Economy", "Premium Economy", "Business", "First" });
+            cbclase.Location = new Point(461, 170);
+            cbclase.Name = "cbclase";
+            cbclase.Size = new Size(121, 23);
+            cbclase.TabIndex = 36;
+            // 
+            // cbpago
+            // 
+            cbpago.FormattingEnabled = true;
+            cbpago.Items.AddRange(new object[] { "Pendiente", "Pagado", "Cancelado" });
+            cbpago.Location = new Point(507, 256);
+            cbpago.Name = "cbpago";
+            cbpago.Size = new Size(121, 23);
+            cbpago.TabIndex = 37;
+            // 
+            // texvuelo
+            // 
+            texvuelo.Location = new Point(256, 211);
+            texvuelo.Name = "texvuelo";
+            texvuelo.Size = new Size(100, 23);
+            texvuelo.TabIndex = 38;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(390, 172);
+            dateTimePicker1.Location = new Point(507, 127);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 35;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(201, 262);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 34;
-            textBox5.Text = "Metodo De Pago";
-            textBox5.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(201, 233);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 33;
-            textBox4.Text = "Asiento";
-            textBox4.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(201, 204);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 32;
-            textBox3.Text = "ID Pasajero";
-            textBox3.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(201, 175);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 31;
-            textBox2.Text = "ID Vuelo";
-            textBox2.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(201, 146);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 30;
-            textBox1.Text = "ID";
-            textBox1.TextAlign = HorizontalAlignment.Center;
-            // 
-            // TxbxTitulo
-            // 
-            TxbxTitulo.Location = new Point(334, 66);
-            TxbxTitulo.Name = "TxbxTitulo";
-            TxbxTitulo.Size = new Size(94, 23);
-            TxbxTitulo.TabIndex = 29;
-            TxbxTitulo.Text = "Reserva";
-            TxbxTitulo.TextAlign = HorizontalAlignment.Center;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(226, 345);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 28;
-            button3.Text = "Guardar";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(469, 345);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 27;
-            button2.Text = "Buscar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(307, 345);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 26;
-            button1.Text = "Editar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // BtEliminar
-            // 
-            BtEliminar.Location = new Point(388, 345);
-            BtEliminar.Name = "BtEliminar";
-            BtEliminar.Size = new Size(75, 23);
-            BtEliminar.TabIndex = 25;
-            BtEliminar.Text = "Eliminar";
-            BtEliminar.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(432, 143);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(100, 23);
-            textBox7.TabIndex = 38;
-            textBox7.Text = "Fecha De Reserva";
-            textBox7.TextAlign = HorizontalAlignment.Center;
-            // 
-            // button4
-            // 
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(12, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(47, 40);
-            button4.TabIndex = 39;
-            button4.UseVisualStyleBackColor = true;
+            dateTimePicker1.TabIndex = 39;
             // 
             // FrmReserva
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
-            Controls.Add(button4);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(comboBox1);
             Controls.Add(dateTimePicker1);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(TxbxTitulo);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(BtEliminar);
+            Controls.Add(texvuelo);
+            Controls.Add(cbpago);
+            Controls.Add(cbclase);
+            Controls.Add(nupdprecio);
+            Controls.Add(lbpago);
+            Controls.Add(texasiento);
+            Controls.Add(lbfabricacion);
+            Controls.Add(ibclase);
+            Controls.Add(lbprecio);
+            Controls.Add(texpasajero);
+            Controls.Add(textID);
+            Controls.Add(Labreserva);
+            Controls.Add(lbvuelo);
+            Controls.Add(lbpasajero);
+            Controls.Add(lbId);
+            Controls.Add(LabelTitulo);
+            Controls.Add(picboxlogo);
+            Controls.Add(labBuscar);
+            Controls.Add(labborrar);
+            Controls.Add(labeditar);
+            Controls.Add(labGuardar);
+            Controls.Add(botBuscar);
+            Controls.Add(buteliminar);
+            Controls.Add(butEditar);
+            Controls.Add(butGuardar);
+            Controls.Add(labeNombrecorpo);
             Name = "FrmReserva";
-            Text = "Form5";
+            Text = "Gestion de Reservas";
+            Load += FrmVuelo_Load;
+            ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nupdprecio).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox6;
-        private ComboBox comboBox1;
+        private Button butGuardar;
+        private Button butEditar;
+        private Button buteliminar;
+        private Button botBuscar;
+        private Label labGuardar;
+        private Label labeditar;
+        private Label labborrar;
+        private Label labBuscar;
+        private PictureBox picboxlogo;
+        private Label labeNombrecorpo;
+        private Label LabelTitulo;
+        private Label lbId;
+        private Label lbpasajero;
+        private Label lbvuelo;
+        private Label Labreserva;
+        private TextBox textID;
+        private TextBox texpasajero;
+        private Label lbprecio;
+        private Label lbIngreso;
+        private Label ibclase;
+        private Label lbfabricacion;
+        private DateTimePicker DTPfechadeingreso;
+        private TextBox texasiento;
+        private Label lbpago;
+        private NumericUpDown nupdprecio;
+        private ComboBox cbclase;
+        private ComboBox cbpago;
+        private TextBox texvuelo;
         private DateTimePicker dateTimePicker1;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox TxbxTitulo;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Button BtEliminar;
-        private TextBox textBox7;
-        private Button button4;
     }
 }
