@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmpuertaembarque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmpuertaembarque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmpuertaembarque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmpuertaembarque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +27,31 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmPuertaEmbarque.cs",
+              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmPuertaEmbarque.cs",
+              "RelativeDocumentMoniker": "Frontend\\FrmPuertaEmbarque.cs",
+              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmPuertaEmbarque.cs",
+              "RelativeToolTip": "Frontend\\FrmPuertaEmbarque.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAkwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T02:05:34.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmPuertaEmbarque.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmPuertaEmbarque.cs",
+              "RelativeDocumentMoniker": "Frontend\\FrmPuertaEmbarque.cs",
+              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmPuertaEmbarque.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\FrmPuertaEmbarque.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T01:57:33.282Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }
