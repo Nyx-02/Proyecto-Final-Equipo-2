@@ -181,7 +181,7 @@
             LabelTitulo.Name = "LabelTitulo";
             LabelTitulo.Size = new Size(242, 39);
             LabelTitulo.TabIndex = 12;
-            LabelTitulo.Text = "Gestion de Empleados";
+            LabelTitulo.Text = "Gestion de Aviones";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
             LabelTitulo.Click += label1_Click;
             // 
