@@ -52,12 +52,16 @@
             lbHoraarpe = new Label();
             DTPcierre = new DateTimePicker();
             DTPapertura = new DateTimePicker();
-            comboBox1 = new ComboBox();
+            cbestado = new ComboBox();
             cbterminal = new ComboBox();
             lbcapacidad = new Label();
             nupdCapacidad = new NumericUpDown();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nupdCapacidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -282,6 +286,7 @@
             // 
             // DTPcierre
             // 
+            DTPcierre.Format = DateTimePickerFormat.Time;
             DTPcierre.Location = new Point(472, 257);
             DTPcierre.Name = "DTPcierre";
             DTPcierre.Size = new Size(200, 23);
@@ -289,19 +294,20 @@
             // 
             // DTPapertura
             // 
+            DTPapertura.Format = DateTimePickerFormat.Time;
             DTPapertura.Location = new Point(472, 219);
             DTPapertura.Name = "DTPapertura";
             DTPapertura.Size = new Size(200, 23);
             DTPapertura.TabIndex = 28;
             // 
-            // comboBox1
+            // cbestado
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Disponible", "Ocupada", "Mantenimiento" });
-            comboBox1.Location = new Point(251, 255);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 29;
+            cbestado.FormattingEnabled = true;
+            cbestado.Items.AddRange(new object[] { "Disponible", "Ocupada", "Mantenimiento" });
+            cbestado.Location = new Point(251, 255);
+            cbestado.Name = "cbestado";
+            cbestado.Size = new Size(121, 23);
+            cbestado.TabIndex = 29;
             // 
             // cbterminal
             // 
@@ -330,6 +336,36 @@
             nupdCapacidad.Size = new Size(120, 23);
             nupdCapacidad.TabIndex = 32;
             // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(690, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 49;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(707, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 48;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(732, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 47;
+            // 
             // FrmPuertaEmbarque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -338,10 +374,13 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
             Controls.Add(nupdCapacidad);
             Controls.Add(lbcapacidad);
             Controls.Add(cbterminal);
-            Controls.Add(comboBox1);
+            Controls.Add(cbestado);
             Controls.Add(DTPapertura);
             Controls.Add(DTPcierre);
             Controls.Add(lbHoraarpe);
@@ -369,6 +408,7 @@
             Text = "Gestion de Puerta de Embarque";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdCapacidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -397,9 +437,12 @@
         private Label lbHoraarpe;
         private DateTimePicker DTPcierre;
         private DateTimePicker DTPapertura;
-        private ComboBox comboBox1;
+        private ComboBox cbestado;
         private ComboBox cbterminal;
         private Label lbcapacidad;
         private NumericUpDown nupdCapacidad;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }

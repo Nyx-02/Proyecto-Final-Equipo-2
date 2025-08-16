@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "CD202411",
+    "Numero": "220",
+    "Terminal": "B",
+    "Estado": "Disponible",
+    "Capacidad": 50,
+    "Ubicacion": "NewTown",
+    "HorarioApertura": "2025-08-16T13:00:00.152",
+    "HorarioCierre": "2025-08-16T14:00:00.154"
+  }
+]

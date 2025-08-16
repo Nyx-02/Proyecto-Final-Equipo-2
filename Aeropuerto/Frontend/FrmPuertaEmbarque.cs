@@ -1,6 +1,7 @@
 ﻿using Backend;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,34 +16,21 @@ namespace Frontend
             butEditar.Click += butEditar_Click;
             buteliminar.Click += buteliminar_Click;
             botBuscar.Click += botBuscar_Click;
-        }
-
-        private PuertaEmbarque CrearPuertaDesdeFormulario()
-        {
-            return new PuertaEmbarque
-            {
-                Id = textID.Text.Trim(),
-                Numero = texnumero.Text.Trim(),
-                Terminal = cbterminal.SelectedItem?.ToString() ?? "",
-                Estado = comboBox1.SelectedItem?.ToString() ?? "",
-                Capacidad = (int)nupdCapacidad.Value,
-                Ubicacion = texubicacion.Text.Trim(),
-                HorarioApertura = DTPapertura.Value,
-                HorarioCierre = DTPcierre.Value
-            };
+            Butdata.Click += Butdata_Click; // Evento para abrir ventana con DataGridView
         }
 
         private void butGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                PuertaEmbarque obj = CrearPuertaDesdeFormulario();
-                PuertaEmbarque.Guardar(obj);
-                MessageBox.Show("Puerta de embarque guardada correctamente.");
+                var puerta = ConstruirDesdeFormulario();
+                PuertaEmbarque.Guardar(puerta);
+                MessageBox.Show("Puerta guardada correctamente.");
+                LimpiarCampos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -50,25 +38,31 @@ namespace Frontend
         {
             try
             {
-                List<PuertaEmbarque> lista = PuertaEmbarque.Leer();
-                PuertaEmbarque existente = lista.FirstOrDefault(x => x.Id == textID.Text.Trim());
+                var lista = PuertaEmbarque.Leer();
+                var puerta = lista.FirstOrDefault(x => x.Id == textID.Text.Trim().ToUpper());
 
-                if (existente == null)
+                if (puerta != null)
                 {
-                    MessageBox.Show("Puerta de embarque no encontrada.");
-                    return;
+                    puerta.Numero = texnumero.Text;
+                    puerta.Terminal = cbterminal.Text;
+                    puerta.Estado = cbestado.Text;
+                    puerta.Capacidad = (int)nupdCapacidad.Value;
+                    puerta.Ubicacion = texubicacion.Text;
+                    puerta.HorarioApertura = DTPapertura.Value;
+                    puerta.HorarioCierre = DTPcierre.Value;
+
+                    PuertaEmbarque.GuardarLista(lista);
+                    MessageBox.Show("Puerta editada correctamente.");
+                    LimpiarCampos();
                 }
-
-                PuertaEmbarque actualizado = CrearPuertaDesdeFormulario();
-                int index = lista.IndexOf(existente);
-                lista[index] = actualizado;
-
-                PuertaEmbarque.GuardarLista(lista);
-                MessageBox.Show("Puerta de embarque editada correctamente.");
+                else
+                {
+                    MessageBox.Show("No se encontró una puerta con ese ID.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al editar: " + ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -76,22 +70,24 @@ namespace Frontend
         {
             try
             {
-                List<PuertaEmbarque> lista = PuertaEmbarque.Leer();
-                PuertaEmbarque existente = lista.FirstOrDefault(x => x.Id == textID.Text.Trim());
+                var lista = PuertaEmbarque.Leer();
+                var puerta = lista.FirstOrDefault(x => x.Id == textID.Text.Trim().ToUpper());
 
-                if (existente == null)
+                if (puerta != null)
                 {
-                    MessageBox.Show("Puerta de embarque no encontrada.");
-                    return;
+                    lista.Remove(puerta);
+                    PuertaEmbarque.GuardarLista(lista);
+                    MessageBox.Show("Puerta eliminada correctamente.");
+                    LimpiarCampos();
                 }
-
-                lista.Remove(existente);
-                PuertaEmbarque.GuardarLista(lista);
-                MessageBox.Show("Puerta de embarque eliminada correctamente.");
+                else
+                {
+                    MessageBox.Show("No se encontró una puerta con ese ID.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar: " + ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -99,29 +95,93 @@ namespace Frontend
         {
             try
             {
-                List<PuertaEmbarque> lista = PuertaEmbarque.Leer();
-                PuertaEmbarque obj = lista.FirstOrDefault(x => x.Id == textID.Text.Trim());
+                var lista = PuertaEmbarque.Leer();
+                var puerta = lista.FirstOrDefault(x => x.Id == textID.Text.Trim().ToUpper());
 
-                if (obj == null)
+                if (puerta != null)
                 {
-                    MessageBox.Show("Puerta de embarque no encontrada.");
-                    return;
+                    texnumero.Text = puerta.Numero;
+                    cbterminal.Text = puerta.Terminal;
+                    cbestado.Text = puerta.Estado;
+                    nupdCapacidad.Value = puerta.Capacidad;
+                    texubicacion.Text = puerta.Ubicacion;
+                    DTPapertura.Value = puerta.HorarioApertura;
+                    DTPcierre.Value = puerta.HorarioCierre;
                 }
-
-                texnumero.Text = obj.Numero;
-                cbterminal.SelectedItem = obj.Terminal;
-                comboBox1.SelectedItem = obj.Estado;
-                nupdCapacidad.Value = obj.Capacidad;
-                texubicacion.Text = obj.Ubicacion;
-                DTPapertura.Value = obj.HorarioApertura;
-                DTPcierre.Value = obj.HorarioCierre;
-
-                MessageBox.Show("Puerta de embarque encontrada y cargada en el formulario.");
+                else
+                {
+                    MessageBox.Show("No se encontró una puerta con ese ID.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al buscar: " + ex.Message);
+                MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        private void Butdata_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var lista = PuertaEmbarque.Leer();
+
+                if (lista == null || lista.Count == 0)
+                {
+                    MessageBox.Show("No hay puertas de embarque registradas.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Crear un nuevo formulario para mostrar la tabla
+                Form ventanaDatos = new Form
+                {
+                    Text = "Listado de Puertas de Embarque",
+                    Size = new Size(900, 500),
+                    StartPosition = FormStartPosition.CenterScreen
+                };
+
+                DataGridView dgv = new DataGridView
+                {
+                    Dock = DockStyle.Fill,
+                    DataSource = lista,
+                    ReadOnly = true,
+                    AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                    SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                };
+
+                ventanaDatos.Controls.Add(dgv);
+                ventanaDatos.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private PuertaEmbarque ConstruirDesdeFormulario()
+        {
+            return new PuertaEmbarque
+            {
+                Id = textID.Text.Trim().ToUpper(),
+                Numero = texnumero.Text.Trim(),
+                Terminal = cbterminal.Text.Trim(),
+                Estado = cbestado.Text.Trim(),
+                Capacidad = (int)nupdCapacidad.Value,
+                Ubicacion = texubicacion.Text.Trim(),
+                HorarioApertura = DTPapertura.Value,
+                HorarioCierre = DTPcierre.Value
+            };
+        }
+
+        private void LimpiarCampos()
+        {
+            textID.Clear();
+            texnumero.Clear();
+            cbterminal.SelectedIndex = -1;
+            cbestado.SelectedIndex = -1;
+            nupdCapacidad.Value = 0;
+            texubicacion.Clear();
+            DTPapertura.Value = DateTime.Now;
+            DTPcierre.Value = DateTime.Now;
         }
     }
 }

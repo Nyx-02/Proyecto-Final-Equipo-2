@@ -14,9 +14,9 @@ namespace Frontend
             butEditar.Click += butEditar_Click;
             buteliminar.Click += buteliminar_Click;
             botBuscar.Click += botBuscar_Click;
+            Butdata.Click += Butdata_Click; 
         }
 
-        // ====== BOTONES ======
 
         private void butGuardar_Click(object sender, EventArgs e)
         {
@@ -62,8 +62,7 @@ namespace Frontend
                 }
 
                 var actualizado = ConstruirDesdeFormulario();
-                // Mantener el mismo ID normalizado
-                actualizado.Id = id;
+                actualizado.Id = id; 
 
                 lista[idx] = actualizado;
                 Backend.Pasajero.GuardarLista(lista);
@@ -146,15 +145,14 @@ namespace Frontend
                     return;
                 }
 
-                // Llenar controles
                 textID.Text = p.Id;
-                texDestino.Text = p.Nombre;       
-                textBox4.Text = p.Apellido;
-                textBox3.Text = p.Nacionalidad;
+                texnombre.Text = p.Nombre;
+                texapellido.Text = p.Apellido;
+                texnacionalidad.Text = p.Nacionalidad;
                 texpasaporte.Text = p.Pasaporte;
                 textelefono.Text = p.Telefono;
-                textBox2.Text = p.Email;
-                DTPhoradelle.Value = p.FechaNacimiento;
+                texemail.Text = p.Email;
+                DTPnacimiento.Value = p.FechaNacimiento;
 
                 MessageBox.Show("Pasajero cargado.", "Info",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -166,42 +164,51 @@ namespace Frontend
             }
         }
 
-        // ====== HELPERS ======
+        private void Butdata_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var lista = Backend.Pasajero.Leer();
+                dgvDatos.DataSource = null;   
+                dgvDatos.DataSource = lista;  
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar datos: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private Backend.Pasajero ConstruirDesdeFormulario()
         {
-            // Normalizamos el ID a mayúsculas porque el backend lo exige
             var id = (textID.Text ?? "").Trim().ToUpper();
 
-            var pasajero = new Backend.Pasajero
+            return new Backend.Pasajero
             {
                 Id = id,
-                Nombre = (texDestino.Text ?? "").Trim(),       
-                Apellido = (textBox4.Text ?? "").Trim(),
-                Nacionalidad = (textBox3.Text ?? "").Trim(),
+                Nombre = (texnombre.Text ?? "").Trim(),
+                Apellido = (texapellido.Text ?? "").Trim(),
+                Nacionalidad = (texnacionalidad.Text ?? "").Trim(),
                 Pasaporte = (texpasaporte.Text ?? "").Trim().ToUpper(),
                 Telefono = (textelefono.Text ?? "").Trim(),
-                Email = (textBox2.Text ?? "").Trim(),
-                FechaNacimiento = DTPhoradelle.Value.Date
+                Email = (texemail.Text ?? "").Trim(),
+                FechaNacimiento = DTPnacimiento.Value.Date
             };
-
-            return pasajero;
         }
 
         private void LimpiarCampos()
         {
             textID.Clear();
-            texDestino.Clear();
-            textBox4.Clear();
-            textBox3.Clear();
+            texnombre.Clear();
+            texapellido.Clear();
+            texnacionalidad.Clear();
             texpasaporte.Clear();
             textelefono.Clear();
-            textBox2.Clear();
-            DTPhoradelle.Value = DateTime.Today;
+            texemail.Clear();
+            DTPnacimiento.Value = DateTime.Today;
             textID.Focus();
         }
 
-        
         private void TxbxTitulo_TextChanged(object sender, EventArgs e) { }
         private void FrmVuelo_Load(object sender, EventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }

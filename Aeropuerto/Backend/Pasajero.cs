@@ -9,7 +9,6 @@ namespace Backend
 {
     public class Pasajero
     {
-        // ====== 8 PROPIEDADES CON VALIDACIONES ======
         public string Id
         {
             get => _id;
@@ -182,7 +181,6 @@ namespace Backend
         }
         private string _email;
 
-        // ====== PERSISTENCIA ======
         private static string filePath = "pasajeros.json";
 
         public static void Guardar(Pasajero obj)
@@ -203,7 +201,6 @@ namespace Backend
             }
             catch
             {
-                // Si hay corrupción en el JSON, devolvemos lista vacía para no romper la app
                 return new List<Pasajero>();
             }
         }

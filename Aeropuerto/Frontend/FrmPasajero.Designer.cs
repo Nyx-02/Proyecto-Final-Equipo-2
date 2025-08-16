@@ -45,18 +45,22 @@
             lbApellido = new Label();
             LabNacionalidad = new Label();
             textID = new TextBox();
-            texDestino = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            texnombre = new TextBox();
+            texnacionalidad = new TextBox();
+            texapellido = new TextBox();
             lbemail = new Label();
-            lbhoradelle = new Label();
+            lbnacimiento = new Label();
             lbtelefono = new Label();
             lbPasaporte = new Label();
-            DTPhoradelle = new DateTimePicker();
+            DTPnacimiento = new DateTimePicker();
             texpasaporte = new TextBox();
-            textBox2 = new TextBox();
+            texemail = new TextBox();
             textelefono = new TextBox();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -235,26 +239,26 @@
             textID.Size = new Size(100, 23);
             textID.TabIndex = 18;
             // 
-            // texDestino
+            // texnombre
             // 
-            texDestino.Location = new Point(256, 170);
-            texDestino.Name = "texDestino";
-            texDestino.Size = new Size(100, 23);
-            texDestino.TabIndex = 19;
+            texnombre.Location = new Point(256, 170);
+            texnombre.Name = "texnombre";
+            texnombre.Size = new Size(100, 23);
+            texnombre.TabIndex = 19;
             // 
-            // textBox3
+            // texnacionalidad
             // 
-            textBox3.Location = new Point(256, 254);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 20;
+            texnacionalidad.Location = new Point(256, 254);
+            texnacionalidad.Name = "texnacionalidad";
+            texnacionalidad.Size = new Size(100, 23);
+            texnacionalidad.TabIndex = 20;
             // 
-            // textBox4
+            // texapellido
             // 
-            textBox4.Location = new Point(256, 211);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 21;
+            texapellido.Location = new Point(256, 211);
+            texapellido.Name = "texapellido";
+            texapellido.Size = new Size(100, 23);
+            texapellido.TabIndex = 21;
             // 
             // lbemail
             // 
@@ -267,16 +271,16 @@
             lbemail.Text = "Email:";
             lbemail.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lbhoradelle
+            // lbnacimiento
             // 
-            lbhoradelle.BackColor = Color.LightSkyBlue;
-            lbhoradelle.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbhoradelle.Location = new Point(386, 253);
-            lbhoradelle.Name = "lbhoradelle";
-            lbhoradelle.Size = new Size(141, 21);
-            lbhoradelle.TabIndex = 23;
-            lbhoradelle.Text = "Feha de Nacimiento:";
-            lbhoradelle.TextAlign = ContentAlignment.MiddleCenter;
+            lbnacimiento.BackColor = Color.LightSkyBlue;
+            lbnacimiento.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbnacimiento.Location = new Point(386, 253);
+            lbnacimiento.Name = "lbnacimiento";
+            lbnacimiento.Size = new Size(141, 21);
+            lbnacimiento.TabIndex = 23;
+            lbnacimiento.Text = "Feha de Nacimiento:";
+            lbnacimiento.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbtelefono
             // 
@@ -300,12 +304,12 @@
             lbPasaporte.Text = "Pasaporte:";
             lbPasaporte.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // DTPhoradelle
+            // DTPnacimiento
             // 
-            DTPhoradelle.Location = new Point(533, 254);
-            DTPhoradelle.Name = "DTPhoradelle";
-            DTPhoradelle.Size = new Size(200, 23);
-            DTPhoradelle.TabIndex = 27;
+            DTPnacimiento.Location = new Point(533, 254);
+            DTPnacimiento.Name = "DTPnacimiento";
+            DTPnacimiento.Size = new Size(200, 23);
+            DTPnacimiento.TabIndex = 27;
             // 
             // texpasaporte
             // 
@@ -314,12 +318,12 @@
             texpasaporte.Size = new Size(100, 23);
             texpasaporte.TabIndex = 28;
             // 
-            // textBox2
+            // texemail
             // 
-            textBox2.Location = new Point(461, 209);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 29;
+            texemail.Location = new Point(461, 209);
+            texemail.Name = "texemail";
+            texemail.Size = new Size(100, 23);
+            texemail.TabIndex = 29;
             // 
             // textelefono
             // 
@@ -327,6 +331,36 @@
             textelefono.Name = "textelefono";
             textelefono.Size = new Size(100, 23);
             textelefono.TabIndex = 30;
+            // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(690, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 52;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(707, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 51;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(732, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 50;
             // 
             // FrmPasajero
             // 
@@ -336,17 +370,20 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
             Controls.Add(textelefono);
-            Controls.Add(textBox2);
+            Controls.Add(texemail);
             Controls.Add(texpasaporte);
-            Controls.Add(DTPhoradelle);
+            Controls.Add(DTPnacimiento);
             Controls.Add(lbPasaporte);
             Controls.Add(lbtelefono);
-            Controls.Add(lbhoradelle);
+            Controls.Add(lbnacimiento);
             Controls.Add(lbemail);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(texDestino);
+            Controls.Add(texapellido);
+            Controls.Add(texnacionalidad);
+            Controls.Add(texnombre);
             Controls.Add(textID);
             Controls.Add(LabNacionalidad);
             Controls.Add(lbApellido);
@@ -367,6 +404,7 @@
             Text = "Gestion de Pasajeros";
             Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -388,16 +426,19 @@
         private Label lbApellido;
         private Label LabNacionalidad;
         private TextBox textID;
-        private TextBox texDestino;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox texnombre;
+        private TextBox texnacionalidad;
+        private TextBox texapellido;
         private Label lbemail;
-        private Label lbhoradelle;
+        private Label lbnacimiento;
         private Label lbtelefono;
         private Label lbPasaporte;
-        private DateTimePicker DTPhoradelle;
+        private DateTimePicker DTPnacimiento;
         private TextBox texpasaporte;
-        private TextBox textBox2;
+        private TextBox texemail;
         private TextBox textelefono;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }
