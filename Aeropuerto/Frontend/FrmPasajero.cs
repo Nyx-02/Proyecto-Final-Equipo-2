@@ -6,6 +6,8 @@ namespace Frontend
 {
     public partial class FrmPasajero : Form
     {
+        private bool expandido = false; 
+
         public FrmPasajero()
         {
             InitializeComponent();
@@ -62,7 +64,7 @@ namespace Frontend
                 }
 
                 var actualizado = ConstruirDesdeFormulario();
-                actualizado.Id = id; 
+                actualizado.Id = id; // mantener el mismo ID
 
                 lista[idx] = actualizado;
                 Backend.Pasajero.GuardarLista(lista);
@@ -168,9 +170,21 @@ namespace Frontend
         {
             try
             {
-                var lista = Backend.Pasajero.Leer();
-                dgvDatos.DataSource = null;   
-                dgvDatos.DataSource = lista;  
+                if (!expandido)
+                {
+
+                    dgvDatos.DataSource = null;
+                    dgvDatos.DataSource = Backend.Pasajero.Leer();
+                    dgvDatos.Dock = DockStyle.Fill;
+                    dgvDatos.BringToFront();
+                    expandido = true;
+                }
+                else
+                {
+                    dgvDatos.Dock = DockStyle.None;
+                    dgvDatos.Visible = false;
+                    expandido = false;
+                }
             }
             catch (Exception ex)
             {

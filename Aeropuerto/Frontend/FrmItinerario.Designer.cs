@@ -51,12 +51,16 @@
             lbfechadeinicio = new Label();
             lbestado = new Label();
             cbestado = new ComboBox();
-            texempleado = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            texactividades = new TextBox();
+            DTPfechadefin = new DateTimePicker();
             DTPfechadeinicio = new DateTimePicker();
             texescalas = new TextBox();
             texobservaciones = new TextBox();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -293,19 +297,19 @@
             cbestado.Size = new Size(121, 23);
             cbestado.TabIndex = 37;
             // 
-            // texempleado
+            // texactividades
             // 
-            texempleado.Location = new Point(256, 211);
-            texempleado.Name = "texempleado";
-            texempleado.Size = new Size(100, 23);
-            texempleado.TabIndex = 38;
+            texactividades.Location = new Point(256, 211);
+            texactividades.Name = "texactividades";
+            texactividades.Size = new Size(100, 23);
+            texactividades.TabIndex = 38;
             // 
-            // dateTimePicker1
+            // DTPfechadefin
             // 
-            dateTimePicker1.Location = new Point(479, 127);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(182, 23);
-            dateTimePicker1.TabIndex = 39;
+            DTPfechadefin.Location = new Point(479, 127);
+            DTPfechadefin.Name = "DTPfechadefin";
+            DTPfechadefin.Size = new Size(182, 23);
+            DTPfechadefin.TabIndex = 39;
             // 
             // DTPfechadeinicio
             // 
@@ -328,6 +332,36 @@
             texobservaciones.Size = new Size(100, 23);
             texobservaciones.TabIndex = 42;
             // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(688, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 58;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(705, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 57;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(730, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 56;
+            // 
             // FrmItinerario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -336,11 +370,14 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
             Controls.Add(texobservaciones);
             Controls.Add(texescalas);
             Controls.Add(DTPfechadeinicio);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(texempleado);
+            Controls.Add(DTPfechadefin);
+            Controls.Add(texactividades);
             Controls.Add(cbestado);
             Controls.Add(lbestado);
             Controls.Add(lbfechadeinicio);
@@ -366,6 +403,7 @@
             Name = "FrmItinerario";
             Text = "Gestion de Itinerario";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -395,10 +433,13 @@
         private DateTimePicker DTPfechadeingreso;
         private Label lbestado;
         private ComboBox cbestado;
-        private TextBox texempleado;
-        private DateTimePicker dateTimePicker1;
+        private TextBox texactividades;
+        private DateTimePicker DTPfechadefin;
         private DateTimePicker DTPfechadeinicio;
         private TextBox texescalas;
         private TextBox texobservaciones;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }

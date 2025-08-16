@@ -9,14 +9,21 @@ namespace Frontend
 {
     public partial class FrmMantenimiento : Form
     {
+        private bool mostrandoDatos = false;
+
         public FrmMantenimiento()
         {
             InitializeComponent();
+
             butGuardar.Click += butGuardar_Click;
             butEditar.Click += butEditar_Click;
             buteliminar.Click += buteliminar_Click;
             botBuscar.Click += botBuscar_Click;
+            Butdata.Click += Butdata_Click;
+
+            dgvDatos.Visible = false;
         }
+
 
         private void butGuardar_Click(object sender, EventArgs e)
         {
@@ -30,7 +37,7 @@ namespace Frontend
                     Fecha = DTPfecha.Value,
                     Estado = cbestado.SelectedItem?.ToString() ?? cbestado.Text.Trim(),
                     Costo = nupdcosto.Value,
-                    Responsable = textBox1.Text.Trim(),
+                    Responsable = texresponsable.Text.Trim(),
                     Ubicacion = texavion.Text.Trim()
                 };
 
@@ -69,7 +76,7 @@ namespace Frontend
                     Fecha = DTPfecha.Value,
                     Estado = cbestado.SelectedItem?.ToString() ?? cbestado.Text.Trim(),
                     Costo = nupdcosto.Value,
-                    Responsable = textBox1.Text.Trim(),
+                    Responsable = texresponsable.Text.Trim(),
                     Ubicacion = texavion.Text.Trim()
                 };
 
@@ -137,7 +144,7 @@ namespace Frontend
                 DTPfecha.Value = m.Fecha;
                 cbestado.SelectedItem = m.Estado;
                 nupdcosto.Value = m.Costo;
-                textBox1.Text = m.Responsable;
+                texresponsable.Text = m.Responsable;
                 texavion.Text = m.Ubicacion;
 
                 MessageBox.Show("Mantenimiento cargado en el formulario.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -148,6 +155,48 @@ namespace Frontend
             }
         }
 
+
+        private void Butdata_Click(object sender, EventArgs e)
+        {
+            ToggleGrid();
+        }
+
+        private void ToggleGrid()
+        {
+            mostrandoDatos = !mostrandoDatos;
+
+            if (mostrandoDatos)
+            {
+                CargarDatos();
+                dgvDatos.Dock = DockStyle.Fill;
+                dgvDatos.Visible = true;
+                dgvDatos.BringToFront();
+                Butdata.Text = "Ocultar Datos";
+            }
+            else
+            {
+                dgvDatos.Visible = false;
+                dgvDatos.Dock = DockStyle.None;
+                Butdata.Text = "Mostrar Datos";
+            }
+        }
+
+        private void CargarDatos()
+        {
+            try
+            {
+                var lista = Mantenimiento.Leer() ?? new List<Mantenimiento>();
+                dgvDatos.DataSource = null;
+                dgvDatos.DataSource = lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron cargar los datos: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void LimpiarCampos()
         {
             textID.Clear();
@@ -156,7 +205,7 @@ namespace Frontend
             DTPfecha.Value = DateTime.Today;
             cbestado.SelectedIndex = -1;
             nupdcosto.Value = 0;
-            textBox1.Clear();
+            texresponsable.Clear();
             texavion.Clear();
             textID.Focus();
         }

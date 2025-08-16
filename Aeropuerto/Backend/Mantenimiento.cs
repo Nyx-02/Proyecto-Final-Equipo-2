@@ -9,7 +9,6 @@ namespace Backend
 {
     public class Mantenimiento
     {
-        // Propiedad Id
         public string Id
         {
             get => _id;
@@ -35,7 +34,6 @@ namespace Backend
         }
         private string _id;
 
-        // Propiedad Tipo
         public string Tipo
         {
             get => _tipo;
@@ -61,7 +59,6 @@ namespace Backend
         }
         private string _tipo;
 
-        // Propiedad Descripcion
         public string Descripcion
         {
             get => _descripcion;
@@ -87,7 +84,6 @@ namespace Backend
         }
         private string _descripcion;
 
-        // Propiedad Fecha
         public DateTime Fecha
         {
             get => _fecha;
@@ -113,7 +109,6 @@ namespace Backend
         }
         private DateTime _fecha;
 
-        // Propiedad Estado
         public string Estado
         {
             get => _estado;
@@ -139,7 +134,6 @@ namespace Backend
         }
         private string _estado;
 
-        // Propiedad Costo
         public decimal Costo
         {
             get => _costo;
@@ -165,7 +159,6 @@ namespace Backend
         }
         private decimal _costo;
 
-        // Propiedad Responsable
         public string Responsable
         {
             get => _responsable;
@@ -191,7 +184,6 @@ namespace Backend
         }
         private string _responsable;
 
-        // Propiedad Ubicacion
         public string Ubicacion
         {
             get => _ubicacion;
@@ -217,7 +209,6 @@ namespace Backend
         }
         private string _ubicacion;
 
-        // Métodos estáticos
         private static string filePath = "mantenimientos.json";
 
         public static void Guardar(Mantenimiento obj)

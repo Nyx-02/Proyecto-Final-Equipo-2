@@ -55,9 +55,13 @@
             lbdescripcion = new Label();
             texdescripcion = new TextBox();
             nupdcosto = new NumericUpDown();
-            textBox1 = new TextBox();
+            texresponsable = new TextBox();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nupdcosto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -324,12 +328,42 @@
             nupdcosto.Size = new Size(120, 23);
             nupdcosto.TabIndex = 33;
             // 
-            // textBox1
+            // texresponsable
             // 
-            textBox1.Location = new Point(480, 219);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 34;
+            texresponsable.Location = new Point(480, 219);
+            texresponsable.Name = "texresponsable";
+            texresponsable.Size = new Size(100, 23);
+            texresponsable.TabIndex = 34;
+            // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(691, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 55;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(708, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 54;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(733, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 53;
             // 
             // FrmMantenimiento
             // 
@@ -339,7 +373,10 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
+            Controls.Add(texresponsable);
             Controls.Add(nupdcosto);
             Controls.Add(texdescripcion);
             Controls.Add(lbdescripcion);
@@ -370,6 +407,7 @@
             Text = "Gestion de Mantenimiento";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdcosto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -401,6 +439,9 @@
         private Label lbdescripcion;
         private TextBox texdescripcion;
         private NumericUpDown nupdcosto;
-        private TextBox textBox1;
+        private TextBox texresponsable;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }
