@@ -81,7 +81,6 @@
             butempleados.Size = new Size(56, 53);
             butempleados.TabIndex = 4;
             butempleados.UseVisualStyleBackColor = true;
-            butempleados.Click += butEditar_Click;
             // 
             // butpasajeros
             // 
@@ -160,7 +159,6 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Menu Principal";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbAviones
             // 
@@ -409,7 +407,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmMenuPrincipal";
             Text = "Menu Principal";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ResumeLayout(false);
         }

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Frontend
@@ -15,46 +8,92 @@ namespace Frontend
         public FrmMenuPrincipal()
         {
             InitializeComponent();
+
+            // Asignar eventos a los botones
+            butvuelos.Click += Butvuelos_Click;
+            butpasajeros.Click += Butpasajeros_Click;
+            butempleados.Click += Butempleados_Click;
+            butaviones.Click += Butaviones_Click;
+            butaerolineas.Click += Butaerolineas_Click;
+            butreservas.Click += Butreservas_Click;
+            butequipaje.Click += Butequipaje_Click;
+            butpuertadeembarque.Click += Butpuertadeembarque_Click;
+            butseguridad.Click += Butseguridad_Click;
+            butmantenimiento.Click += Butmantenimiento_Click;
+            butcheckin.Click += Butcheckin_Click;
+            butitinerario.Click += Butitinerario_Click;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Butvuelos_Click(object sender, EventArgs e)
         {
-
+            FrmVuelo frm = new FrmVuelo();
+            frm.ShowDialog();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void Butpasajeros_Click(object sender, EventArgs e)
         {
-
+            FrmPasajero frm = new FrmPasajero();
+            frm.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Butempleados_Click(object sender, EventArgs e)
         {
-
+            FrmEmpleado frm = new FrmEmpleado();
+            frm.ShowDialog();
         }
 
-        private void TxbxTitulo_TextChanged(object sender, EventArgs e)
+        private void Butaviones_Click(object sender, EventArgs e)
         {
-
+            FrmAvion frm = new FrmAvion();
+            frm.ShowDialog();
         }
 
-        private void FrmVuelo_Load(object sender, EventArgs e)
+        private void Butaerolineas_Click(object sender, EventArgs e)
         {
-
+            FrmAerolinea frm = new FrmAerolinea();
+            frm.ShowDialog();
         }
 
-        private void butEditar_Click(object sender, EventArgs e)
+        private void Butreservas_Click(object sender, EventArgs e)
         {
-
+            FrmReserva frm = new FrmReserva();
+            frm.ShowDialog();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void Butequipaje_Click(object sender, EventArgs e)
         {
-
+            FrmEquipaje frm = new FrmEquipaje();
+            frm.ShowDialog();
         }
 
-        private void lbDestino_Click(object sender, EventArgs e)
+        private void Butpuertadeembarque_Click(object sender, EventArgs e)
         {
+            FrmPuertaEmbarque frm = new FrmPuertaEmbarque();
+            frm.ShowDialog();
+        }
 
+        private void Butseguridad_Click(object sender, EventArgs e)
+        {
+            FrmSeguridad frm = new FrmSeguridad();
+            frm.ShowDialog();
+        }
+
+        private void Butmantenimiento_Click(object sender, EventArgs e)
+        {
+            FrmMantenimiento frm = new FrmMantenimiento();
+            frm.ShowDialog();
+        }
+
+        private void Butcheckin_Click(object sender, EventArgs e)
+        {
+            FrmCheckIn frm = new FrmCheckIn();
+            frm.ShowDialog();
+        }
+
+        private void Butitinerario_Click(object sender, EventArgs e)
+        {
+            FrmItinerario frm = new FrmItinerario();
+            frm.ShowDialog();
         }
     }
 }
