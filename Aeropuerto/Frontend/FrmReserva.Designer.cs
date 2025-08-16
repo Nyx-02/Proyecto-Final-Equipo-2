@@ -48,16 +48,20 @@
             texpasajero = new TextBox();
             lbprecio = new Label();
             ibclase = new Label();
-            lbfabricacion = new Label();
+            lbasiento = new Label();
             texasiento = new TextBox();
             lbpago = new Label();
             nupdprecio = new NumericUpDown();
             cbclase = new ComboBox();
             cbpago = new ComboBox();
             texvuelo = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            DTPReserva = new DateTimePicker();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nupdprecio).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -263,16 +267,16 @@
             ibclase.Text = "Clase:";
             ibclase.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lbfabricacion
+            // lbasiento
             // 
-            lbfabricacion.BackColor = Color.LightSkyBlue;
-            lbfabricacion.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lbfabricacion.Location = new Point(179, 256);
-            lbfabricacion.Name = "lbfabricacion";
-            lbfabricacion.Size = new Size(71, 21);
-            lbfabricacion.TabIndex = 25;
-            lbfabricacion.Text = "Asiento:";
-            lbfabricacion.TextAlign = ContentAlignment.MiddleCenter;
+            lbasiento.BackColor = Color.LightSkyBlue;
+            lbasiento.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbasiento.Location = new Point(179, 256);
+            lbasiento.Name = "lbasiento";
+            lbasiento.Size = new Size(71, 21);
+            lbasiento.TabIndex = 25;
+            lbasiento.Text = "Asiento:";
+            lbasiento.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // texasiento
             // 
@@ -324,12 +328,42 @@
             texvuelo.Size = new Size(100, 23);
             texvuelo.TabIndex = 38;
             // 
-            // dateTimePicker1
+            // DTPReserva
             // 
-            dateTimePicker1.Location = new Point(507, 127);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 39;
+            DTPReserva.Location = new Point(507, 127);
+            DTPReserva.Name = "DTPReserva";
+            DTPReserva.Size = new Size(200, 23);
+            DTPReserva.TabIndex = 39;
+            // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(689, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 46;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(706, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 45;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(731, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 44;
             // 
             // FrmReserva
             // 
@@ -339,14 +373,17 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
+            Controls.Add(DTPReserva);
             Controls.Add(texvuelo);
             Controls.Add(cbpago);
             Controls.Add(cbclase);
             Controls.Add(nupdprecio);
             Controls.Add(lbpago);
             Controls.Add(texasiento);
-            Controls.Add(lbfabricacion);
+            Controls.Add(lbasiento);
             Controls.Add(ibclase);
             Controls.Add(lbprecio);
             Controls.Add(texpasajero);
@@ -370,6 +407,7 @@
             Text = "Gestion de Reservas";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdprecio).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -395,7 +433,7 @@
         private Label lbprecio;
         private Label lbIngreso;
         private Label ibclase;
-        private Label lbfabricacion;
+        private Label lbasiento;
         private DateTimePicker DTPfechadeingreso;
         private TextBox texasiento;
         private Label lbpago;
@@ -403,6 +441,9 @@
         private ComboBox cbclase;
         private ComboBox cbpago;
         private TextBox texvuelo;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DTPReserva;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }

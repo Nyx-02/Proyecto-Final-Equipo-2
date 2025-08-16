@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "2024110107",
+    "IdPasajero": "AC2002",
+    "IdVuelo": "CA2004",
+    "FechaReserva": "2025-08-18T13:59:40.855",
+    "Asiento": "BC20",
+    "Clase": "Business",
+    "Precio": 100,
+    "EstadoPago": "Pendiente"
+  }
+]

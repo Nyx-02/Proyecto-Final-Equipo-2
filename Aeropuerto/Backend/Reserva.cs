@@ -9,7 +9,6 @@ namespace Backend
 {
     public class Reserva
     {
-        // Propiedad Id
         public string Id
         {
             get => _id;
@@ -35,7 +34,6 @@ namespace Backend
         }
         private string _id;
 
-        // Propiedad IdPasajero
         public string IdPasajero
         {
             get => _idPasajero;
@@ -61,7 +59,6 @@ namespace Backend
         }
         private string _idPasajero;
 
-        // Propiedad IdVuelo
         public string IdVuelo
         {
             get => _idVuelo;
@@ -87,7 +84,6 @@ namespace Backend
         }
         private string _idVuelo;
 
-        // Propiedad FechaReserva
         public DateTime FechaReserva
         {
             get => _fechaReserva;
@@ -113,7 +109,6 @@ namespace Backend
         }
         private DateTime _fechaReserva;
 
-        // Propiedad Asiento
         public string Asiento
         {
             get => _asiento;
@@ -139,7 +134,6 @@ namespace Backend
         }
         private string _asiento;
 
-        // Propiedad Clase
         public string Clase
         {
             get => _clase;
@@ -165,7 +159,6 @@ namespace Backend
         }
         private string _clase;
 
-        // Propiedad Precio
         public decimal Precio
         {
             get => _precio;
@@ -191,7 +184,6 @@ namespace Backend
         }
         private decimal _precio;
 
-        // Propiedad EstadoPago
         public string EstadoPago
         {
             get => _estadoPago;
@@ -217,7 +209,6 @@ namespace Backend
         }
         private string _estadoPago;
 
-        // Métodos estáticos
         private static string filePath = "reservas.json";
 
         public static void Guardar(Reserva obj)
