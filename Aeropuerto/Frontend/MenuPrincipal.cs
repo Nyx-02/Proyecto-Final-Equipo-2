@@ -9,7 +9,6 @@ namespace Frontend
         {
             InitializeComponent();
 
-            // Asignar eventos a los botones
             butvuelos.Click += Butvuelos_Click;
             butpasajeros.Click += Butpasajeros_Click;
             butempleados.Click += Butempleados_Click;

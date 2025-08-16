@@ -16,7 +16,6 @@ namespace Frontend
             InitializeComponent();
             CargarGrid();
 
-            // Conectar eventos
             Butdata.Click += Butdata_Click;
             butGuardar.Click += butGuardar_Click;
             butEditar.Click += butEditar_Click;
@@ -122,7 +121,6 @@ namespace Frontend
                     DTPfechadeingreso.Value = emp.FechaIngreso;
                     texemail.Text = emp.Email;
 
-                    // Mostrar solo este empleado en el grid
                     dgvDatos.DataSource = null;
                     dgvDatos.DataSource = new List<Empleado> { emp };
 

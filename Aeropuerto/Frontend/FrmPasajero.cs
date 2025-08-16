@@ -64,7 +64,7 @@ namespace Frontend
                 }
 
                 var actualizado = ConstruirDesdeFormulario();
-                actualizado.Id = id; // mantener el mismo ID
+                actualizado.Id = id; 
 
                 lista[idx] = actualizado;
                 Backend.Pasajero.GuardarLista(lista);

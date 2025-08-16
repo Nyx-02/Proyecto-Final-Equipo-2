@@ -8,7 +8,6 @@ namespace Backend
 {
     public class Avion
     {
-        // ===== ID =====
         private string _id;
         public string Id
         {
@@ -26,7 +25,6 @@ namespace Backend
             }
         }
 
-        // ===== MODELO =====
         private string _modelo;
         public string Modelo
         {
@@ -44,7 +42,6 @@ namespace Backend
             }
         }
 
-        // ===== CAPACIDAD =====
         private int _capacidad;
         public int Capacidad
         {
@@ -62,7 +59,6 @@ namespace Backend
             }
         }
 
-        // ===== FABRICANTE =====
         private string _fabricante;
         public string Fabricante
         {
@@ -80,7 +76,6 @@ namespace Backend
             }
         }
 
-        // ===== AÑO DE FABRICACIÓN =====
         private int _anioFabricacion;
         public int AnioFabricacion
         {
@@ -102,7 +97,6 @@ namespace Backend
             }
         }
 
-        // ===== ESTADO =====
         private string _estado;
         public string Estado
         {
@@ -121,7 +115,6 @@ namespace Backend
             }
         }
 
-        // ===== MATRÍCULA =====
         private string _matricula;
         public string Matricula
         {
@@ -140,7 +133,6 @@ namespace Backend
             }
         }
 
-        // ===== MOTOR =====
         private string _motor;
         public string Motor
         {
@@ -159,7 +151,6 @@ namespace Backend
             }
         }
 
-        // ===== Persistencia =====
         private static string filePath = "aviones.json";
 
         public static void Guardar(Avion obj)

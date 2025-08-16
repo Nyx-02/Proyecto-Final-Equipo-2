@@ -16,7 +16,6 @@ namespace Frontend
             InitializeComponent();
             CargarGrid();
 
-            // Conectar eventos
             butGuardar.Click += butGuardar_Click;
             butEditar.Click += butEditar_Click;
             buteliminar.Click += buteliminar_Click;

@@ -16,7 +16,6 @@ namespace Frontend
             InitializeComponent();
             CargarGrid();
 
-            // Conectar eventos
             Butdata.Click += Butdata_Click;
             butGuardar.Click += butGuardar_Click;
             butEditar.Click += butEditar_Click;
@@ -127,7 +126,6 @@ namespace Frontend
                     dateTimePicker3.Value = vuelo.HoraSalida;
                     DTPhoradelle.Value = vuelo.HoraLlegada;
 
-                    // Mostrar solo este vuelo en el DataGridView
                     dgvDatos.DataSource = null;
                     dgvDatos.DataSource = new List<Backend.Vuelo> { vuelo };
                 }

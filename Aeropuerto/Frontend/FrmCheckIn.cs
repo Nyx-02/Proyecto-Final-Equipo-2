@@ -15,12 +15,10 @@ namespace Frontend
         {
             InitializeComponent();
 
-            // Agregar opciones al ComboBox de Facturado
             cbfacturado.Items.AddRange(new string[] { "SI", "NO" });
 
             CargarGrid();
 
-            // Conectar eventos
             Butdata.Click += Butdata_Click;
             butGuardar.Click += butGuardar_Click;
             butEditar.Click += butEditar_Click;
@@ -121,7 +119,6 @@ namespace Frontend
                     cbestado.Text = c.Estado;
                     DTPfecha.Value = c.Fecha;
 
-                    // Mostrar solo este registro en el DataGridView
                     dgvDatos.DataSource = null;
                     dgvDatos.DataSource = new List<CheckIn> { c };
                 }

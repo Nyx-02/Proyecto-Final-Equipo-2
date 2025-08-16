@@ -132,7 +132,6 @@ namespace Frontend
                     texasiento.Text = reserva.Asiento;
                     cbclase.Text = reserva.Clase;
 
-                    // Asegurar que el valor entra en el rango del NumericUpDown
                     decimal precio = reserva.Precio;
                     if (precio < nupdprecio.Minimum) precio = nupdprecio.Minimum;
                     if (precio > nupdprecio.Maximum) precio = nupdprecio.Maximum;

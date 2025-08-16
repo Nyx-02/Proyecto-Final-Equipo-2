@@ -16,7 +16,7 @@ namespace Frontend
             butEditar.Click += butEditar_Click;
             buteliminar.Click += buteliminar_Click;
             botBuscar.Click += botBuscar_Click;
-            Butdata.Click += Butdata_Click; // Evento para abrir ventana con DataGridView
+            Butdata.Click += Butdata_Click; 
         }
 
         private void butGuardar_Click(object sender, EventArgs e)
@@ -131,7 +131,6 @@ namespace Frontend
                     return;
                 }
 
-                // Crear un nuevo formulario para mostrar la tabla
                 Form ventanaDatos = new Form
                 {
                     Text = "Listado de Puertas de Embarque",

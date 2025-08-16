@@ -45,18 +45,22 @@
             lbpais = new Label();
             Labtelefono = new Label();
             textID = new TextBox();
-            texDestino = new TextBox();
+            texnombre = new TextBox();
             textelefono = new TextBox();
-            tepais = new TextBox();
+            texpais = new TextBox();
             lbemail = new Label();
             lbdirecion = new Label();
             lbsitiowb = new Label();
             texsitioweb = new TextBox();
-            textBox2 = new TextBox();
+            texemail = new TextBox();
             texcodigo = new TextBox();
             labcodigoiata = new Label();
             texdireccion = new TextBox();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -233,12 +237,12 @@
             textID.Size = new Size(100, 23);
             textID.TabIndex = 18;
             // 
-            // texDestino
+            // texnombre
             // 
-            texDestino.Location = new Point(280, 176);
-            texDestino.Name = "texDestino";
-            texDestino.Size = new Size(100, 23);
-            texDestino.TabIndex = 19;
+            texnombre.Location = new Point(280, 176);
+            texnombre.Name = "texnombre";
+            texnombre.Size = new Size(100, 23);
+            texnombre.TabIndex = 19;
             // 
             // textelefono
             // 
@@ -247,12 +251,12 @@
             textelefono.Size = new Size(100, 23);
             textelefono.TabIndex = 20;
             // 
-            // tepais
+            // texpais
             // 
-            tepais.Location = new Point(280, 217);
-            tepais.Name = "tepais";
-            tepais.Size = new Size(100, 23);
-            tepais.TabIndex = 21;
+            texpais.Location = new Point(280, 217);
+            texpais.Name = "texpais";
+            texpais.Size = new Size(100, 23);
+            texpais.TabIndex = 21;
             // 
             // lbemail
             // 
@@ -294,12 +298,12 @@
             texsitioweb.Size = new Size(100, 23);
             texsitioweb.TabIndex = 28;
             // 
-            // textBox2
+            // texemail
             // 
-            textBox2.Location = new Point(485, 130);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 29;
+            texemail.Location = new Point(485, 130);
+            texemail.Name = "texemail";
+            texemail.Size = new Size(100, 23);
+            texemail.TabIndex = 29;
             // 
             // texcodigo
             // 
@@ -326,6 +330,36 @@
             texdireccion.Size = new Size(100, 23);
             texdireccion.TabIndex = 33;
             // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(689, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 70;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(706, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 69;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(731, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 68;
+            // 
             // FrmAerolinea
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -334,17 +368,20 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
             Controls.Add(texdireccion);
             Controls.Add(texcodigo);
             Controls.Add(labcodigoiata);
-            Controls.Add(textBox2);
+            Controls.Add(texemail);
             Controls.Add(texsitioweb);
             Controls.Add(lbsitiowb);
             Controls.Add(lbdirecion);
             Controls.Add(lbemail);
-            Controls.Add(tepais);
+            Controls.Add(texpais);
             Controls.Add(textelefono);
-            Controls.Add(texDestino);
+            Controls.Add(texnombre);
             Controls.Add(textID);
             Controls.Add(Labtelefono);
             Controls.Add(lbpais);
@@ -364,6 +401,7 @@
             Name = "FrmAerolinea";
             Text = "Gestion de Aerolineas";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -385,16 +423,19 @@
         private Label lbpais;
         private Label Labtelefono;
         private TextBox textID;
-        private TextBox texDestino;
-        private TextBox tepais;
+        private TextBox texnombre;
+        private TextBox texpais;
         private Label lbemail;
         private Label lbdirecion;
         private Label lbsitiowb;
         private TextBox texsitioweb;
-        private TextBox textBox2;
+        private TextBox texemail;
         private TextBox textelefono;
         private TextBox texcodigo;
         private Label labcodigoiata;
         private TextBox texdireccion;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }

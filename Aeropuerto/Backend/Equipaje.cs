@@ -9,7 +9,6 @@ namespace Backend
 {
     public class Equipaje
     {
-        // ====== PROPIEDADES ======
         public string Id
         {
             get => _id;
@@ -145,7 +144,6 @@ namespace Backend
         }
         private string _estado;
 
-        // ====== PERSISTENCIA ======
         private static readonly string filePath = "equipajes.json";
 
         public static void Guardar(Equipaje obj)
@@ -166,7 +164,6 @@ namespace Backend
             }
             catch
             {
-                // Si el JSON está corrupto, devolvemos lista vacía para no romper la app
                 return new List<Equipaje>();
             }
         }

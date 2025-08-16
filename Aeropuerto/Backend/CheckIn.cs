@@ -77,7 +77,6 @@ namespace Backend
         }
         private string _idVuelo;
 
-        // --- NUEVA PROPIEDAD: Facturado (reemplaza a NumeroAsiento) ---
         public string Facturado
         {
             get => _facturado;

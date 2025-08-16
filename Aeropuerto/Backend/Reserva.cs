@@ -15,19 +15,19 @@ namespace Backend
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El ID no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El ID no puede estar vacío.");
                 if (value.Length < 3)
-                    throw new ArgumentException("El ID debe tener al menos 3 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El ID debe tener al menos 3 caracteres."); 
                 if (value.Length > 10)
-                    throw new ArgumentException("El ID no puede tener más de 10 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El ID no puede tener más de 10 caracteres."); 
                 if (!Regex.IsMatch(value, @"^[A-Za-z0-9]+$"))
-                    throw new ArgumentException("El ID solo puede contener letras y números."); // Solo alfanumérico
+                    throw new ArgumentException("El ID solo puede contener letras y números.");
                 if (value.Contains(" "))
-                    throw new ArgumentException("El ID no puede contener espacios."); // Sin espacios
+                    throw new ArgumentException("El ID no puede contener espacios."); 
                 if (value.StartsWith("0"))
-                    throw new ArgumentException("El ID no puede iniciar con 0."); // No iniciar con cero
+                    throw new ArgumentException("El ID no puede iniciar con 0."); 
                 if (value != value.ToUpper())
-                    throw new ArgumentException("El ID debe estar en mayúsculas."); // Solo mayúsculas
+                    throw new ArgumentException("El ID debe estar en mayúsculas."); 
 
                 _id = value;
             }
@@ -40,19 +40,19 @@ namespace Backend
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El ID del pasajero no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El ID del pasajero no puede estar vacío.");
                 if (value.Length < 3)
-                    throw new ArgumentException("El ID del pasajero debe tener al menos 3 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El ID del pasajero debe tener al menos 3 caracteres."); 
                 if (value.Length > 10)
-                    throw new ArgumentException("El ID del pasajero no puede tener más de 10 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El ID del pasajero no puede tener más de 10 caracteres.");
                 if (!Regex.IsMatch(value, @"^[A-Z0-9]+$"))
-                    throw new ArgumentException("El ID del pasajero solo puede contener letras mayúsculas y números."); // Solo mayúsculas
+                    throw new ArgumentException("El ID del pasajero solo puede contener letras mayúsculas y números.");
                 if (value.Contains(" "))
-                    throw new ArgumentException("El ID del pasajero no puede contener espacios."); // Sin espacios
+                    throw new ArgumentException("El ID del pasajero no puede contener espacios."); 
                 if (value.StartsWith("0"))
-                    throw new ArgumentException("El ID del pasajero no puede iniciar con 0."); // No iniciar con cero
+                    throw new ArgumentException("El ID del pasajero no puede iniciar con 0."); 
                 if (value == Id)
-                    throw new ArgumentException("El ID del pasajero no puede ser igual al ID de la reserva."); // Lógica
+                    throw new ArgumentException("El ID del pasajero no puede ser igual al ID de la reserva."); 
 
                 _idPasajero = value;
             }
@@ -65,19 +65,19 @@ namespace Backend
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El ID del vuelo no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El ID del vuelo no puede estar vacío."); 
                 if (value.Length < 3)
-                    throw new ArgumentException("El ID del vuelo debe tener al menos 3 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El ID del vuelo debe tener al menos 3 caracteres."); 
                 if (value.Length > 10)
-                    throw new ArgumentException("El ID del vuelo no puede tener más de 10 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El ID del vuelo no puede tener más de 10 caracteres."); 
                 if (!Regex.IsMatch(value, @"^[A-Z0-9]+$"))
-                    throw new ArgumentException("El ID del vuelo solo puede contener letras mayúsculas y números."); // Solo mayúsculas
+                    throw new ArgumentException("El ID del vuelo solo puede contener letras mayúsculas y números."); 
                 if (value.Contains(" "))
-                    throw new ArgumentException("El ID del vuelo no puede contener espacios."); // Sin espacios
+                    throw new ArgumentException("El ID del vuelo no puede contener espacios."); 
                 if (value.StartsWith("0"))
-                    throw new ArgumentException("El ID del vuelo no puede iniciar con 0."); // No iniciar con cero
+                    throw new ArgumentException("El ID del vuelo no puede iniciar con 0."); 
                 if (value == Id)
-                    throw new ArgumentException("El ID del vuelo no puede ser igual al ID de la reserva."); // Lógica
+                    throw new ArgumentException("El ID del vuelo no puede ser igual al ID de la reserva."); 
 
                 _idVuelo = value;
             }
@@ -90,19 +90,19 @@ namespace Backend
             set
             {
                 if (value == default)
-                    throw new ArgumentException("La fecha de reserva no puede estar vacía."); // No vacío
+                    throw new ArgumentException("La fecha de reserva no puede estar vacía."); 
                 if (value.Year < 2000)
-                    throw new ArgumentException("La fecha de reserva no puede ser anterior al año 2000."); // Año mínimo
+                    throw new ArgumentException("La fecha de reserva no puede ser anterior al año 2000."); 
                 if (value > DateTime.Today.AddYears(2))
-                    throw new ArgumentException("La fecha de reserva no puede ser más de 2 años en el futuro."); // Año máximo
+                    throw new ArgumentException("La fecha de reserva no puede ser más de 2 años en el futuro."); 
                 if (value.Date < DateTime.Today)
-                    throw new ArgumentException("La fecha de reserva no puede ser en el pasado."); // Sin fecha pasada
+                    throw new ArgumentException("La fecha de reserva no puede ser en el pasado.");
                 if (value.DayOfWeek == DayOfWeek.Sunday)
-                    throw new ArgumentException("No se pueden hacer reservas los domingos."); // Restricción día
+                    throw new ArgumentException("No se pueden hacer reservas los domingos."); 
                 if (value.Month == 2 && value.Day > 29)
-                    throw new ArgumentException("Fecha inválida para febrero."); // Validación febrero
+                    throw new ArgumentException("Fecha inválida para febrero."); 
                 if (!DateTime.IsLeapYear(value.Year) && value.Month == 2 && value.Day == 29)
-                    throw new ArgumentException("El año no es bisiesto."); // Año bisiesto
+                    throw new ArgumentException("El año no es bisiesto."); 
 
                 _fechaReserva = value;
             }
@@ -115,19 +115,19 @@ namespace Backend
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El asiento no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El asiento no puede estar vacío."); 
                 if (value.Length < 2)
-                    throw new ArgumentException("El asiento debe tener al menos 2 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El asiento debe tener al menos 2 caracteres."); 
                 if (value.Length > 5)
-                    throw new ArgumentException("El asiento no puede tener más de 5 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El asiento no puede tener más de 5 caracteres."); 
                 if (!Regex.IsMatch(value, @"^[A-Z0-9]+$"))
-                    throw new ArgumentException("El asiento solo puede contener letras mayúsculas y números."); // Formato permitido
+                    throw new ArgumentException("El asiento solo puede contener letras mayúsculas y números."); 
                 if (value.Contains(" "))
-                    throw new ArgumentException("El asiento no puede contener espacios."); // Sin espacios
+                    throw new ArgumentException("El asiento no puede contener espacios."); 
                 if (value.Any(char.IsLower))
-                    throw new ArgumentException("El asiento no puede contener letras minúsculas."); // Solo mayúsculas
+                    throw new ArgumentException("El asiento no puede contener letras minúsculas."); 
                 if (value.StartsWith("0"))
-                    throw new ArgumentException("El asiento no puede iniciar con 0."); // No iniciar con cero
+                    throw new ArgumentException("El asiento no puede iniciar con 0."); 
 
                 _asiento = value;
             }
@@ -140,19 +140,19 @@ namespace Backend
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("La clase no puede estar vacía."); // No vacío
+                    throw new ArgumentException("La clase no puede estar vacía."); 
                 if (value.Length < 3)
-                    throw new ArgumentException("La clase debe tener al menos 3 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("La clase debe tener al menos 3 caracteres."); 
                 if (value.Length > 20)
-                    throw new ArgumentException("La clase no puede tener más de 20 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("La clase no puede tener más de 20 caracteres."); 
                 if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
-                    throw new ArgumentException("La clase solo puede contener letras."); // Solo letras
+                    throw new ArgumentException("La clase solo puede contener letras."); 
                 if (value.Any(char.IsDigit))
-                    throw new ArgumentException("La clase no puede contener números."); // Sin números
+                    throw new ArgumentException("La clase no puede contener números."); 
                 if (value.StartsWith(" "))
-                    throw new ArgumentException("La clase no puede iniciar con espacio."); // Sin espacio inicial
+                    throw new ArgumentException("La clase no puede iniciar con espacio."); 
                 if (value.EndsWith(" "))
-                    throw new ArgumentException("La clase no puede terminar con espacio."); // Sin espacio final
+                    throw new ArgumentException("La clase no puede terminar con espacio."); 
 
                 _clase = value;
             }
@@ -165,19 +165,19 @@ namespace Backend
             set
             {
                 if (value <= 0)
-                    throw new ArgumentException("El precio debe ser mayor que 0."); // Positivo
+                    throw new ArgumentException("El precio debe ser mayor que 0."); 
                 if (value < 50)
-                    throw new ArgumentException("El precio no puede ser menor a 50."); // Precio mínimo
+                    throw new ArgumentException("El precio no puede ser menor a 50."); 
                 if (value > 10000)
-                    throw new ArgumentException("El precio no puede superar los 10,000."); // Precio máximo
+                    throw new ArgumentException("El precio no puede superar los 10,000."); 
                 if (decimal.Round(value, 2) != value)
-                    throw new ArgumentException("El precio solo puede tener dos decimales."); // Decimales
+                    throw new ArgumentException("El precio solo puede tener dos decimales."); 
                 if (value % 1m != 0m && value % 0.5m != 0m)
-                    throw new ArgumentException("El precio debe estar en múltiplos de 0.50."); // Múltiplo válido
+                    throw new ArgumentException("El precio debe estar en múltiplos de 0.50.");
                 if (value > 0 && value < 100)
-                    throw new ArgumentException("Precio demasiado bajo para una reserva."); // Lógica de negocio
+                    throw new ArgumentException("Precio demasiado bajo para una reserva."); 
                 if (value > 5000 && Clase.ToLower().Contains("economica"))
-                    throw new ArgumentException("Una clase económica no puede tener precio tan alto."); // Lógica clase
+                    throw new ArgumentException("Una clase económica no puede tener precio tan alto."); 
 
                 _precio = value;
             }
@@ -190,19 +190,19 @@ namespace Backend
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El estado de pago no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El estado de pago no puede estar vacío."); 
                 if (value.Length < 3)
-                    throw new ArgumentException("El estado de pago debe tener al menos 3 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El estado de pago debe tener al menos 3 caracteres."); 
                 if (value.Length > 20)
-                    throw new ArgumentException("El estado de pago no puede tener más de 20 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El estado de pago no puede tener más de 20 caracteres."); 
                 if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
-                    throw new ArgumentException("El estado de pago solo puede contener letras."); // Solo letras
+                    throw new ArgumentException("El estado de pago solo puede contener letras."); 
                 if (value.Any(char.IsDigit))
-                    throw new ArgumentException("El estado de pago no puede contener números."); // Sin números
+                    throw new ArgumentException("El estado de pago no puede contener números."); 
                 if (value.StartsWith(" "))
-                    throw new ArgumentException("El estado de pago no puede iniciar con espacio."); // Sin espacio inicial
+                    throw new ArgumentException("El estado de pago no puede iniciar con espacio.");
                 if (value.EndsWith(" "))
-                    throw new ArgumentException("El estado de pago no puede terminar con espacio."); // Sin espacio final
+                    throw new ArgumentException("El estado de pago no puede terminar con espacio."); 
 
                 _estadoPago = value;
             }

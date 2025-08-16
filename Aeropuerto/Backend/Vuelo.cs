@@ -9,9 +9,7 @@ namespace Backend
 {
     public class Vuelo
     {
-        // === PROPIEDADES ===
 
-        // Propiedad Id
         public string Id
         {
             get => _id;
@@ -35,7 +33,6 @@ namespace Backend
         }
         private string _id;
 
-        // Propiedad Origen
         public string Origen
         {
             get => _origen;
@@ -59,7 +56,6 @@ namespace Backend
         }
         private string _origen;
 
-        // Propiedad Destino
         public string Destino
         {
             get => _destino;
@@ -83,7 +79,6 @@ namespace Backend
         }
         private string _destino;
 
-        // Propiedad Fecha
         public DateTime Fecha
         {
             get => _fecha;
@@ -109,7 +104,6 @@ namespace Backend
         }
         private DateTime _fecha;
 
-        // Propiedad HoraSalida
         public DateTime HoraSalida
         {
             get => _horaSalida;
@@ -127,7 +121,6 @@ namespace Backend
         }
         private DateTime _horaSalida;
 
-        // Propiedad HoraLlegada
         public DateTime HoraLlegada
         {
             get => _horaLlegada;
@@ -149,7 +142,6 @@ namespace Backend
         }
         private DateTime _horaLlegada;
 
-        // Propiedad Aerolinea
         public string Aerolinea
         {
             get => _aerolinea;
@@ -173,7 +165,6 @@ namespace Backend
         }
         private string _aerolinea;
 
-        // Propiedad Estado
         public string Estado
         {
             get => _estado;
@@ -197,7 +188,6 @@ namespace Backend
         }
         private string _estado;
 
-        // === MÉTODOS ESTÁTICOS ===
         private static string filePath = "vuelos.json";
 
         public static void Guardar(Vuelo obj)
