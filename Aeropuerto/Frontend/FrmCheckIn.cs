@@ -20,11 +20,11 @@ namespace Frontend
                 {
                     Id = textID.Text,
                     IdReserva = texreserva.Text,
-                    IdPasajero = texpasajero.Text,
-                    IdVuelo = texvuelo.Text,
-                    NumeroAsiento = texasiento.Text,
-                    Estado = cbEstado.Text,
-                    Fecha = dtpFecha.Value
+                    IdPasajero = texempleado.Text,   
+                    IdVuelo = texmostrador.Text,     
+                    NumeroAsiento = cbfacturado.Text, 
+                    Estado = cbestado.Text,          
+                    Fecha = DTPfecha.Value           
                 };
 
                 CheckIn.Guardar(checkin);
@@ -47,11 +47,11 @@ namespace Frontend
                 if (checkin != null)
                 {
                     checkin.IdReserva = texreserva.Text;
-                    checkin.IdPasajero = texpasajero.Text;
-                    checkin.IdVuelo = texvuelo.Text;
-                    checkin.NumeroAsiento = texasiento.Text;
-                    checkin.Estado = cbEstado.Text;
-                    checkin.Fecha = dtpFecha.Value;
+                    checkin.IdPasajero = texempleado.Text;
+                    checkin.IdVuelo = texmostrador.Text;
+                    checkin.NumeroAsiento = cbfacturado.Text;
+                    checkin.Estado = cbestado.Text;
+                    checkin.Fecha = DTPfecha.Value;
 
                     GuardarLista(lista);
                     MessageBox.Show("Check-in editado correctamente.");
@@ -102,11 +102,11 @@ namespace Frontend
                 if (checkin != null)
                 {
                     texreserva.Text = checkin.IdReserva;
-                    texpasajero.Text = checkin.IdPasajero;
-                    texvuelo.Text = checkin.IdVuelo;
-                    texasiento.Text = checkin.NumeroAsiento;
-                    cbEstado.Text = checkin.Estado;
-                    dtpFecha.Value = checkin.Fecha;
+                    texempleado.Text = checkin.IdPasajero;
+                    texmostrador.Text = checkin.IdVuelo;
+                    cbfacturado.Text = checkin.NumeroAsiento;
+                    cbestado.Text = checkin.Estado;
+                    DTPfecha.Value = checkin.Fecha;
                 }
                 else
                 {
@@ -123,11 +123,11 @@ namespace Frontend
         {
             textID.Clear();
             texreserva.Clear();
-            texpasajero.Clear();
-            texvuelo.Clear();
-            texasiento.Clear();
-            cbEstado.SelectedIndex = -1;
-            dtpFecha.Value = DateTime.Today;
+            texempleado.Clear();
+            texmostrador.Clear();
+            cbfacturado.SelectedIndex = -1; // porque es combo
+            cbestado.SelectedIndex = -1;
+            DTPfecha.Value = DateTime.Today;
         }
 
         private void GuardarLista(List<CheckIn> lista)

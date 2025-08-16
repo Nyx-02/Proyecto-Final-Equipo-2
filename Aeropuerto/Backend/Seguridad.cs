@@ -9,6 +9,8 @@ namespace Backend
 {
     public class Seguridad
     {
+
+
         // Propiedad Id
         private string _id;
         public string Id
@@ -58,32 +60,6 @@ namespace Backend
                     throw new ArgumentException("El nombre no puede terminar con espacio.");
 
                 _nombreGuardia = value;
-            }
-        }
-
-        // Propiedad Puesto
-        private string _puesto;
-        public string Puesto
-        {
-            get => _puesto;
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El puesto no puede estar vacío.");
-                if (value.Length < 3)
-                    throw new ArgumentException("El puesto debe tener al menos 3 caracteres.");
-                if (value.Length > 30)
-                    throw new ArgumentException("El puesto no puede tener más de 30 caracteres.");
-                if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
-                    throw new ArgumentException("El puesto solo puede contener letras.");
-                if (value.Any(char.IsDigit))
-                    throw new ArgumentException("El puesto no puede contener números.");
-                if (value.StartsWith(" "))
-                    throw new ArgumentException("El puesto no puede iniciar con espacio.");
-                if (value.EndsWith(" "))
-                    throw new ArgumentException("El puesto no puede terminar con espacio.");
-
-                _puesto = value;
             }
         }
 
@@ -149,7 +125,7 @@ namespace Backend
                 if (value == default)
                     throw new ArgumentException("La fecha de inicio no puede estar vacía.");
                 if (value.Year < 2000)
-                    throw new ArgumentException("La fecha de inicio no puede ser anterior al 2000.");
+                    throw new ArgumentException("La fecha de inicio no puede ser anterior al año 2000.");
                 if (value > DateTime.Today.AddYears(1))
                     throw new ArgumentException("La fecha de inicio no puede ser más de 1 año en el futuro.");
                 if (value.Date > DateTime.Today)
@@ -165,7 +141,7 @@ namespace Backend
             }
         }
 
-        // Propiedad NivelAcceso
+
         private int _nivelAcceso;
         public int NivelAcceso
         {
@@ -176,20 +152,47 @@ namespace Backend
                     throw new ArgumentException("El nivel de acceso mínimo es 1.");
                 if (value > 5)
                     throw new ArgumentException("El nivel de acceso máximo es 5.");
+                if (value % 1 != 0)
+                    throw new ArgumentException("El nivel de acceso debe ser un número entero.");
                 if (value == 0)
                     throw new ArgumentException("El nivel de acceso no puede ser 0.");
                 if (value < 3 && ZonaAsignada != null && ZonaAsignada.ToLower().Contains("vip"))
                     throw new ArgumentException("Zona VIP requiere nivel de acceso 3 o superior.");
+                if (value > 5)
+                    throw new ArgumentException("Nivel de acceso fuera de rango lógico.");
                 if (value < 0)
                     throw new ArgumentException("Nivel de acceso no puede ser negativo.");
-                if (value % 1 != 0)
-                    throw new ArgumentException("El nivel de acceso debe ser un número entero.");
 
                 _nivelAcceso = value;
             }
         }
 
-        // Propiedad Estado
+
+        private string _identificacion;
+        public string Identificacion
+        {
+            get => _identificacion;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("La identificación no puede estar vacía.");
+                if (value.Length < 6)
+                    throw new ArgumentException("La identificación debe tener al menos 6 caracteres.");
+                if (value.Length > 15)
+                    throw new ArgumentException("La identificación no puede tener más de 15 caracteres.");
+                if (!Regex.IsMatch(value, @"^[A-Z0-9]+$"))
+                    throw new ArgumentException("La identificación solo puede contener letras mayúsculas y números.");
+                if (value.Contains(" "))
+                    throw new ArgumentException("La identificación no puede contener espacios.");
+                if (value.StartsWith("0"))
+                    throw new ArgumentException("La identificación no puede iniciar con 0.");
+                if (value.Any(char.IsLower))
+                    throw new ArgumentException("La identificación no puede contener letras minúsculas.");
+
+                _identificacion = value;
+            }
+        }
+
         private string _estado;
         public string Estado
         {
@@ -215,7 +218,32 @@ namespace Backend
             }
         }
 
-        // Métodos estáticos
+        private string _puesto;
+        public string Puesto
+        {
+            get => _puesto;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("El puesto no puede estar vacío.");
+                if (value.Length < 3)
+                    throw new ArgumentException("El puesto debe tener al menos 3 caracteres.");
+                if (value.Length > 30)
+                    throw new ArgumentException("El puesto no puede tener más de 30 caracteres.");
+                if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
+                    throw new ArgumentException("El puesto solo puede contener letras.");
+                if (value.Any(char.IsDigit))
+                    throw new ArgumentException("El puesto no puede contener números.");
+                if (value.StartsWith(" "))
+                    throw new ArgumentException("El puesto no puede iniciar con espacio.");
+                if (value.EndsWith(" "))
+                    throw new ArgumentException("El puesto no puede terminar con espacio.");
+
+                _puesto = value;
+            }
+        }
+
+
         private static string filePath = "seguridad.json";
 
         public static void Guardar(Seguridad obj)
