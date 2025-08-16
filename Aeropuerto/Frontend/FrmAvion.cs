@@ -6,6 +6,8 @@ namespace Frontend
 {
     public partial class FrmAvion : Form
     {
+        private bool expandido = false;
+
         public FrmAvion()
         {
             InitializeComponent();
@@ -13,6 +15,8 @@ namespace Frontend
             butEditar.Click += butEditar_Click;
             buteliminar.Click += buteliminar_Click;
             botBuscar.Click += botBuscar_Click;
+            Butdata.Click += Butdata_Click;
+            CargarGrid();
         }
 
         private void butGuardar_Click(object sender, EventArgs e)
@@ -23,6 +27,7 @@ namespace Frontend
                 Backend.Avion.Guardar(av);
                 MessageBox.Show("Avión guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarCampos();
+                CargarGrid();
             }
             catch (ArgumentException ex)
             {
@@ -60,6 +65,7 @@ namespace Frontend
 
                 MessageBox.Show("Avión editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarCampos();
+                CargarGrid();
             }
             catch (ArgumentException ex)
             {
@@ -97,6 +103,7 @@ namespace Frontend
                     Backend.Avion.GuardarLista(lista);
                     MessageBox.Show("Avión eliminado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
+                    CargarGrid();
                 }
             }
             catch (Exception ex)
@@ -128,12 +135,13 @@ namespace Frontend
                 texmodelo.Text = av.Modelo;
                 nupdCapacidad.Value = av.Capacidad;
                 texfabricante.Text = av.Fabricante;
-                nupdfabricacion.Value = av.AnioFabricacion;
+                dtpfabricacion.Value = new DateTime(av.AnioFabricacion, 1, 1); // solo el año
                 cbEstado.Text = av.Estado;
-                tematricula.Text = av.Matricula;
+                texmatricula.Text = av.Matricula;
                 cbmotor.Text = av.Motor;
 
-                MessageBox.Show("Avión cargado.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dgvDatos.DataSource = null;
+                dgvDatos.DataSource = new[] { av };
             }
             catch (Exception ex)
             {
@@ -150,9 +158,9 @@ namespace Frontend
                 Modelo = (texmodelo.Text ?? "").Trim(),
                 Capacidad = (int)nupdCapacidad.Value,
                 Fabricante = (texfabricante.Text ?? "").Trim(),
-                AnioFabricacion = (int)nupdfabricacion.Value,
+                AnioFabricacion = dtpfabricacion.Value.Year,
                 Estado = cbEstado.Text.Trim(),
-                Matricula = (tematricula.Text ?? "").Trim().ToUpper(),
+                Matricula = (texmatricula.Text ?? "").Trim().ToUpper(),
                 Motor = (cbmotor.Text ?? "").Trim()
             };
             return av;
@@ -164,11 +172,37 @@ namespace Frontend
             texmodelo.Clear();
             nupdCapacidad.Value = 0;
             texfabricante.Clear();
-            nupdfabricacion.Value = DateTime.Now.Year;
+            dtpfabricacion.Value = DateTime.Now;
             cbEstado.SelectedIndex = -1;
-            tematricula.Clear();
+            texmatricula.Clear();
             cbmotor.SelectedIndex = -1;
             textID.Focus();
+        }
+
+        private void CargarGrid()
+        {
+            var lista = Backend.Avion.Leer();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = lista;
+        }
+
+        private void Butdata_Click(object sender, EventArgs e)
+        {
+            if (!expandido)
+            {
+                dgvDatos.Dock = DockStyle.Fill;
+                dgvDatos.BringToFront();
+                expandido = true;
+                lbdata.Text = "Restaurar";
+            }
+            else
+            {
+                dgvDatos.Dock = DockStyle.None;
+                dgvDatos.Size = new System.Drawing.Size(600, 200);
+                dgvDatos.Location = new System.Drawing.Point(100, 300);
+                expandido = false;
+                lbdata.Text = "DataGridView";
+            }
         }
     }
 }

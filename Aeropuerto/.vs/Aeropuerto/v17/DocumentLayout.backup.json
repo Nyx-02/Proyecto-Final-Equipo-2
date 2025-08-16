@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmseguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmseguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmavion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmavion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmseguridad.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmseguridad.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmavion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmavion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmseguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmseguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmavion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmavion.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5431FA1A-82A3-4389-A6C9-2E993C8F50F8}|Backend\\Backend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\backend\\seguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5431FA1A-82A3-4389-A6C9-2E993C8F50F8}|Backend\\Backend.csproj|solutionrelative:backend\\seguridad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\frontend\\frmvuelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{43B5AF44-A28B-4AE3-A9C4-EE1823DF31C1}|Frontend\\Frontend.csproj|solutionrelative:frontend\\frmvuelo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5431FA1A-82A3-4389-A6C9-2E993C8F50F8}|Backend\\Backend.csproj|c:\\users\\default.laptop-t08j1vqh\\source\\repos\\nyx-02\\proyecto-final-equipo-2\\aeropuerto\\backend\\avion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5431FA1A-82A3-4389-A6C9-2E993C8F50F8}|Backend\\Backend.csproj|solutionrelative:backend\\avion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,66 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Seguridad.cs",
-              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Backend\\Seguridad.cs",
-              "RelativeDocumentMoniker": "Backend\\Seguridad.cs",
-              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Backend\\Seguridad.cs",
-              "RelativeToolTip": "Backend\\Seguridad.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T19:01:58.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FrmSeguridad.cs",
-              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmSeguridad.cs",
-              "RelativeDocumentMoniker": "Frontend\\FrmSeguridad.cs",
-              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmSeguridad.cs",
-              "RelativeToolTip": "Frontend\\FrmSeguridad.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Title": "FrmAvion.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmAvion.Designer.cs",
+              "RelativeDocumentMoniker": "Frontend\\FrmAvion.Designer.cs",
+              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmAvion.Designer.cs",
+              "RelativeToolTip": "Frontend\\FrmAvion.Designer.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwKQBAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T18:58:08.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmSeguridad.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmSeguridad.Designer.cs",
-              "RelativeDocumentMoniker": "Frontend\\FrmSeguridad.Designer.cs",
-              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmSeguridad.Designer.cs",
-              "RelativeToolTip": "Frontend\\FrmSeguridad.Designer.cs",
-              "ViewState": "AgIAAJoBAAAAAAAAAAAmwKMBAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T18:57:48.474Z",
+              "WhenOpened": "2025-08-16T19:30:35.849Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmSeguridad.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmSeguridad.cs",
-              "RelativeDocumentMoniker": "Frontend\\FrmSeguridad.cs",
-              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmSeguridad.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Frontend\\FrmSeguridad.cs [Dise\u00F1o]",
+              "Title": "FrmAvion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmAvion.cs",
+              "RelativeDocumentMoniker": "Frontend\\FrmAvion.cs",
+              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmAvion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Frontend\\FrmAvion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T18:56:29.268Z",
+              "WhenOpened": "2025-08-16T19:30:30.904Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FrmVuelo.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmVuelo.cs",
-              "RelativeDocumentMoniker": "Frontend\\FrmVuelo.cs",
-              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmVuelo.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Frontend\\FrmVuelo.cs [Dise\u00F1o]",
+              "DocumentIndex": 3,
+              "Title": "Avion.cs",
+              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Backend\\Avion.cs",
+              "RelativeDocumentMoniker": "Backend\\Avion.cs",
+              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Backend\\Avion.cs",
+              "RelativeToolTip": "Backend\\Avion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-16T18:50:53.779Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-08-16T19:30:27.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmAvion.cs",
+              "DocumentMoniker": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmAvion.cs",
+              "RelativeDocumentMoniker": "Frontend\\FrmAvion.cs",
+              "ToolTip": "C:\\Users\\default.LAPTOP-T08J1VQH\\source\\repos\\Nyx-02\\Proyecto-Final-Equipo-2\\Aeropuerto\\Frontend\\FrmAvion.cs",
+              "RelativeToolTip": "Frontend\\FrmAvion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAM8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-16T19:28:33.139Z",
+              "EditorCaption": ""
             }
           ]
         }

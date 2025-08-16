@@ -1,9 +1,8 @@
 ﻿using Backend;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Frontend
@@ -32,18 +31,19 @@ namespace Frontend
                 var seg = new Seguridad
                 {
                     Id = textID.Text.Trim(),
-                    IdEmpleado = texempleado.Text.Trim(),  
+                    IdEmpleado = texidempleado.Text.Trim(),
                     Puesto = texpuesto.Text.Trim(),
-                    Turno = cbclase.SelectedItem?.ToString() ?? cbclase.Text.Trim(),
-                    ZonaAsignada = texasiento.Text.Trim(),
-                    FechaInicio = dateTimePicker1.Value,
+                    Turno = cbturno.SelectedItem?.ToString() ?? cbturno.Text.Trim(),
+                    FechaIngreso = dtpfecha.Value,
+                    Observaciones = texobservaciones.Text.Trim(),
                     NivelAcceso = cbniveleacceso.SelectedIndex + 1,
-                    Estado = cbestado.SelectedItem?.ToString() ?? cbestado.Text.Trim(),
-                    Identificacion = texasiento.Text.Trim()
+                    Estado = cbestado.SelectedItem?.ToString() ?? cbestado.Text.Trim()
                 };
 
                 Seguridad.Guardar(seg);
-                MessageBox.Show("Registro de seguridad guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registro de seguridad guardado correctamente.", "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 LimpiarCampos();
                 CargarGrid();
             }
@@ -53,7 +53,8 @@ namespace Frontend
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al guardar: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -66,27 +67,30 @@ namespace Frontend
 
                 if (existente == null)
                 {
-                    MessageBox.Show("No se encontró un registro con ese ID.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encontró un registro con ese ID.", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                existente.IdEmpleado = texempleado.Text.Trim();  
+                existente.IdEmpleado = texidempleado.Text.Trim();
                 existente.Puesto = texpuesto.Text.Trim();
-                existente.Turno = cbclase.SelectedItem?.ToString() ?? cbclase.Text.Trim();
-                existente.ZonaAsignada = texasiento.Text.Trim();
-                existente.FechaInicio = dateTimePicker1.Value;
+                existente.Turno = cbturno.SelectedItem?.ToString() ?? cbturno.Text.Trim();
+                existente.FechaIngreso = dtpfecha.Value;
+                existente.Observaciones = texobservaciones.Text.Trim();
                 existente.NivelAcceso = cbniveleacceso.SelectedIndex + 1;
                 existente.Estado = cbestado.SelectedItem?.ToString() ?? cbestado.Text.Trim();
-                existente.Identificacion = texasiento.Text.Trim();
 
                 Seguridad.GuardarLista(lista);
-                MessageBox.Show("Registro editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registro editado correctamente.", "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 LimpiarCampos();
                 CargarGrid();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al editar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al editar: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -99,20 +103,24 @@ namespace Frontend
 
                 if (existente == null)
                 {
-                    MessageBox.Show("No se encontró un registro con ese ID.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encontró un registro con ese ID.", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
                 lista.Remove(existente);
                 Seguridad.GuardarLista(lista);
 
-                MessageBox.Show("Registro eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Registro eliminado correctamente.", "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 LimpiarCampos();
                 CargarGrid();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al eliminar: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -126,11 +134,11 @@ namespace Frontend
                 if (seg != null)
                 {
                     textID.Text = seg.Id;
-                    texempleado.Text = seg.IdEmpleado;   
+                    texidempleado.Text = seg.IdEmpleado;
                     texpuesto.Text = seg.Puesto;
-                    cbclase.SelectedItem = seg.Turno;
-                    texasiento.Text = seg.ZonaAsignada;
-                    dateTimePicker1.Value = seg.FechaInicio;
+                    cbturno.SelectedItem = seg.Turno;
+                    dtpfecha.Value = seg.FechaIngreso;
+                    texobservaciones.Text = seg.Observaciones;
                     cbniveleacceso.SelectedIndex = seg.NivelAcceso - 1;
                     cbestado.SelectedItem = seg.Estado;
 
@@ -139,14 +147,17 @@ namespace Frontend
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró un registro con ese ID.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("No se encontró un registro con ese ID.", "Aviso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     dgvDatos.DataSource = null;
                     dgvDatos.DataSource = lista;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al buscar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al buscar: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -172,11 +183,11 @@ namespace Frontend
         private void LimpiarCampos()
         {
             textID.Clear();
-            texempleado.Clear();
+            texidempleado.Clear();
             texpuesto.Clear();
-            cbclase.SelectedIndex = -1;
-            texasiento.Clear();
-            dateTimePicker1.Value = DateTime.Today;
+            cbturno.SelectedIndex = -1;
+            dtpfecha.Value = DateTime.Today;
+            texobservaciones.Clear();
             cbniveleacceso.SelectedIndex = -1;
             cbestado.SelectedIndex = -1;
         }

@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "2024110107",
+    "IdEmpleado": "2025110113",
+    "Puesto": "Guardia",
+    "Turno": "Noche",
+    "FechaIngreso": "2025-08-16T13:42:29.649",
+    "Observaciones": "Puesto Trasero",
+    "NivelAcceso": 2,
+    "Estado": "Pagado"
+  }
+]

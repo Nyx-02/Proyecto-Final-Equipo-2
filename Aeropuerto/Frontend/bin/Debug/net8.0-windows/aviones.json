@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "2024110107",
+    "Modelo": "Airbus",
+    "Capacidad": 50,
+    "Fabricante": "Hilton",
+    "AnioFabricacion": 2022,
+    "Estado": "En Mantenimiento",
+    "Matricula": "CB254413",
+    "Motor": "Turbofan"
+  }
+]

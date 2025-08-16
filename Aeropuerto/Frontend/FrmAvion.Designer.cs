@@ -50,14 +50,18 @@
             lbmatricula = new Label();
             lbestado = new Label();
             lbfabricacion = new Label();
-            tematricula = new TextBox();
+            texmatricula = new TextBox();
             lbmotoro = new Label();
             nupdCapacidad = new NumericUpDown();
             cbEstado = new ComboBox();
             cbmotor = new ComboBox();
-            dateTimePicker1 = new DateTimePicker();
+            dtpfabricacion = new DateTimePicker();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nupdCapacidad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -281,12 +285,12 @@
             lbfabricacion.Text = "Año de Fabricacion:";
             lbfabricacion.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tematricula
+            // texmatricula
             // 
-            tematricula.Location = new Point(461, 214);
-            tematricula.Name = "tematricula";
-            tematricula.Size = new Size(100, 23);
-            tematricula.TabIndex = 29;
+            texmatricula.Location = new Point(461, 214);
+            texmatricula.Name = "texmatricula";
+            texmatricula.Size = new Size(100, 23);
+            texmatricula.TabIndex = 29;
             // 
             // lbmotoro
             // 
@@ -324,12 +328,43 @@
             cbmotor.Size = new Size(121, 23);
             cbmotor.TabIndex = 37;
             // 
-            // dateTimePicker1
+            // dtpfabricacion
             // 
-            dateTimePicker1.Location = new Point(517, 125);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 38;
+            dtpfabricacion.Format = DateTimePickerFormat.Custom;
+            dtpfabricacion.Location = new Point(517, 125);
+            dtpfabricacion.Name = "dtpfabricacion";
+            dtpfabricacion.Size = new Size(200, 23);
+            dtpfabricacion.TabIndex = 38;
+            // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(689, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 46;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(706, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 45;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(731, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 44;
             // 
             // FrmAvion
             // 
@@ -339,12 +374,15 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
+            Controls.Add(dtpfabricacion);
             Controls.Add(cbmotor);
             Controls.Add(cbEstado);
             Controls.Add(nupdCapacidad);
             Controls.Add(lbmotoro);
-            Controls.Add(tematricula);
+            Controls.Add(texmatricula);
             Controls.Add(lbfabricacion);
             Controls.Add(lbestado);
             Controls.Add(lbmatricula);
@@ -370,6 +408,7 @@
             Text = "Gestion de Aviones";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdCapacidad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -398,11 +437,14 @@
         private Label lbestado;
         private Label lbfabricacion;
         private DateTimePicker DTPfechadeingreso;
-        private TextBox tematricula;
+        private TextBox texmatricula;
         private Label lbmotoro;
         private NumericUpDown nupdCapacidad;
         private ComboBox cbEstado;
         private ComboBox cbmotor;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpfabricacion;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }
