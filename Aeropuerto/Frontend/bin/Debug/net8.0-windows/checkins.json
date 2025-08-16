@@ -1,0 +1,11 @@
+[
+  {
+    "Id": "2024110107",
+    "IdReserva": "PR2025",
+    "IdPasajero": "BG2007",
+    "IdVuelo": "PRNEWTRAVEL",
+    "Facturado": "SI",
+    "Estado": "Completado",
+    "Fecha": "2025-08-15T00:00:00"
+  }
+]

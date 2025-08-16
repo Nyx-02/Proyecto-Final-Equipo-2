@@ -1,39 +1,47 @@
 ﻿using Backend;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Frontend
 {
     public partial class FrmCheckIn : Form
     {
+        private bool expandido = false;
+
         public FrmCheckIn()
         {
             InitializeComponent();
+
+            // Agregar opciones al ComboBox de Facturado
+            cbfacturado.Items.AddRange(new string[] { "SI", "NO" });
+
+            CargarGrid();
+
+            // Conectar eventos
+            Butdata.Click += Butdata_Click;
+            butGuardar.Click += butGuardar_Click;
+            butEditar.Click += butEditar_Click;
+            buteliminar.Click += buteliminar_Click;
+            botBuscar.Click += botBuscar_Click;
+            dgvDatos.CellContentClick += dgvDatos_CellContentClick;
         }
 
         private void butGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                var checkin = new CheckIn
-                {
-                    Id = textID.Text,
-                    IdReserva = texreserva.Text,
-                    IdPasajero = texempleado.Text,   
-                    IdVuelo = texmostrador.Text,     
-                    NumeroAsiento = cbfacturado.Text, 
-                    Estado = cbestado.Text,          
-                    Fecha = DTPfecha.Value           
-                };
-
-                CheckIn.Guardar(checkin);
-                MessageBox.Show("Check-in guardado correctamente.");
+                var c = ConstruirDesdeFormulario();
+                CheckIn.Guardar(c);
+                MessageBox.Show("Check-in guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarCampos();
+                CargarGrid();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al guardar: {ex.Message}");
+                MessageBox.Show("Error al guardar: " + ex.Message, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -41,29 +49,30 @@ namespace Frontend
         {
             try
             {
-                List<CheckIn> lista = CheckIn.Leer();
-                var checkin = lista.Find(c => c.Id == textID.Text);
+                string id = textID.Text.Trim().ToUpper();
+                var lista = CheckIn.Leer();
+                var existente = lista.FirstOrDefault(x => x.Id == id);
 
-                if (checkin != null)
+                if (existente != null)
                 {
-                    checkin.IdReserva = texreserva.Text;
-                    checkin.IdPasajero = texempleado.Text;
-                    checkin.IdVuelo = texmostrador.Text;
-                    checkin.NumeroAsiento = cbfacturado.Text;
-                    checkin.Estado = cbestado.Text;
-                    checkin.Fecha = DTPfecha.Value;
+                    var actualizado = ConstruirDesdeFormulario();
+                    actualizado.Id = id;
+                    int idx = lista.FindIndex(x => x.Id == id);
+                    lista[idx] = actualizado;
 
-                    GuardarLista(lista);
-                    MessageBox.Show("Check-in editado correctamente.");
+                    CheckIn.GuardarLista(lista);
+                    MessageBox.Show("Check-in editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+                    CargarGrid();
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró un check-in con ese ID.");
+                    MessageBox.Show("Check-in no encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al editar: {ex.Message}");
+                MessageBox.Show("Error al editar: " + ex.Message, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -71,24 +80,26 @@ namespace Frontend
         {
             try
             {
-                List<CheckIn> lista = CheckIn.Leer();
-                var checkin = lista.Find(c => c.Id == textID.Text);
+                string id = textID.Text.Trim().ToUpper();
+                var lista = CheckIn.Leer();
+                var existente = lista.FirstOrDefault(x => x.Id == id);
 
-                if (checkin != null)
+                if (existente != null)
                 {
-                    lista.Remove(checkin);
-                    GuardarLista(lista);
-                    MessageBox.Show("Check-in eliminado correctamente.");
+                    lista.Remove(existente);
+                    CheckIn.GuardarLista(lista);
+                    MessageBox.Show("Check-in eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
+                    CargarGrid();
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró un check-in con ese ID.");
+                    MessageBox.Show("Check-in no encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al eliminar: {ex.Message}");
+                MessageBox.Show("Error al eliminar: " + ex.Message, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -96,26 +107,52 @@ namespace Frontend
         {
             try
             {
-                List<CheckIn> lista = CheckIn.Leer();
-                var checkin = lista.Find(c => c.Id == textID.Text);
+                string id = textID.Text.Trim().ToUpper();
+                var lista = CheckIn.Leer();
+                var c = lista.FirstOrDefault(x => x.Id == id);
 
-                if (checkin != null)
+                if (c != null)
                 {
-                    texreserva.Text = checkin.IdReserva;
-                    texempleado.Text = checkin.IdPasajero;
-                    texmostrador.Text = checkin.IdVuelo;
-                    cbfacturado.Text = checkin.NumeroAsiento;
-                    cbestado.Text = checkin.Estado;
-                    DTPfecha.Value = checkin.Fecha;
+                    textID.Text = c.Id;
+                    texreserva.Text = c.IdReserva;
+                    texempleado.Text = c.IdPasajero;
+                    texmostrador.Text = c.IdVuelo;
+                    cbfacturado.Text = c.Facturado;
+                    cbestado.Text = c.Estado;
+                    DTPfecha.Value = c.Fecha;
+
+                    // Mostrar solo este registro en el DataGridView
+                    dgvDatos.DataSource = null;
+                    dgvDatos.DataSource = new List<CheckIn> { c };
                 }
                 else
                 {
-                    MessageBox.Show("No se encontró un check-in con ese ID.");
+                    MessageBox.Show("Check-in no encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarGrid();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al buscar: {ex.Message}");
+                MessageBox.Show("Error al buscar: " + ex.Message, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void Butdata_Click(object sender, EventArgs e)
+        {
+            if (!expandido)
+            {
+                dgvDatos.Dock = DockStyle.Fill;
+                dgvDatos.BringToFront();
+                expandido = true;
+                lbdata.Text = "Restaurar";
+            }
+            else
+            {
+                dgvDatos.Dock = DockStyle.None;
+                dgvDatos.Size = new Size(600, 200);
+                dgvDatos.Location = new Point(100, 300);
+                expandido = false;
+                lbdata.Text = "DataGridView";
             }
         }
 
@@ -125,15 +162,49 @@ namespace Frontend
             texreserva.Clear();
             texempleado.Clear();
             texmostrador.Clear();
-            cbfacturado.SelectedIndex = -1; // porque es combo
+            cbfacturado.SelectedIndex = -1;
             cbestado.SelectedIndex = -1;
             DTPfecha.Value = DateTime.Today;
+            textID.Focus();
         }
 
-        private void GuardarLista(List<CheckIn> lista)
+        private void CargarGrid()
         {
-            string json = System.Text.Json.JsonSerializer.Serialize(lista, new System.Text.Json.JsonSerializerOptions { WriteIndented = true });
-            System.IO.File.WriteAllText("checkins.json", json);
+            List<CheckIn> lista = CheckIn.Leer();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = lista;
+        }
+
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var fila = dgvDatos.Rows[e.RowIndex].DataBoundItem as CheckIn;
+                if (fila != null)
+                {
+                    textID.Text = fila.Id;
+                    texreserva.Text = fila.IdReserva;
+                    texempleado.Text = fila.IdPasajero;
+                    texmostrador.Text = fila.IdVuelo;
+                    cbfacturado.Text = fila.Facturado;
+                    cbestado.Text = fila.Estado;
+                    DTPfecha.Value = fila.Fecha;
+                }
+            }
+        }
+
+        private CheckIn ConstruirDesdeFormulario()
+        {
+            return new CheckIn
+            {
+                Id = (textID.Text ?? "").Trim().ToUpper(),
+                IdReserva = (texreserva.Text ?? "").Trim().ToUpper(),
+                IdPasajero = (texempleado.Text ?? "").Trim().ToUpper(),
+                IdVuelo = (texmostrador.Text ?? "").Trim().ToUpper(),
+                Facturado = (cbfacturado.Text ?? "").Trim().ToUpper(),
+                Estado = (cbestado.Text ?? "").Trim(),
+                Fecha = DTPfecha.Value.Date
+            };
         }
     }
 }

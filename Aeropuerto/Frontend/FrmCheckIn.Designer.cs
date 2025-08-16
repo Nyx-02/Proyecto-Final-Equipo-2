@@ -52,11 +52,15 @@
             lbestado = new Label();
             cbestado = new ComboBox();
             texempleado = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            DTPhora = new DateTimePicker();
             DTPfecha = new DateTimePicker();
             cbfacturado = new ComboBox();
             texmostrador = new TextBox();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -299,13 +303,13 @@
             texempleado.Size = new Size(100, 23);
             texempleado.TabIndex = 38;
             // 
-            // dateTimePicker1
+            // DTPhora
             // 
-            dateTimePicker1.Format = DateTimePickerFormat.Time;
-            dateTimePicker1.Location = new Point(461, 127);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 39;
+            DTPhora.Format = DateTimePickerFormat.Time;
+            DTPhora.Location = new Point(461, 127);
+            DTPhora.Name = "DTPhora";
+            DTPhora.Size = new Size(200, 23);
+            DTPhora.TabIndex = 39;
             // 
             // DTPfecha
             // 
@@ -317,7 +321,6 @@
             // cbfacturado
             // 
             cbfacturado.FormattingEnabled = true;
-            cbfacturado.Items.AddRange(new object[] { "Si ", "No" });
             cbfacturado.Location = new Point(528, 211);
             cbfacturado.Name = "cbfacturado";
             cbfacturado.Size = new Size(100, 23);
@@ -330,6 +333,36 @@
             texmostrador.Size = new Size(100, 23);
             texmostrador.TabIndex = 41;
             // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(694, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 67;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(711, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 66;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(736, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 65;
+            // 
             // FrmCheckIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -338,9 +371,12 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
             Controls.Add(texmostrador);
             Controls.Add(DTPfecha);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(DTPhora);
             Controls.Add(texempleado);
             Controls.Add(cbestado);
             Controls.Add(cbfacturado);
@@ -368,6 +404,7 @@
             Name = "FrmCheckIn";
             Text = "Gestion de CheckIn";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -398,9 +435,12 @@
         private Label lbestado;
         private ComboBox cbestado;
         private TextBox texempleado;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DTPhora;
         private DateTimePicker DTPfecha;
         private ComboBox cbfacturado;
         private TextBox texmostrador;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }

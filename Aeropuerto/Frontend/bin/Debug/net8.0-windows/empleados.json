@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "2024110107",
+    "Nombre": "Bryan",
+    "Apellido": "Galo",
+    "Cargo": "Guardia",
+    "Salario": 100,
+    "Turno": "Noche",
+    "FechaIngreso": "2025-08-04T00:00:00",
+    "Email": "bgaloc.rabs@gmail.com"
+  }
+]

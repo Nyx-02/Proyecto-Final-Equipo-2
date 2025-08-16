@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "2024110107",
+    "IdPasajero": "BG2007",
+    "Peso": 20,
+    "Tipo": "Facturado",
+    "Color": "Azul",
+    "Dimensiones": "25x30x20",
+    "Etiqueta": "PERSONA3",
+    "Estado": "Registrado"
+  }
+]

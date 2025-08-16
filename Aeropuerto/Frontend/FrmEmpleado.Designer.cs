@@ -45,19 +45,23 @@
             lbApellido = new Label();
             LabCargo = new Label();
             textID = new TextBox();
-            texDestino = new TextBox();
+            texnombre = new TextBox();
             texCargo = new TextBox();
-            textBox4 = new TextBox();
+            texapellido = new TextBox();
             lbemail = new Label();
             lbIngreso = new Label();
             lbturno = new Label();
             lbSalario = new Label();
             DTPfechadeingreso = new DateTimePicker();
-            textBox2 = new TextBox();
+            texemail = new TextBox();
             nupdsalario = new NumericUpDown();
             cbturno = new ComboBox();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nupdsalario).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -234,12 +238,12 @@
             textID.Size = new Size(100, 23);
             textID.TabIndex = 18;
             // 
-            // texDestino
+            // texnombre
             // 
-            texDestino.Location = new Point(256, 170);
-            texDestino.Name = "texDestino";
-            texDestino.Size = new Size(100, 23);
-            texDestino.TabIndex = 19;
+            texnombre.Location = new Point(256, 170);
+            texnombre.Name = "texnombre";
+            texnombre.Size = new Size(100, 23);
+            texnombre.TabIndex = 19;
             // 
             // texCargo
             // 
@@ -248,12 +252,12 @@
             texCargo.Size = new Size(100, 23);
             texCargo.TabIndex = 20;
             // 
-            // textBox4
+            // texapellido
             // 
-            textBox4.Location = new Point(256, 211);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 21;
+            texapellido.Location = new Point(256, 211);
+            texapellido.Name = "texapellido";
+            texapellido.Size = new Size(100, 23);
+            texapellido.TabIndex = 21;
             // 
             // lbemail
             // 
@@ -306,12 +310,12 @@
             DTPfechadeingreso.Size = new Size(200, 23);
             DTPfechadeingreso.TabIndex = 27;
             // 
-            // textBox2
+            // texemail
             // 
-            textBox2.Location = new Point(461, 209);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 29;
+            texemail.Location = new Point(461, 209);
+            texemail.Name = "texemail";
+            texemail.Size = new Size(100, 23);
+            texemail.TabIndex = 29;
             // 
             // nupdsalario
             // 
@@ -329,6 +333,36 @@
             cbturno.Size = new Size(121, 23);
             cbturno.TabIndex = 33;
             // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(688, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 64;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(705, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 63;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(730, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 62;
+            // 
             // FrmEmpleado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -337,17 +371,20 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
             Controls.Add(cbturno);
             Controls.Add(nupdsalario);
-            Controls.Add(textBox2);
+            Controls.Add(texemail);
             Controls.Add(DTPfechadeingreso);
             Controls.Add(lbSalario);
             Controls.Add(lbturno);
             Controls.Add(lbIngreso);
             Controls.Add(lbemail);
-            Controls.Add(textBox4);
+            Controls.Add(texapellido);
             Controls.Add(texCargo);
-            Controls.Add(texDestino);
+            Controls.Add(texnombre);
             Controls.Add(textID);
             Controls.Add(LabCargo);
             Controls.Add(lbApellido);
@@ -368,6 +405,7 @@
             Text = "Gestion de Empleados";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdsalario).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -389,16 +427,19 @@
         private Label lbApellido;
         private Label LabCargo;
         private TextBox textID;
-        private TextBox texDestino;
+        private TextBox texnombre;
         private TextBox texCargo;
-        private TextBox textBox4;
+        private TextBox texapellido;
         private Label lbemail;
         private Label lbIngreso;
         private Label lbturno;
         private Label lbSalario;
         private DateTimePicker DTPfechadeingreso;
-        private TextBox textBox2;
+        private TextBox texemail;
         private NumericUpDown nupdsalario;
         private ComboBox cbturno;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }

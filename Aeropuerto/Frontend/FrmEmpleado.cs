@@ -1,14 +1,23 @@
-﻿using System;
+﻿using Backend;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Frontend
 {
     public partial class FrmEmpleado : Form
     {
+        private bool expandido = false;
+
         public FrmEmpleado()
         {
             InitializeComponent();
+            CargarGrid();
+
+            // Conectar eventos
+            Butdata.Click += Butdata_Click;
             butGuardar.Click += butGuardar_Click;
             butEditar.Click += butEditar_Click;
             buteliminar.Click += buteliminar_Click;
@@ -20,9 +29,11 @@ namespace Frontend
             try
             {
                 var emp = ConstruirDesdeFormulario();
-                Backend.Empleado.Guardar(emp);
+                Empleado.Guardar(emp);
+
                 MessageBox.Show("Empleado guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarCampos();
+                CargarGrid();
             }
             catch (ArgumentException ex)
             {
@@ -39,31 +50,24 @@ namespace Frontend
             try
             {
                 string id = textID.Text.Trim().ToUpper();
-                if (string.IsNullOrWhiteSpace(id))
-                {
-                    MessageBox.Show("Ingrese el ID para editar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                var lista = Empleado.Leer();
+                var emp = lista.FirstOrDefault(x => x.Id == id);
 
-                var lista = Backend.Empleado.Leer();
-                int idx = lista.FindIndex(x => x.Id == id);
-                if (idx < 0)
+                if (emp != null)
+                {
+                    var actualizado = ConstruirDesdeFormulario();
+                    actualizado.Id = id;
+                    lista[lista.IndexOf(emp)] = actualizado;
+                    Empleado.GuardarLista(lista);
+
+                    MessageBox.Show("Empleado editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LimpiarCampos();
+                    CargarGrid();
+                }
+                else
                 {
                     MessageBox.Show("No se encontró un empleado con ese ID.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
                 }
-
-                var actualizado = ConstruirDesdeFormulario();
-                actualizado.Id = id;
-                lista[idx] = actualizado;
-                Backend.Empleado.GuardarLista(lista);
-
-                MessageBox.Show("Empleado editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimpiarCampos();
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message, "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
@@ -76,27 +80,21 @@ namespace Frontend
             try
             {
                 string id = textID.Text.Trim().ToUpper();
-                if (string.IsNullOrWhiteSpace(id))
-                {
-                    MessageBox.Show("Ingrese el ID para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                var lista = Empleado.Leer();
+                var emp = lista.FirstOrDefault(x => x.Id == id);
 
-                var lista = Backend.Empleado.Leer();
-                var existente = lista.FirstOrDefault(x => x.Id == id);
-                if (existente == null)
+                if (emp != null)
+                {
+                    lista.Remove(emp);
+                    Empleado.GuardarLista(lista);
+                    MessageBox.Show("Empleado eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LimpiarCampos();
+                    CargarGrid();
+                }
+                else
                 {
                     MessageBox.Show("No se encontró un empleado con ese ID.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                var confirm = MessageBox.Show($"¿Seguro que desea eliminar al empleado {existente.MostrarInfo()}?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (confirm == DialogResult.Yes)
-                {
-                    lista.RemoveAll(x => x.Id == id);
-                    Backend.Empleado.GuardarLista(lista);
-                    MessageBox.Show("Empleado eliminado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LimpiarCampos();
                 }
             }
             catch (Exception ex)
@@ -110,30 +108,33 @@ namespace Frontend
             try
             {
                 string id = textID.Text.Trim().ToUpper();
-                if (string.IsNullOrWhiteSpace(id))
-                {
-                    MessageBox.Show("Ingrese el ID para buscar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                var lista = Backend.Empleado.Leer();
+                var lista = Empleado.Leer();
                 var emp = lista.FirstOrDefault(x => x.Id == id);
-                if (emp == null)
+
+                if (emp != null)
                 {
-                    MessageBox.Show("No se encontró un empleado con ese ID.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    textID.Text = emp.Id;
+                    texnombre.Text = emp.Nombre;
+                    texapellido.Text = emp.Apellido;
+                    texCargo.Text = emp.Cargo;
+                    nupdsalario.Value = emp.Salario;
+                    cbturno.Text = emp.Turno;
+                    DTPfechadeingreso.Value = emp.FechaIngreso;
+                    texemail.Text = emp.Email;
+
+                    // Mostrar solo este empleado en el grid
+                    dgvDatos.DataSource = null;
+                    dgvDatos.DataSource = new List<Empleado> { emp };
+
+                    MessageBox.Show("Empleado encontrado.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Empleado no encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                textID.Text = emp.Id;
-                texDestino.Text = emp.Nombre;
-                textBox4.Text = emp.Apellido;
-                texCargo.Text = emp.Cargo;
-                nupdsalario.Value = emp.Salario;
-                cbturno.Text = emp.Turno;
-                DTPfechadeingreso.Value = emp.FechaIngreso;
-                textBox2.Text = emp.Email;
-
-                MessageBox.Show("Empleado cargado.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvDatos.DataSource = null;
+                    dgvDatos.DataSource = lista;
+                }
             }
             catch (Exception ex)
             {
@@ -141,34 +142,57 @@ namespace Frontend
             }
         }
 
-        private Backend.Empleado ConstruirDesdeFormulario()
+        private void Butdata_Click(object sender, EventArgs e)
         {
-            var id = (textID.Text ?? "").Trim().ToUpper();
-            var emp = new Backend.Empleado
+            if (!expandido)
             {
-                Id = id,
-                Nombre = (texDestino.Text ?? "").Trim(),
-                Apellido = (textBox4.Text ?? "").Trim(),
-                Cargo = (texCargo.Text ?? "").Trim(),
+                dgvDatos.Dock = DockStyle.Fill;
+                dgvDatos.BringToFront();
+                expandido = true;
+                lbdata.Text = "Restaurar";
+            }
+            else
+            {
+                dgvDatos.Dock = DockStyle.None;
+                dgvDatos.Size = new Size(600, 200);
+                dgvDatos.Location = new Point(100, 300);
+                expandido = false;
+                lbdata.Text = "DataGridView";
+            }
+        }
+
+        private Empleado ConstruirDesdeFormulario()
+        {
+            return new Empleado
+            {
+                Id = textID.Text.Trim().ToUpper(),
+                Nombre = texnombre.Text.Trim(),
+                Apellido = texapellido.Text.Trim(),
+                Cargo = texCargo.Text.Trim(),
                 Salario = nupdsalario.Value,
                 Turno = cbturno.Text.Trim(),
                 FechaIngreso = DTPfechadeingreso.Value.Date,
-                Email = (textBox2.Text ?? "").Trim()
+                Email = texemail.Text.Trim()
             };
-            return emp;
         }
 
         private void LimpiarCampos()
         {
             textID.Clear();
-            texDestino.Clear();
-            textBox4.Clear();
+            texnombre.Clear();
+            texapellido.Clear();
             texCargo.Clear();
             nupdsalario.Value = 0;
             cbturno.SelectedIndex = -1;
             DTPfechadeingreso.Value = DateTime.Today;
-            textBox2.Clear();
-            textID.Focus();
+            texemail.Clear();
+        }
+
+        private void CargarGrid()
+        {
+            List<Empleado> lista = Empleado.Leer();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = lista;
         }
     }
 }
