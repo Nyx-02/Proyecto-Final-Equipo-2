@@ -9,232 +9,209 @@ namespace Backend
 {
     public class Pasajero
     {
-        // Propiedad Id
+        // ====== 8 PROPIEDADES CON VALIDACIONES ======
         public string Id
         {
             get => _id;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El ID no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El ID no puede estar vacío.");
                 if (value.Length < 3)
-                    throw new ArgumentException("El ID debe tener al menos 3 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El ID debe tener al menos 3 caracteres.");
                 if (value.Length > 10)
-                    throw new ArgumentException("El ID no puede tener más de 10 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El ID no puede tener más de 10 caracteres.");
                 if (!Regex.IsMatch(value, @"^[A-Za-z0-9]+$"))
-                    throw new ArgumentException("El ID solo puede contener letras y números."); // Solo alfanumérico
+                    throw new ArgumentException("El ID solo puede contener letras y números.");
                 if (value.Contains(" "))
-                    throw new ArgumentException("El ID no puede contener espacios."); // Sin espacios
+                    throw new ArgumentException("El ID no puede contener espacios.");
                 if (value.StartsWith("0"))
-                    throw new ArgumentException("El ID no puede iniciar con 0."); // No iniciar con cero
+                    throw new ArgumentException("El ID no puede iniciar con 0.");
                 if (value != value.ToUpper())
-                    throw new ArgumentException("El ID debe estar en mayúsculas."); // Solo mayúsculas
-
+                    throw new ArgumentException("El ID debe estar en mayúsculas.");
                 _id = value;
             }
         }
         private string _id;
 
-        // Propiedad Nombre
         public string Nombre
         {
             get => _nombre;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El nombre no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El nombre no puede estar vacío.");
                 if (value.Length < 2)
-                    throw new ArgumentException("El nombre debe tener al menos 2 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El nombre debe tener al menos 2 caracteres.");
                 if (value.Length > 50)
-                    throw new ArgumentException("El nombre no puede tener más de 50 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El nombre no puede tener más de 50 caracteres.");
                 if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
-                    throw new ArgumentException("El nombre solo puede contener letras."); // Solo letras
+                    throw new ArgumentException("El nombre solo puede contener letras.");
                 if (value.Any(char.IsDigit))
-                    throw new ArgumentException("El nombre no puede contener números."); // Sin números
-                if (value.StartsWith(" "))
-                    throw new ArgumentException("El nombre no puede iniciar con espacio."); // Sin espacio inicial
-                if (value.EndsWith(" "))
-                    throw new ArgumentException("El nombre no puede terminar con espacio."); // Sin espacio final
-
+                    throw new ArgumentException("El nombre no puede contener números.");
+                if (value.StartsWith(" ") || value.EndsWith(" "))
+                    throw new ArgumentException("El nombre no puede iniciar/terminar con espacio.");
                 _nombre = value;
             }
         }
         private string _nombre;
 
-        // Propiedad Apellido
         public string Apellido
         {
             get => _apellido;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El apellido no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El apellido no puede estar vacío.");
                 if (value.Length < 2)
-                    throw new ArgumentException("El apellido debe tener al menos 2 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El apellido debe tener al menos 2 caracteres.");
                 if (value.Length > 50)
-                    throw new ArgumentException("El apellido no puede tener más de 50 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El apellido no puede tener más de 50 caracteres.");
                 if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
-                    throw new ArgumentException("El apellido solo puede contener letras."); // Solo letras
+                    throw new ArgumentException("El apellido solo puede contener letras.");
                 if (value.Any(char.IsDigit))
-                    throw new ArgumentException("El apellido no puede contener números."); // Sin números
-                if (value.StartsWith(" "))
-                    throw new ArgumentException("El apellido no puede iniciar con espacio."); // Sin espacio inicial
-                if (value.EndsWith(" "))
-                    throw new ArgumentException("El apellido no puede terminar con espacio."); // Sin espacio final
-
+                    throw new ArgumentException("El apellido no puede contener números.");
+                if (value.StartsWith(" ") || value.EndsWith(" "))
+                    throw new ArgumentException("El apellido no puede iniciar/terminar con espacio.");
                 _apellido = value;
             }
         }
         private string _apellido;
 
-        // Propiedad FechaNacimiento
         public DateTime FechaNacimiento
         {
             get => _fechaNacimiento;
             set
             {
-                if (value == default)
-                    throw new ArgumentException("La fecha de nacimiento no puede estar vacía."); // No vacío
-                if (value.Year < 1900)
-                    throw new ArgumentException("La fecha de nacimiento no puede ser anterior a 1900."); // Año mínimo
-                if (value > DateTime.Today)
-                    throw new ArgumentException("La fecha de nacimiento no puede ser en el futuro."); // Sin fecha futura
-                if ((DateTime.Today.Year - value.Year) < 0)
-                    throw new ArgumentException("Edad inválida."); // Lógica de edad
-                if ((DateTime.Today.Year - value.Year) > 120)
-                    throw new ArgumentException("Edad demasiado alta."); // Edad máxima
-                if (value.Month < 1 || value.Month > 12)
-                    throw new ArgumentException("Mes inválido."); // Mes válido
-                if (value.Day < 1 || value.Day > DateTime.DaysInMonth(value.Year, value.Month))
-                    throw new ArgumentException("Día inválido para el mes indicado."); // Día válido
-
+                if (value == default) throw new ArgumentException("La fecha de nacimiento no puede estar vacía.");
+                if (value.Year < 1900) throw new ArgumentException("La fecha de nacimiento no puede ser anterior a 1900.");
+                if (value > DateTime.Today) throw new ArgumentException("La fecha de nacimiento no puede ser en el futuro.");
+                var edad = DateTime.Today.Year - value.Year - (DateTime.Today.Date < value.Date.AddYears(DateTime.Today.Year - value.Year) ? 1 : 0);
+                if (edad < 0) throw new ArgumentException("Edad inválida.");
+                if (edad > 120) throw new ArgumentException("Edad demasiado alta.");
                 _fechaNacimiento = value;
             }
         }
         private DateTime _fechaNacimiento;
 
-        // Propiedad Nacionalidad
         public string Nacionalidad
         {
             get => _nacionalidad;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("La nacionalidad no puede estar vacía."); // No vacío
+                    throw new ArgumentException("La nacionalidad no puede estar vacía.");
                 if (value.Length < 3)
-                    throw new ArgumentException("La nacionalidad debe tener al menos 3 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("La nacionalidad debe tener al menos 3 caracteres.");
                 if (value.Length > 50)
-                    throw new ArgumentException("La nacionalidad no puede tener más de 50 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("La nacionalidad no puede tener más de 50 caracteres.");
                 if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
-                    throw new ArgumentException("La nacionalidad solo puede contener letras."); // Solo letras
+                    throw new ArgumentException("La nacionalidad solo puede contener letras.");
                 if (value.Any(char.IsDigit))
-                    throw new ArgumentException("La nacionalidad no puede contener números."); // Sin números
-                if (value.StartsWith(" "))
-                    throw new ArgumentException("La nacionalidad no puede iniciar con espacio."); // Sin espacio inicial
-                if (value.EndsWith(" "))
-                    throw new ArgumentException("La nacionalidad no puede terminar con espacio."); // Sin espacio final
-
+                    throw new ArgumentException("La nacionalidad no puede contener números.");
+                if (value.StartsWith(" ") || value.EndsWith(" "))
+                    throw new ArgumentException("La nacionalidad no puede iniciar/terminar con espacio.");
                 _nacionalidad = value;
             }
         }
         private string _nacionalidad;
 
-        // Propiedad Pasaporte
         public string Pasaporte
         {
             get => _pasaporte;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El pasaporte no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El pasaporte no puede estar vacío.");
                 if (value.Length < 6)
-                    throw new ArgumentException("El pasaporte debe tener al menos 6 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El pasaporte debe tener al menos 6 caracteres.");
                 if (value.Length > 9)
-                    throw new ArgumentException("El pasaporte no puede tener más de 9 caracteres."); // Máximo de caracteres
+                    throw new ArgumentException("El pasaporte no puede tener más de 9 caracteres.");
                 if (!Regex.IsMatch(value, @"^[A-Za-z0-9]+$"))
-                    throw new ArgumentException("El pasaporte solo puede contener letras y números."); // Solo alfanumérico
+                    throw new ArgumentException("El pasaporte solo puede contener letras y números.");
                 if (value.Any(char.IsWhiteSpace))
-                    throw new ArgumentException("El pasaporte no puede contener espacios."); // Sin espacios
+                    throw new ArgumentException("El pasaporte no puede contener espacios.");
                 if (value != value.ToUpper())
-                    throw new ArgumentException("El pasaporte debe estar en mayúsculas."); // Solo mayúsculas
+                    throw new ArgumentException("El pasaporte debe estar en mayúsculas.");
                 if (value.StartsWith("0"))
-                    throw new ArgumentException("El pasaporte no puede iniciar con 0."); // No iniciar con cero
-
+                    throw new ArgumentException("El pasaporte no puede iniciar con 0.");
                 _pasaporte = value;
             }
         }
         private string _pasaporte;
 
-        // Propiedad Telefono
         public string Telefono
         {
             get => _telefono;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El teléfono no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El teléfono no puede estar vacío.");
                 if (!Regex.IsMatch(value, @"^[0-9]+$"))
-                    throw new ArgumentException("El teléfono solo puede contener números."); // Solo números
+                    throw new ArgumentException("El teléfono solo puede contener números.");
                 if (value.Length < 8)
-                    throw new ArgumentException("El teléfono debe tener al menos 8 dígitos."); // Mínimo de dígitos
+                    throw new ArgumentException("El teléfono debe tener al menos 8 dígitos.");
                 if (value.Length > 15)
-                    throw new ArgumentException("El teléfono no puede tener más de 15 dígitos."); // Máximo de dígitos
+                    throw new ArgumentException("El teléfono no puede tener más de 15 dígitos.");
                 if (value.StartsWith("0"))
-                    throw new ArgumentException("El teléfono no puede iniciar con 0."); // No iniciar con cero
+                    throw new ArgumentException("El teléfono no puede iniciar con 0.");
                 if (value.Contains(" "))
-                    throw new ArgumentException("El teléfono no puede contener espacios."); // Sin espacios
-                if (value.Any(char.IsLetter))
-                    throw new ArgumentException("El teléfono no puede contener letras."); // Sin letras
-
+                    throw new ArgumentException("El teléfono no puede contener espacios.");
                 _telefono = value;
             }
         }
         private string _telefono;
 
-        // Propiedad Email
         public string Email
         {
             get => _email;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El email no puede estar vacío."); // No vacío
+                    throw new ArgumentException("El email no puede estar vacío.");
                 if (value.Length < 5)
-                    throw new ArgumentException("El email debe tener al menos 5 caracteres."); // Mínimo de caracteres
+                    throw new ArgumentException("El email debe tener al menos 5 caracteres.");
                 if (value.Length > 100)
-                    throw new ArgumentException("El email no puede tener más de 100 caracteres."); // Máximo de caracteres
-                if (!value.Contains("@"))
-                    throw new ArgumentException("El email debe contener '@'."); // Contener arroba
-                if (!value.Contains("."))
-                    throw new ArgumentException("El email debe contener un punto."); // Contener punto
-                if (value.StartsWith(" "))
-                    throw new ArgumentException("El email no puede iniciar con espacio."); // Sin espacio inicial
-                if (value.EndsWith(" "))
-                    throw new ArgumentException("El email no puede terminar con espacio."); // Sin espacio final
-
+                    throw new ArgumentException("El email no puede tener más de 100 caracteres.");
+                if (!value.Contains("@") || !value.Contains("."))
+                    throw new ArgumentException("El email debe contener '@' y '.'.");
+                if (value.StartsWith(" ") || value.EndsWith(" "))
+                    throw new ArgumentException("El email no puede iniciar/terminar con espacio.");
                 _email = value;
             }
         }
         private string _email;
 
-        // Métodos estáticos
+        // ====== PERSISTENCIA ======
         private static string filePath = "pasajeros.json";
 
         public static void Guardar(Pasajero obj)
         {
-            List<Pasajero> lista = Leer();
+            var lista = Leer();
             lista.Add(obj);
-            string json = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(filePath, json);
+            GuardarLista(lista);
         }
 
         public static List<Pasajero> Leer()
         {
-            if (!File.Exists(filePath))
+            try
+            {
+                if (!File.Exists(filePath)) return new List<Pasajero>();
+                string json = File.ReadAllText(filePath);
+                if (string.IsNullOrWhiteSpace(json)) return new List<Pasajero>();
+                return JsonSerializer.Deserialize<List<Pasajero>>(json) ?? new List<Pasajero>();
+            }
+            catch
+            {
+                // Si hay corrupción en el JSON, devolvemos lista vacía para no romper la app
                 return new List<Pasajero>();
+            }
+        }
 
-            string json = File.ReadAllText(filePath);
-            return JsonSerializer.Deserialize<List<Pasajero>>(json);
+        public static void GuardarLista(List<Pasajero> lista)
+        {
+            string json = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(filePath, json);
         }
 
         public string MostrarInfo()

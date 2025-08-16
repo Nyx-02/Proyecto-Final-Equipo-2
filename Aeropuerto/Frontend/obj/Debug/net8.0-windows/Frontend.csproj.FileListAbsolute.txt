@@ -1,5 +1,4 @@
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.csproj.AssemblyReference.cache
-C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend..resources
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmAerolinea.resources
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmAvion.resources
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmCheckIn.resources
@@ -7,7 +6,6 @@ C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aer
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmEquipaje.resources
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmItinerario.resources
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmMantenimiento.resources
-C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmMenu.resources
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmPasajero.resources
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmPuertaEmbarque.resources
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmReserva.resources
@@ -19,3 +17,17 @@ C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aer
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.AssemblyInfo.cs
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.csproj.CoreCompileInputs.cache
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.sourcelink.json
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.FrmMenuPrincipal.resources
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\bin\Debug\net8.0-windows\Frontend.exe
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\bin\Debug\net8.0-windows\Frontend.deps.json
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\bin\Debug\net8.0-windows\Frontend.runtimeconfig.json
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\bin\Debug\net8.0-windows\Frontend.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\bin\Debug\net8.0-windows\Frontend.pdb
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\bin\Debug\net8.0-windows\Backend.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\bin\Debug\net8.0-windows\Backend.pdb
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.csproj.Up2Date
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\refint\Frontend.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.pdb
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.genruntimeconfig.cache
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\ref\Frontend.dll

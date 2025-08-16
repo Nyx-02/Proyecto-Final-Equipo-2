@@ -183,7 +183,6 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Aviones";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbId
             // 
@@ -206,7 +205,6 @@
             lbmodelo.TabIndex = 15;
             lbmodelo.Text = "Modelo:";
             lbmodelo.TextAlign = ContentAlignment.MiddleCenter;
-            lbmodelo.Click += lbDestino_Click;
             // 
             // lbcapacidad
             // 
@@ -371,7 +369,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmAvion";
             Text = "Gestion de Aviones";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdCapacidad).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdfabricacion).EndInit();

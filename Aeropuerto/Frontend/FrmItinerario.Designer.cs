@@ -181,7 +181,6 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Itinerario";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbId
             // 
@@ -204,7 +203,6 @@
             lbvuelo.TabIndex = 15;
             lbvuelo.Text = "ID Vuelo:";
             lbvuelo.TextAlign = ContentAlignment.MiddleCenter;
-            lbvuelo.Click += lbDestino_Click;
             // 
             // idactividades
             // 
@@ -367,7 +365,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmItinerario";
             Text = "Gestion de Itinerario";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ResumeLayout(false);
             PerformLayout();

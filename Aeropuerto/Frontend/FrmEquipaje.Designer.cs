@@ -182,7 +182,6 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Equipaje";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbId
             // 
@@ -205,7 +204,6 @@
             lbpasajero.TabIndex = 15;
             lbpasajero.Text = "ID Pasajero:";
             lbpasajero.TextAlign = ContentAlignment.MiddleCenter;
-            lbpasajero.Click += lbDestino_Click;
             // 
             // lbpeso
             // 
@@ -370,7 +368,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmEquipaje";
             Text = "Gestion de Equipaje";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdpeso).EndInit();
             ResumeLayout(false);

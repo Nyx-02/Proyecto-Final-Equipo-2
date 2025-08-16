@@ -182,7 +182,6 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Reservas";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbId
             // 
@@ -205,7 +204,6 @@
             lbpasajero.TabIndex = 15;
             lbpasajero.Text = "ID Pasajero:";
             lbpasajero.TextAlign = ContentAlignment.MiddleCenter;
-            lbpasajero.Click += lbDestino_Click;
             // 
             // lbvuelo
             // 
@@ -300,7 +298,6 @@
             nupdprecio.Name = "nupdprecio";
             nupdprecio.Size = new Size(100, 23);
             nupdprecio.TabIndex = 35;
-            nupdprecio.ValueChanged += nupdfabricacion_ValueChanged;
             // 
             // cbclase
             // 
@@ -371,7 +368,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmReserva";
             Text = "Gestion de Reservas";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdprecio).EndInit();
             ResumeLayout(false);

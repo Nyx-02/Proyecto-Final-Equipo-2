@@ -182,7 +182,6 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Mantenimiento";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbId
             // 
@@ -205,7 +204,6 @@
             idavion.TabIndex = 15;
             idavion.Text = "ID Avion:";
             idavion.TextAlign = ContentAlignment.MiddleCenter;
-            idavion.Click += lbDestino_Click;
             // 
             // lbestado
             // 
@@ -291,7 +289,6 @@
             cbmantenimiento.Name = "cbmantenimiento";
             cbmantenimiento.Size = new Size(121, 23);
             cbmantenimiento.TabIndex = 29;
-            cbmantenimiento.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // cbestado
             // 
@@ -371,7 +368,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmMantenimiento";
             Text = "Gestion de Mantenimiento";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdcosto).EndInit();
             ResumeLayout(false);

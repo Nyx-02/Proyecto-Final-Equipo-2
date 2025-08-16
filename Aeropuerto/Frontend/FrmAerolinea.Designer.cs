@@ -181,7 +181,6 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Aerolineas";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbId
             // 
@@ -204,7 +203,6 @@
             lbNombre.TabIndex = 15;
             lbNombre.Text = "Nombre:";
             lbNombre.TextAlign = ContentAlignment.MiddleCenter;
-            lbNombre.Click += lbDestino_Click;
             // 
             // lbpais
             // 
@@ -365,7 +363,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmAerolinea";
             Text = "Gestion de Aerolineas";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ResumeLayout(false);
             PerformLayout();

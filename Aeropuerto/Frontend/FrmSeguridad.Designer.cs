@@ -181,7 +181,7 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Seguridad";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
+
             // 
             // lbId
             // 
@@ -204,7 +204,6 @@
             lbpasajero.TabIndex = 15;
             lbpasajero.Text = "ID Empleado:";
             lbpasajero.TextAlign = ContentAlignment.MiddleCenter;
-            lbpasajero.Click += lbDestino_Click;
             // 
             // lbvuelo
             // 
@@ -371,7 +370,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmSeguridad";
             Text = "Gestion de Seguridad";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ResumeLayout(false);
             PerformLayout();

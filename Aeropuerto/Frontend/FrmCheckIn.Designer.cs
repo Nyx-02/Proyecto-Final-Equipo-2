@@ -180,8 +180,6 @@
             LabelTitulo.Size = new Size(242, 39);
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de CheckIn";
-            LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbId
             // 
@@ -204,7 +202,6 @@
             lbreserva.TabIndex = 15;
             lbreserva.Text = "ID Reserva:";
             lbreserva.TextAlign = ContentAlignment.MiddleCenter;
-            lbreserva.Click += lbDestino_Click;
             // 
             // lbempleado
             // 
@@ -369,7 +366,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmCheckIn";
             Text = "Gestion de CheckIn";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ResumeLayout(false);
             PerformLayout();

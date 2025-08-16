@@ -9,237 +9,181 @@ namespace Backend
 {
     public class PuertaEmbarque
     {
-        // Propiedad Id
+        private string _id;
+        private string _numero;
+        private string _terminal;
+        private string _estado;
+        private int _capacidad;
+        private string _ubicacion;
+        private DateTime _horarioApertura;
+        private DateTime _horarioCierre;
+
         public string Id
         {
             get => _id;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El ID no puede estar vacío."); // No vacío
-                if (value.Length < 3)
-                    throw new ArgumentException("El ID debe tener al menos 3 caracteres."); // Mínimo de caracteres
-                if (value.Length > 10)
-                    throw new ArgumentException("El ID no puede tener más de 10 caracteres."); // Máximo de caracteres
-                if (!Regex.IsMatch(value, @"^[A-Z0-9]+$"))
-                    throw new ArgumentException("El ID solo puede contener letras mayúsculas y números."); // Solo mayúsculas y números
-                if (value.Contains(" "))
-                    throw new ArgumentException("El ID no puede contener espacios."); // Sin espacios
-                if (value.StartsWith("0"))
-                    throw new ArgumentException("El ID no puede iniciar con 0."); // No iniciar con cero
-                if (value.Any(char.IsLower))
-                    throw new ArgumentException("El ID no puede contener letras minúsculas."); // Sin minúsculas
-
-                _id = value;
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("El ID no puede estar vacío.");
+                var v = value.Trim();
+                if (v.Length < 2) throw new ArgumentException("El ID debe tener al menos 2 caracteres.");
+                if (v.Length > 12) throw new ArgumentException("El ID no puede tener más de 12 caracteres.");
+                if (v.Contains(" ")) throw new ArgumentException("El ID no puede contener espacios.");
+                if (!Regex.IsMatch(v, @"^[A-Z0-9]+$")) throw new ArgumentException("El ID debe ser alfanumérico en mayúsculas.");
+                if (Regex.IsMatch(v, @"^\d+$")) throw new ArgumentException("El ID no puede ser solo números.");
+                if (v.StartsWith("0")) throw new ArgumentException("El ID no puede iniciar con 0.");
+                if (v != value) throw new ArgumentException("El ID no debe tener espacios al inicio o final.");
+                _id = v;
             }
         }
-        private string _id;
 
-        // Propiedad Numero
         public string Numero
         {
             get => _numero;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El número no puede estar vacío."); // No vacío
-                if (!Regex.IsMatch(value, @"^[0-9]+$"))
-                    throw new ArgumentException("El número solo puede contener dígitos."); // Solo números
-                if (value.Length < 1)
-                    throw new ArgumentException("El número debe tener al menos 1 dígito."); // Mínimo de dígitos
-                if (value.Length > 3)
-                    throw new ArgumentException("El número no puede tener más de 3 dígitos."); // Máximo de dígitos
-                if (value.StartsWith("0"))
-                    throw new ArgumentException("El número no puede iniciar con 0."); // No iniciar con cero
-                if (int.Parse(value) <= 0)
-                    throw new ArgumentException("El número debe ser mayor que 0."); // Positivo
-                if (int.Parse(value) > 999)
-                    throw new ArgumentException("El número no puede ser mayor a 999."); // Límite máximo
-
-                _numero = value;
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("El número no puede estar vacío.");
+                var v = value.Trim();
+                if (v.Length < 1) throw new ArgumentException("El número debe tener al menos 1 dígito.");
+                if (v.Length > 4) throw new ArgumentException("El número no puede tener más de 4 dígitos.");
+                if (v.Contains(" ")) throw new ArgumentException("El número no puede contener espacios.");
+                if (!Regex.IsMatch(v, @"^\d+$")) throw new ArgumentException("El número debe contener solo dígitos.");
+                if (v.StartsWith("0")) throw new ArgumentException("El número no puede iniciar con 0.");
+                var n = int.Parse(v);
+                if (n < 1 || n > 9999) throw new ArgumentException("El número debe estar entre 1 y 9999.");
+                if (_terminal != null && _terminal.Equals(v, StringComparison.OrdinalIgnoreCase)) throw new ArgumentException("El número no puede ser igual a la terminal.");
+                _numero = v;
             }
         }
-        private string _numero;
 
-        // Propiedad Terminal
         public string Terminal
         {
             get => _terminal;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("La terminal no puede estar vacía."); // No vacío
-                if (value.Length < 1)
-                    throw new ArgumentException("La terminal debe tener al menos 1 carácter."); // Mínimo de caracteres
-                if (value.Length > 5)
-                    throw new ArgumentException("La terminal no puede tener más de 5 caracteres."); // Máximo de caracteres
-                if (!Regex.IsMatch(value, @"^[A-Z0-9]+$"))
-                    throw new ArgumentException("La terminal solo puede contener letras mayúsculas y números."); // Formato permitido
-                if (value.Contains(" "))
-                    throw new ArgumentException("La terminal no puede contener espacios."); // Sin espacios
-                if (value.StartsWith("0"))
-                    throw new ArgumentException("La terminal no puede iniciar con 0."); // No iniciar con cero
-                if (value.Any(char.IsLower))
-                    throw new ArgumentException("La terminal no puede contener letras minúsculas."); // Sin minúsculas
-
-                _terminal = value;
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("La terminal no puede estar vacía.");
+                var v = value.Trim().ToUpper();
+                if (v.Length < 1) throw new ArgumentException("La terminal debe tener al menos 1 carácter.");
+                if (v.Length > 5) throw new ArgumentException("La terminal no puede tener más de 5 caracteres.");
+                if (v.Contains(" ")) throw new ArgumentException("La terminal no puede contener espacios.");
+                if (!Regex.IsMatch(v, @"^[A-Z0-9]+$")) throw new ArgumentException("La terminal debe ser alfanumérica en mayúsculas.");
+                if (v.StartsWith("0")) throw new ArgumentException("La terminal no puede iniciar con 0.");
+                if (v == "N/A") throw new ArgumentException("La terminal no puede ser N/A.");
+                if (_numero != null && _numero.Equals(v, StringComparison.OrdinalIgnoreCase)) throw new ArgumentException("La terminal no puede ser igual al número.");
+                _terminal = v;
             }
         }
-        private string _terminal;
 
-        // Propiedad Estado
         public string Estado
         {
             get => _estado;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El estado no puede estar vacío."); // No vacío
-                if (value.Length < 3)
-                    throw new ArgumentException("El estado debe tener al menos 3 caracteres."); // Mínimo de caracteres
-                if (value.Length > 20)
-                    throw new ArgumentException("El estado no puede tener más de 20 caracteres."); // Máximo de caracteres
-                if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
-                    throw new ArgumentException("El estado solo puede contener letras."); // Solo letras
-                if (value.Any(char.IsDigit))
-                    throw new ArgumentException("El estado no puede contener números."); // Sin números
-                if (value.StartsWith(" "))
-                    throw new ArgumentException("El estado no puede iniciar con espacio."); // Sin espacio inicial
-                if (value.EndsWith(" "))
-                    throw new ArgumentException("El estado no puede terminar con espacio."); // Sin espacio final
-
-                _estado = value;
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("El estado no puede estar vacío.");
+                var v = value.Trim();
+                if (v.Length < 6) throw new ArgumentException("El estado es demasiado corto.");
+                if (v.Length > 25) throw new ArgumentException("El estado es demasiado largo.");
+                if (!Regex.IsMatch(v, @"^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+$")) throw new ArgumentException("El estado solo puede contener letras y espacios.");
+                if (v.Contains("  ")) throw new ArgumentException("El estado no puede contener espacios dobles.");
+                var permitidos = new[] { "Disponible", "Ocupada", "Mantenimiento", "Cerrada Temporalmente" };
+                if (!permitidos.Contains(v)) throw new ArgumentException("Estado inválido.");
+                if (v != value) throw new ArgumentException("El estado no debe tener espacios al inicio o final.");
+                _estado = v;
             }
         }
-        private string _estado;
 
-        // Propiedad Capacidad
         public int Capacidad
         {
             get => _capacidad;
             set
             {
-                if (value <= 0)
-                    throw new ArgumentException("La capacidad debe ser mayor que 0."); // Positivo
-                if (value < 10)
-                    throw new ArgumentException("La capacidad mínima es de 10 personas."); // Mínimo
-                if (value > 500)
-                    throw new ArgumentException("La capacidad máxima es de 500 personas."); // Máximo
-                if (value % 5 != 0)
-                    throw new ArgumentException("La capacidad debe ser múltiplo de 5."); // Múltiplo de 5
-                if (value > 400 && Estado.ToLower().Contains("cerrada"))
-                    throw new ArgumentException("Una puerta cerrada no puede tener tanta capacidad."); // Lógica de estado
-                if (value < 0)
-                    throw new ArgumentException("La capacidad no puede ser negativa."); // No negativo
-                if (value > 1000)
-                    throw new ArgumentException("Capacidad fuera de rango lógico."); // Lógica adicional
-
+                if (value <= 0) throw new ArgumentException("La capacidad debe ser mayor que 0.");
+                if (value < 10) throw new ArgumentException("La capacidad mínima es 10.");
+                if (value > 500) throw new ArgumentException("La capacidad máxima es 500.");
+                if (value == int.MaxValue) throw new ArgumentException("La capacidad es inválida.");
+                if (_estado == "Ocupada" && value < 10) throw new ArgumentException("La capacidad no puede ser menor a 10 estando Ocupada.");
+                if (_estado == "Mantenimiento" && value > 50) throw new ArgumentException("En Mantenimiento la capacidad no puede exceder 50.");
+                if (_terminal != null && _terminal.StartsWith("T") && value > 500) throw new ArgumentException("La capacidad excede el máximo para esta terminal.");
                 _capacidad = value;
             }
         }
-        private int _capacidad;
 
-        // Propiedad Ubicacion
         public string Ubicacion
         {
             get => _ubicacion;
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("La ubicación no puede estar vacía."); // No vacío
-                if (value.Length < 3)
-                    throw new ArgumentException("La ubicación debe tener al menos 3 caracteres."); // Mínimo de caracteres
-                if (value.Length > 50)
-                    throw new ArgumentException("La ubicación no puede tener más de 50 caracteres."); // Máximo de caracteres
-                if (value.StartsWith(" "))
-                    throw new ArgumentException("La ubicación no puede iniciar con espacio."); // Sin espacio inicial
-                if (value.EndsWith(" "))
-                    throw new ArgumentException("La ubicación no puede terminar con espacio."); // Sin espacio final
-                if (value.Count(char.IsLetterOrDigit) < 3)
-                    throw new ArgumentException("La ubicación debe contener al menos 3 caracteres alfanuméricos."); // Contenido mínimo
-                if (value.Contains("@"))
-                    throw new ArgumentException("La ubicación no puede contener '@'."); // Sin caracteres inválidos
-
-                _ubicacion = value;
+                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("La ubicación no puede estar vacía.");
+                var v = value.Trim();
+                if (v.Length < 3) throw new ArgumentException("La ubicación debe tener al menos 3 caracteres.");
+                if (v.Length > 100) throw new ArgumentException("La ubicación no puede superar 100 caracteres.");
+                if (v.Contains("  ")) throw new ArgumentException("La ubicación no puede contener espacios dobles.");
+                if (!Regex.IsMatch(v, @"^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ0-9\s\.\-]+$")) throw new ArgumentException("La ubicación contiene caracteres inválidos.");
+                if (Regex.IsMatch(v, @"^\d+$")) throw new ArgumentException("La ubicación no puede ser solo números.");
+                if (v != value) throw new ArgumentException("La ubicación no debe tener espacios al inicio o final.");
+                _ubicacion = v;
             }
         }
-        private string _ubicacion;
 
-        // Propiedad HorarioApertura
         public DateTime HorarioApertura
         {
             get => _horarioApertura;
             set
             {
-                if (value == default)
-                    throw new ArgumentException("El horario de apertura no puede estar vacío."); // No vacío
-                if (value.Hour < 0 || value.Hour > 23)
-                    throw new ArgumentException("Hora inválida."); // Hora válida
-                if (value.Minute < 0 || value.Minute > 59)
-                    throw new ArgumentException("Minutos inválidos."); // Minuto válido
-                if (value.Hour < 4)
-                    throw new ArgumentException("La apertura no puede ser antes de las 4 AM."); // Restricción horaria
-                if (value.Hour > 12)
-                    throw new ArgumentException("La apertura no puede ser después del mediodía."); // Restricción horaria
-                if (value.Second != 0)
-                    throw new ArgumentException("Los segundos deben ser 0."); // Sin segundos
-                if (HorarioCierre != default && value >= HorarioCierre)
-                    throw new ArgumentException("La apertura debe ser antes del cierre."); // Lógica de horario
-
+                if (value == default) throw new ArgumentException("El horario de apertura es inválido.");
+                if (value.Date < DateTime.Today) throw new ArgumentException("El horario de apertura no puede estar en el pasado.");
+                if (value.Date > DateTime.Today.AddYears(2)) throw new ArgumentException("El horario de apertura no puede superar 2 años.");
+                if (value.DayOfWeek == DayOfWeek.Sunday) throw new ArgumentException("No se permite apertura en domingo.");
+                if (value.TimeOfDay < TimeSpan.Zero) throw new ArgumentException("Hora de apertura inválida.");
+                if (value.TimeOfDay > new TimeSpan(23, 59, 59)) throw new ArgumentException("Hora de apertura inválida.");
+                if (_horarioCierre != default && value >= _horarioCierre) throw new ArgumentException("La apertura debe ser anterior al cierre.");
+                if (value.Kind == DateTimeKind.Utc) throw new ArgumentException("El horario de apertura debe estar en hora local.");
                 _horarioApertura = value;
             }
         }
-        private DateTime _horarioApertura;
 
-        // Propiedad HorarioCierre
         public DateTime HorarioCierre
         {
             get => _horarioCierre;
             set
             {
-                if (value == default)
-                    throw new ArgumentException("El horario de cierre no puede estar vacío."); // No vacío
-                if (value.Hour < 0 || value.Hour > 23)
-                    throw new ArgumentException("Hora inválida."); // Hora válida
-                if (value.Minute < 0 || value.Minute > 59)
-                    throw new ArgumentException("Minutos inválidos."); // Minuto válido
-                if (value.Hour < 6)
-                    throw new ArgumentException("El cierre no puede ser antes de las 6 AM."); // Restricción horaria
-                if (value.Hour > 23)
-                    throw new ArgumentException("El cierre no puede ser después de las 11 PM."); // Restricción horaria
-                if (value.Second != 0)
-                    throw new ArgumentException("Los segundos deben ser 0."); // Sin segundos
-                if (HorarioApertura != default && value <= HorarioApertura)
-                    throw new ArgumentException("El cierre debe ser después de la apertura."); // Lógica de horario
-
+                if (value == default) throw new ArgumentException("El horario de cierre es inválido.");
+                if (value.Date < DateTime.Today) throw new ArgumentException("El horario de cierre no puede estar en el pasado.");
+                if (value.Date > DateTime.Today.AddYears(2)) throw new ArgumentException("El horario de cierre no puede superar 2 años.");
+                if (value.DayOfWeek == DayOfWeek.Sunday) throw new ArgumentException("No se permite cierre en domingo.");
+                if (value.TimeOfDay < TimeSpan.Zero) throw new ArgumentException("Hora de cierre inválida.");
+                if (value.TimeOfDay > new TimeSpan(23, 59, 59)) throw new ArgumentException("Hora de cierre inválida.");
+                if (_horarioApertura != default && value <= _horarioApertura) throw new ArgumentException("El cierre debe ser posterior a la apertura.");
+                if (_horarioApertura != default && value - _horarioApertura > TimeSpan.FromHours(24)) throw new ArgumentException("El intervalo entre apertura y cierre no puede superar 24 horas.");
+                if (value.Kind == DateTimeKind.Utc) throw new ArgumentException("El horario de cierre debe estar en hora local.");
                 _horarioCierre = value;
             }
         }
-        private DateTime _horarioCierre;
 
-        // Métodos estáticos
         private static string filePath = "puertasEmbarque.json";
 
         public static void Guardar(PuertaEmbarque obj)
         {
-            List<PuertaEmbarque> lista = Leer();
+            var lista = Leer();
             lista.Add(obj);
-            string json = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
+            GuardarLista(lista);
+        }
+
+        public static void GuardarLista(List<PuertaEmbarque> lista)
+        {
+            var json = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, json);
         }
 
         public static List<PuertaEmbarque> Leer()
         {
-            if (!File.Exists(filePath))
-                return new List<PuertaEmbarque>();
-
-            string json = File.ReadAllText(filePath);
-            return JsonSerializer.Deserialize<List<PuertaEmbarque>>(json);
+            if (!File.Exists(filePath)) return new List<PuertaEmbarque>();
+            var json = File.ReadAllText(filePath);
+            return JsonSerializer.Deserialize<List<PuertaEmbarque>>(json) ?? new List<PuertaEmbarque>();
         }
 
         public string MostrarInfo()
         {
-            return $"Puerta {Numero} - Terminal: {Terminal}, Estado: {Estado}";
+            return $"Puerta {Numero} - Terminal {Terminal}, Estado: {Estado}, Capacidad: {Capacidad}";
         }
     }
 }

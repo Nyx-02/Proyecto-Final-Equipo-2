@@ -181,8 +181,6 @@
             LabelTitulo.Size = new Size(340, 39);
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Puerta de Embarque";
-            LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-            LabelTitulo.Click += label1_Click;
             // 
             // lbId
             // 
@@ -205,7 +203,6 @@
             idnumero.TabIndex = 15;
             idnumero.Text = "Numero:";
             idnumero.TextAlign = ContentAlignment.MiddleCenter;
-            idnumero.Click += lbDestino_Click;
             // 
             // lbterminal
             // 
@@ -305,7 +302,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 29;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // cbterminal
             // 
@@ -371,7 +367,6 @@
             Controls.Add(labeNombrecorpo);
             Name = "FrmPuertaEmbarque";
             Text = "Gestion de Puerta de Embarque";
-            Load += FrmVuelo_Load;
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdCapacidad).EndInit();
             ResumeLayout(false);
