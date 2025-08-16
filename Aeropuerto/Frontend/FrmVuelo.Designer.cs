@@ -53,10 +53,14 @@
             lbHorasali = new Label();
             lbFecha = new Label();
             DTPFecha = new DateTimePicker();
+            comboBox1 = new ComboBox();
+            dgvDatos = new DataGridView();
+            lbdata = new Label();
+            Butdata = new Button();
             DTPhoradelle = new DateTimePicker();
             dateTimePicker3 = new DateTimePicker();
-            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -305,20 +309,6 @@
             DTPFecha.Size = new Size(200, 23);
             DTPFecha.TabIndex = 26;
             // 
-            // DTPhoradelle
-            // 
-            DTPhoradelle.Location = new Point(499, 211);
-            DTPhoradelle.Name = "DTPhoradelle";
-            DTPhoradelle.Size = new Size(200, 23);
-            DTPhoradelle.TabIndex = 27;
-            // 
-            // dateTimePicker3
-            // 
-            dateTimePicker3.Location = new Point(488, 170);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(200, 23);
-            dateTimePicker3.TabIndex = 28;
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
@@ -328,6 +318,53 @@
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 29;
             // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(728, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 30;
+            dgvDatos.CellContentClick += dgvDatos_CellContentClick;
+            // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(686, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 32;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(703, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 31;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // DTPhoradelle
+            // 
+            DTPhoradelle.Format = DateTimePickerFormat.Time;
+            DTPhoradelle.Location = new Point(499, 211);
+            DTPhoradelle.Name = "DTPhoradelle";
+            DTPhoradelle.Size = new Size(200, 23);
+            DTPhoradelle.TabIndex = 27;
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Format = DateTimePickerFormat.Time;
+            dateTimePicker3.Location = new Point(488, 170);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(200, 23);
+            dateTimePicker3.TabIndex = 28;
+            // 
             // FrmVuelo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -336,6 +373,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
             Controls.Add(comboBox1);
             Controls.Add(dateTimePicker3);
             Controls.Add(DTPhoradelle);
@@ -366,6 +406,7 @@
             Name = "FrmVuelo";
             Text = "Gestion de Vuelos";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -395,8 +436,11 @@
         private Label lbHorasali;
         private Label lbFecha;
         private DateTimePicker DTPFecha;
+        private ComboBox comboBox1;
+        private DataGridView dgvDatos;
+        private Label lbdata;
+        private Button Butdata;
         private DateTimePicker DTPhoradelle;
         private DateTimePicker dateTimePicker3;
-        private ComboBox comboBox1;
     }
 }

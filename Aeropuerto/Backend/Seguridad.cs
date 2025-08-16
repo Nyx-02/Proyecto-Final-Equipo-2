@@ -9,9 +9,6 @@ namespace Backend
 {
     public class Seguridad
     {
-
-
-        // Propiedad Id
         private string _id;
         public string Id
         {
@@ -37,33 +34,29 @@ namespace Backend
             }
         }
 
-        // Propiedad NombreGuardia
-        private string _nombreGuardia;
-        public string NombreGuardia
+        private string _idEmpleado;
+        public string IdEmpleado
         {
-            get => _nombreGuardia;
+            get => _idEmpleado;
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("El nombre del guardia no puede estar vacío.");
+                    throw new ArgumentException("El ID del empleado no puede estar vacío.");
                 if (value.Length < 3)
-                    throw new ArgumentException("El nombre debe tener al menos 3 caracteres.");
-                if (value.Length > 50)
-                    throw new ArgumentException("El nombre no puede tener más de 50 caracteres.");
-                if (!Regex.IsMatch(value, @"^[A-Za-z\s]+$"))
-                    throw new ArgumentException("El nombre solo puede contener letras.");
-                if (value.Any(char.IsDigit))
-                    throw new ArgumentException("El nombre no puede contener números.");
-                if (value.StartsWith(" "))
-                    throw new ArgumentException("El nombre no puede iniciar con espacio.");
-                if (value.EndsWith(" "))
-                    throw new ArgumentException("El nombre no puede terminar con espacio.");
+                    throw new ArgumentException("El ID del empleado debe tener al menos 3 caracteres.");
+                if (value.Length > 15)
+                    throw new ArgumentException("El ID del empleado no puede tener más de 15 caracteres.");
+                if (!Regex.IsMatch(value, @"^[A-Z0-9]+$"))
+                    throw new ArgumentException("El ID del empleado solo puede contener letras mayúsculas y números.");
+                if (value.Contains(" "))
+                    throw new ArgumentException("El ID del empleado no puede contener espacios.");
+                if (value.StartsWith("0"))
+                    throw new ArgumentException("El ID del empleado no puede iniciar con 0.");
 
-                _nombreGuardia = value;
+                _idEmpleado = value;
             }
         }
 
-        // Propiedad Turno
         private string _turno;
         public string Turno
         {
@@ -89,7 +82,6 @@ namespace Backend
             }
         }
 
-        // Propiedad ZonaAsignada
         private string _zonaAsignada;
         public string ZonaAsignada
         {
@@ -115,7 +107,6 @@ namespace Backend
             }
         }
 
-        // Propiedad FechaInicio
         private DateTime _fechaInicio;
         public DateTime FechaInicio
         {
@@ -141,7 +132,6 @@ namespace Backend
             }
         }
 
-
         private int _nivelAcceso;
         public int NivelAcceso
         {
@@ -152,21 +142,16 @@ namespace Backend
                     throw new ArgumentException("El nivel de acceso mínimo es 1.");
                 if (value > 5)
                     throw new ArgumentException("El nivel de acceso máximo es 5.");
-                if (value % 1 != 0)
-                    throw new ArgumentException("El nivel de acceso debe ser un número entero.");
                 if (value == 0)
                     throw new ArgumentException("El nivel de acceso no puede ser 0.");
                 if (value < 3 && ZonaAsignada != null && ZonaAsignada.ToLower().Contains("vip"))
                     throw new ArgumentException("Zona VIP requiere nivel de acceso 3 o superior.");
-                if (value > 5)
-                    throw new ArgumentException("Nivel de acceso fuera de rango lógico.");
                 if (value < 0)
                     throw new ArgumentException("Nivel de acceso no puede ser negativo.");
 
                 _nivelAcceso = value;
             }
         }
-
 
         private string _identificacion;
         public string Identificacion
@@ -243,15 +228,13 @@ namespace Backend
             }
         }
 
-
         private static string filePath = "seguridad.json";
 
         public static void Guardar(Seguridad obj)
         {
             List<Seguridad> lista = Leer();
             lista.Add(obj);
-            string json = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(filePath, json);
+            GuardarLista(lista);
         }
 
         public static List<Seguridad> Leer()
@@ -260,12 +243,18 @@ namespace Backend
                 return new List<Seguridad>();
 
             string json = File.ReadAllText(filePath);
-            return JsonSerializer.Deserialize<List<Seguridad>>(json);
+            return JsonSerializer.Deserialize<List<Seguridad>>(json) ?? new List<Seguridad>();
+        }
+
+        public static void GuardarLista(List<Seguridad> lista)
+        {
+            string json = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
+            File.WriteAllText(filePath, json);
         }
 
         public string MostrarInfo()
         {
-            return $"Seguridad {Id} - Guardia: {NombreGuardia}, Puesto: {Puesto}, Zona: {ZonaAsignada}";
+            return $"Seguridad {Id} - Empleado: {IdEmpleado}, Puesto: {Puesto}, Zona: {ZonaAsignada}";
         }
     }
 }

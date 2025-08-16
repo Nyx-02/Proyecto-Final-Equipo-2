@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "2024110107",
+    "Origen": "Honduras",
+    "Destino": "NewTexa",
+    "Fecha": "2025-08-18T00:00:00",
+    "HoraSalida": "2025-08-18T13:00:00.952",
+    "HoraLlegada": "2025-08-18T13:40:00.954",
+    "Aerolinea": "AeroLink",
+    "Estado": "Activo"
+  }
+]

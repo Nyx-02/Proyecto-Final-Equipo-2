@@ -31,3 +31,4 @@ C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aer
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.pdb
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.genruntimeconfig.cache
 C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\ref\Frontend.dll
+C:\Users\default.LAPTOP-T08J1VQH\source\repos\Nyx-02\Proyecto-Final-Equipo-2\Aeropuerto\Frontend\obj\Debug\net8.0-windows\Frontend.Properties.Resources.resources

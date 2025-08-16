@@ -1,17 +1,23 @@
-﻿using System;
+﻿using Backend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Frontend
 {
     public partial class FrmVuelo : Form
     {
+        private bool expandido = false; 
+
         public FrmVuelo()
         {
             InitializeComponent();
+            CargarGrid();
 
             // Conectar eventos
+            Butdata.Click += Butdata_Click;
             butGuardar.Click += butGuardar_Click;
             butEditar.Click += butEditar_Click;
             buteliminar.Click += buteliminar_Click;
@@ -37,6 +43,7 @@ namespace Frontend
                 Backend.Vuelo.Guardar(vuelo);
                 MessageBox.Show("Vuelo guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LimpiarCampos();
+                CargarGrid();
             }
             catch (Exception ex)
             {
@@ -64,6 +71,7 @@ namespace Frontend
                     Backend.Vuelo.GuardarLista(lista);
                     MessageBox.Show("Vuelo editado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
+                    CargarGrid();
                 }
                 else
                 {
@@ -89,6 +97,7 @@ namespace Frontend
                     Backend.Vuelo.GuardarLista(lista);
                     MessageBox.Show("Vuelo eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LimpiarCampos();
+                    CargarGrid();
                 }
                 else
                 {
@@ -117,15 +126,41 @@ namespace Frontend
                     DTPFecha.Value = vuelo.Fecha;
                     dateTimePicker3.Value = vuelo.HoraSalida;
                     DTPhoradelle.Value = vuelo.HoraLlegada;
+
+                    // Mostrar solo este vuelo en el DataGridView
+                    dgvDatos.DataSource = null;
+                    dgvDatos.DataSource = new List<Backend.Vuelo> { vuelo };
                 }
                 else
                 {
                     MessageBox.Show("Vuelo no encontrado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    dgvDatos.DataSource = null;
+                    dgvDatos.DataSource = lista;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void Butdata_Click(object sender, EventArgs e)
+        {
+            if (!expandido)
+            {
+                dgvDatos.Dock = DockStyle.Fill;
+                dgvDatos.BringToFront();
+                expandido = true;
+                lbdata.Text = "Restaurar";
+            }
+            else
+            {
+                dgvDatos.Dock = DockStyle.None;
+                dgvDatos.Size = new Size(600, 200);
+                dgvDatos.Location = new Point(100, 300);
+                expandido = false;
+                lbdata.Text = "DataGridView";
             }
         }
 
@@ -139,6 +174,17 @@ namespace Frontend
             DTPFecha.Value = DateTime.Today;
             dateTimePicker3.Value = DateTime.Now;
             DTPhoradelle.Value = DateTime.Now;
+        }
+
+        private void CargarGrid()
+        {
+            List<Vuelo> lista = Vuelo.Leer();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = lista;
+        }
+
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

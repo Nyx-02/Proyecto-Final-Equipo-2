@@ -53,12 +53,11 @@
             tematricula = new TextBox();
             lbmotoro = new Label();
             nupdCapacidad = new NumericUpDown();
-            nupdfabricacion = new NumericUpDown();
             cbEstado = new ComboBox();
             cbmotor = new ComboBox();
+            dateTimePicker1 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nupdCapacidad).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nupdfabricacion).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -307,13 +306,6 @@
             nupdCapacidad.Size = new Size(100, 23);
             nupdCapacidad.TabIndex = 34;
             // 
-            // nupdfabricacion
-            // 
-            nupdfabricacion.Location = new Point(517, 125);
-            nupdfabricacion.Name = "nupdfabricacion";
-            nupdfabricacion.Size = new Size(100, 23);
-            nupdfabricacion.TabIndex = 35;
-            // 
             // cbEstado
             // 
             cbEstado.FormattingEnabled = true;
@@ -332,6 +324,13 @@
             cbmotor.Size = new Size(121, 23);
             cbmotor.TabIndex = 37;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(517, 125);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(200, 23);
+            dateTimePicker1.TabIndex = 38;
+            // 
             // FrmAvion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -340,9 +339,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(dateTimePicker1);
             Controls.Add(cbmotor);
             Controls.Add(cbEstado);
-            Controls.Add(nupdfabricacion);
             Controls.Add(nupdCapacidad);
             Controls.Add(lbmotoro);
             Controls.Add(tematricula);
@@ -371,7 +370,6 @@
             Text = "Gestion de Aviones";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupdCapacidad).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nupdfabricacion).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -403,8 +401,8 @@
         private TextBox tematricula;
         private Label lbmotoro;
         private NumericUpDown nupdCapacidad;
-        private NumericUpDown nupdfabricacion;
         private ComboBox cbEstado;
         private ComboBox cbmotor;
+        private DateTimePicker dateTimePicker1;
     }
 }

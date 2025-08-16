@@ -56,7 +56,11 @@
             texpuesto = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             cbniveleacceso = new ComboBox();
+            lbdata = new Label();
+            Butdata = new Button();
+            dgvDatos = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)picboxlogo).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
             // butGuardar
@@ -181,7 +185,6 @@
             LabelTitulo.TabIndex = 12;
             LabelTitulo.Text = "Gestion de Seguridad";
             LabelTitulo.TextAlign = ContentAlignment.MiddleCenter;
-
             // 
             // lbId
             // 
@@ -333,6 +336,36 @@
             cbniveleacceso.Size = new Size(121, 23);
             cbniveleacceso.TabIndex = 40;
             // 
+            // lbdata
+            // 
+            lbdata.BackColor = Color.LightSkyBlue;
+            lbdata.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lbdata.Location = new Point(684, 410);
+            lbdata.Name = "lbdata";
+            lbdata.Size = new Size(97, 21);
+            lbdata.TabIndex = 43;
+            lbdata.Text = "DataGridView";
+            lbdata.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Butdata
+            // 
+            Butdata.BackgroundImage = (Image)resources.GetObject("Butdata.BackgroundImage");
+            Butdata.FlatStyle = FlatStyle.Flat;
+            Butdata.Image = (Image)resources.GetObject("Butdata.Image");
+            Butdata.Location = new Point(701, 354);
+            Butdata.Name = "Butdata";
+            Butdata.Size = new Size(56, 53);
+            Butdata.TabIndex = 42;
+            Butdata.UseVisualStyleBackColor = true;
+            // 
+            // dgvDatos
+            // 
+            dgvDatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDatos.Location = new Point(726, 378);
+            dgvDatos.Name = "dgvDatos";
+            dgvDatos.Size = new Size(10, 10);
+            dgvDatos.TabIndex = 41;
+            // 
             // FrmSeguridad
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -341,6 +374,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbdata);
+            Controls.Add(Butdata);
+            Controls.Add(dgvDatos);
             Controls.Add(cbniveleacceso);
             Controls.Add(dateTimePicker1);
             Controls.Add(texpuesto);
@@ -371,6 +407,7 @@
             Name = "FrmSeguridad";
             Text = "Gestion de Seguridad";
             ((System.ComponentModel.ISupportInitialize)picboxlogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -405,5 +442,8 @@
         private TextBox texpuesto;
         private DateTimePicker dateTimePicker1;
         private ComboBox cbniveleacceso;
+        private Label lbdata;
+        private Button Butdata;
+        private DataGridView dgvDatos;
     }
 }
